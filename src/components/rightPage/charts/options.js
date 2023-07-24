@@ -80,7 +80,7 @@ export const BrowseCategoriesOptions = params => ({
   ],
 });
 
-// 反馈
+// 用户支付转化率
 export const FeedbackOptions = params => ({
   title: {
     text: `${params.number}%`,
@@ -156,7 +156,7 @@ export const FeedbackOptions = params => ({
   ],
 });
 
-//  线下门店流量
+//  用户柱状图
 export const OfflinePortalOptions = params => ({
   color: ['#73A0FA', '#73DEB3', '#32C5E9', '#67E0E3'],
   tooltip: {
@@ -168,6 +168,9 @@ export const OfflinePortalOptions = params => ({
       },
       lineStyle: {
         type: 'dashed',
+      },
+      label: {
+        precision: 0, // 设置为0，确保只显示整数值
       },
     },
   },
@@ -229,7 +232,7 @@ export const OfflinePortalOptions = params => ({
   yAxis: [
     {
       type: 'value',
-      name: '单位/人',
+      name: '用户/个',
       nameTextStyle: {
         color: '#BCDCFF',
       },
@@ -252,46 +255,12 @@ export const OfflinePortalOptions = params => ({
         show: true,
       },
     },
-    {
-      type: 'value',
-      min: 0,
-      max: 100,
-      interval: 20,
-      name: '密度',
-      //网格样式
-      splitLine: {
-        show: false,
-      },
-      axisLine: {
-        lineStyle: {
-          color: '#94b5ca',
-        },
-      },
-    },
+   
   ],
   series: [
+
     {
-      name: '门店1',
-      type: 'line',
-      data: params.data1,
-    },
-    {
-      name: '门店2',
-      type: 'line',
-      data: params.data2,
-    },
-    {
-      name: '门店3',
-      type: 'line',
-      data: params.data3,
-    },
-    {
-      name: '门店4',
-      type: 'line',
-      data: params.data4,
-    },
-    {
-      name: '额度',
+      name: '用户数量',
       type: 'bar',
       data: params.barData,
       itemStyle: {
@@ -314,6 +283,12 @@ export const OfflinePortalOptions = params => ({
         },
       },
       barMaxWidth: 15,
+      label: {
+        show: true,
+        position: 'top', // 在柱形的顶部显示标签
+        color: '#BCDCFF', // 可以自定义标签颜色
+        fontSize: 12, // 可以自定义标签字体大小
+      },
     },
   ],
 });

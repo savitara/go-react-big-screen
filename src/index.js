@@ -1,6 +1,6 @@
 import dva from 'dva';
 import './utils/flexible';
-
+import 'antd/dist/antd.css'; // 引入 antd 的样式
 // 1. Initialize
 const app = dva();
 

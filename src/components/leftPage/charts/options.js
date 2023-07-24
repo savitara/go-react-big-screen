@@ -92,12 +92,12 @@ export const trafficOptions = (params) => ({
   },
   series: [
     {
-      name: '出口流量',
+      name: '利用率',
       type: 'line',
       smooth: true, //是否平滑
       lineStyle: {
         normal: {
-          color: '#00b3f4',
+          color: '#FFA500',  // 橙色的十六进制代码
           shadowColor: 'rgba(0, 0, 0, .3)',
           shadowBlur: 0,
           shadowOffsetY: 5,
@@ -108,14 +108,14 @@ export const trafficOptions = (params) => ({
         show: false,
         position: 'top',
         textStyle: {
-          color: '#00b3f4',
+          color: '#FFA500',  // 橙色的十六进制代码
         },
       },
       // 去除点标记
       symbolSize: 0,
       // 鼠标放上去还是要有颜色的
       itemStyle: {
-        color: '#00b3f4',
+        color: '#FFA500',  // 橙色的十六进制代码
       },
       // 设置渐变色
       areaStyle: {
@@ -141,10 +141,10 @@ export const trafficOptions = (params) => ({
           shadowBlur: 20,
         },
       },
-      data: params.outData,
+      data: params.utilizationRate,
     },
     {
-      name: '入口流量',
+      name: '历史平均利用率',
       type: 'line',
       smooth: true, //是否平滑
       // 阴影
@@ -193,7 +193,7 @@ export const trafficOptions = (params) => ({
           shadowBlur: 20,
         },
       },
-      data: params.inData,
+      data: params.historicalAverageUtilizationRate,
     },
   ],
 });
@@ -202,3 +202,4 @@ export const userOptions = (params = {}) => ({
   header: params.header,
   data: params.data,
 });
+

@@ -6,7 +6,7 @@ import {
   Decoration6,
 } from '@jiaminghi/data-view-react';
 
-import { TopBox, TimeBox } from './style';
+import { TopBox, TimeBox, TopCenter } from './style';
 
 class index extends PureComponent {
   constructor(props) {
@@ -31,6 +31,8 @@ class index extends PureComponent {
     this.setTimingFn();
   }
 
+
+
   setTimingFn() {
     this.timing = setInterval(() => {
       let dateYear = formatTime(new Date(), 'yyyy-MM-dd');
@@ -44,6 +46,35 @@ class index extends PureComponent {
 
   render() {
     const { title } = this.state;
+    const detailsList = [
+      {
+        title: '订单总金额',
+        number: 2600.5,
+        unit: '元/月',
+      },
+      {
+        title: '停车记录总量',
+        number: 3130,
+        unit: '条/月',
+      }, {
+        title: '用户缴费率/月',
+        number: 85.5,
+        unit: '%',
+      }, {
+        title: '今日订单总额',
+        number: 2116.0,
+        unit: '元',
+      }, {
+        title: '今日订单数量',
+        number: 260,
+        unit: '单',
+      }, {
+        title: '今日缴费率',
+        number: 89.94,
+        unit: '%',
+      },
+      // Add more items here if needed
+    ];
     return (
       <Fragment>
         <TopBox>
@@ -74,6 +105,23 @@ class index extends PureComponent {
               <h3>{this.state.timeStr}</h3>
             </TimeBox>
           </div>
+          <TopCenter>
+            <div className='detail-list'>
+              {detailsList.map((item, index) => (
+                <div className='detail-list-item' key={index}>
+                  <img
+                    src={require(`../../assets/images/center-details-data${index + 1}.png`)}
+                    alt={item.title}
+                  />
+                  <div className='detail-item-text'>
+                    <h3>{item.title}</h3>
+                    <span>{item.number}</span>
+                    <span className='unit'>{item.unit}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TopCenter>
         </TopBox>
       </Fragment>
     );

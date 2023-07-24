@@ -14,11 +14,11 @@ class UserSituation extends PureComponent {
         // 偶数行背景色
         evenRowBGC: '#070C34',
         // 行号
-        index: false,
+        index: true,
         // 行号表头
         indexHeader: '序号',
         // 宽度
-        columnWidth: [ 100, 200],
+        columnWidth: [50, 100, 200],
         // 对其方式
         align: ['center'],
         // 表行数

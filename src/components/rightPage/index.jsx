@@ -1,3 +1,12 @@
+/*
+ * @FileName: index.jsx
+ * @version: 
+ * @Author: LZH
+ * @Date: 2023-07-18 17:11:09
+ * @Description: 
+ * @LastEditors: LZH
+ * @LastEditTime: 2023-07-22 16:20:42
+ */
 import React, { PureComponent } from 'react';
 import { BorderBox13 } from '@jiaminghi/data-view-react';
 import BrowseCategories from './charts/BrowseCategories';
@@ -6,6 +15,7 @@ import OfflinePortal from './charts/OfflinePortal';
 import Feedback from './charts/Feedback';
 import { ModuleTitle } from '../../style/globalStyledSet';
 import { connect } from 'dva';
+// import { PersonnelAndEquipmentStatus } from './charts/PersonnelAndEquipmentStatus'
 import {
   RightPage,
   RightTopBox,
@@ -20,15 +30,24 @@ class index extends PureComponent {
   }
   render() {
     const { offline, browseCategories, userIdentityCategory } = this.props;
+
+    // 从userIdentityCategory数据中计算personnelOnDuty
+    const personnelOnDuty = 35;
+
+    // 假设您拥有以下人员和设备状态的数据
+    const personnelOffDuty = 100 - personnelOnDuty;
+    const equipmentOnline = 60; // 用实际的API响应数据替换
+    const equipmentOffline = 40; // 用实际的API响应数据替换
+
     return (
       <RightPage>
         <RightTopBox>
           <div className='right-top'>
             <ModuleTitle>
               <i className='iconfont'>&#xe7f7;</i>
-              <span>关联数据类别分布</span>
+              <span>路段车位使用</span>
             </ModuleTitle>
-            <div className='right-top-content'>
+            {/* <div className='right-top-content'>
               <BrowseCategories
                 browseCategories={browseCategories}></BrowseCategories>
               <img
@@ -36,17 +55,30 @@ class index extends PureComponent {
                 className='earth-gif'
                 src={require('../../assets/images/earth-rotate.gif')}
               />
-            </div>
+            </div> */}
+
+            <UserIdentityCategory
+              userIdentityCategory={userIdentityCategory}></UserIdentityCategory>
           </div>
         </RightTopBox>
 
         <RightCenterBox>
           <ModuleTitle>
             <i className='iconfont'>&#xe7fd;</i>
-            <span>平均用户类别排布</span>
-          </ModuleTitle>
+            <span>人员和设备情况</span>
+            {/* <PersonnelAndEquipmentStatus
+              personnelOnDuty={personnelOnDuty}
+              personnelOffDuty={personnelOffDuty}
+              equipmentOnline={equipmentOnline}
+              equipmentOffline={equipmentOffline}
+              ></PersonnelAndEquipmentStatus> */}
+            {/* <PersonnelAndEquipmentStatus
+              userIdentityCategory={userIdentityCategory}
+            ></PersonnelAndEquipmentStatus> */}
+            {/* 
           <UserIdentityCategory
-            userIdentityCategory={userIdentityCategory}></UserIdentityCategory>
+            userIdentityCategory={userIdentityCategory}></UserIdentityCategory> */}
+          </ModuleTitle>
         </RightCenterBox>
 
         <RightBottomBox>
@@ -54,22 +86,22 @@ class index extends PureComponent {
             <div className='right-bottom'>
               <ModuleTitle>
                 <i className='iconfont'>&#xe790;</i>
-                <span>今日线下门户流量</span>
+                <span>今日用户统计</span>
               </ModuleTitle>
-              {/* 反馈 */}
+              {/* 支付用户转化率 */}
               <div className='feedback-box'>
                 {offline
                   ? offline.feedback.map((item, index) => {
-                      return (
-                        <div className='feedback-box-item' key={index}>
-                          <Feedback FeedbackData={item}></Feedback>
-                          <span className='dis-text'>{item.title}</span>
-                        </div>
-                      );
-                    })
+                    return (
+                      <div className='feedback-box-item' key={index}>
+                        <Feedback FeedbackData={item}></Feedback>
+                        <span className='dis-text'>{item.title}</span>
+                      </div>
+                    );
+                  })
                   : ''}
               </div>
-              {/* 门店 */}
+              {/* 柱状图 */}
               <div className='offline-portal-box'>
                 {offline ? (
                   <OfflinePortal

@@ -18,10 +18,9 @@ class Map extends PureComponent {
         style={{
           width: '10.625rem',
           height: '8.125rem',
+          display: 'inline-block', // 添加此样式以使组件并排显示
         }}>
-          {
-            mapData?<Chart renderer={renderer} option={mapOptions(mapData)} />:''
-          }
+        {mapData ? <Chart renderer={renderer} option={mapOptions(mapData)} /> : ''}
       </div>
     );
   }

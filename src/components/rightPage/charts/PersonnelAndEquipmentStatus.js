@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { CapsuleChart } from '@jiaminghi/data-view-react';
 
-class UserSituation extends PureComponent {
+class PersonnelAndEquipmentStatus extends PureComponent {
   render() {
     const { userIdentityCategory } = this.props;
 
@@ -56,4 +56,6 @@ class UserSituation extends PureComponent {
   }
 }
 
-export default UserSituation;
+
+
+export default PersonnelAndEquipmentStatus;

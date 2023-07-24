@@ -5,14 +5,52 @@ import { BorderBox12, BorderBox13 } from '@jiaminghi/data-view-react';
 import TrafficSituation from './charts/TrafficSituation';
 import UserSituation from './charts/UserSituation';
 import { connect } from 'dva';
+import { DatePicker, Space } from 'antd';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+import locale from 'antd/es/date-picker/locale/zh_CN';
 
 class index extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      startDate: moment(), // 设置默认值为今天
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  async fetchDataFromBackend(selectedDate) {
+    try {
+      const response = await fetch(`/api/leftPageData?date=${selectedDate}`);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('从后端获取数据时出错:', error);
+      return null;
+    }
+  }
+
+  async handleChange(date, dateString) {
+    // 更新组件的状态，将选择的日期赋值给startDate
+    this.setState({
+      startDate: date,
+    });
+
+    // 根据选择的日期，从后端API获取新数据
+    const newData = await this.fetchDataFromBackend(dateString);
+
+    // 将新数据更新到组件的状态中
+    if (newData) {
+      this.setState({
+        // userSitua: newData.userSitua,
+        trafficSitua: newData.trafficSitua,
+      });
+    }
+  }
+
   render() {
     const { userSitua, trafficSitua, accessFrequency, peakFlow } = this.props;
+    const { startDate } = this.state;
     return (
       <LeftPage>
         {/* 顶部图表 */}
@@ -21,22 +59,20 @@ class index extends PureComponent {
             <div className='left-top'>
               <ModuleTitle>
                 <i className='iconfont'>&#xe78f;</i>
-                <span>今日流量态势</span>
+                <span>停车场实时泊位利用率(24小时)</span>
               </ModuleTitle>
-              <div className='title-dis'>
-                <span>
-                  平均接纳次数(小时):
-                  <span className='title-dis-keyword'>{accessFrequency}次</span>
-                </span>
-                <span>
-                  流量峰值:
-                  <span className='title-dis-keyword'>{peakFlow}M</span>
-                </span>
-              </div>
+              <Space direction='vertical'>
+                <DatePicker
+                  locale={locale}
+                  onChange={this.handleChange}
+                  defaultValue={startDate} // 设置默认值
+                />
+              </Space>
               {/* 图表 */}
               <TrafficSituation trafficSitua={trafficSitua}></TrafficSituation>
             </div>
           </BorderBox12>
+          
         </LeftTopBox>
 
         {/* 底部图表 */}
@@ -45,7 +81,7 @@ class index extends PureComponent {
             <div className='left-bottom'>
               <ModuleTitle>
                 <i className='iconfont'>&#xe88e;</i>
-                <span>用户数据状态</span>
+                <span>车辆统计</span>
               </ModuleTitle>
               {/* 图表 */}
               <UserSituation userSitua={userSitua}></UserSituation>
@@ -57,7 +93,7 @@ class index extends PureComponent {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     accessFrequency: state.leftPage.accessFrequency,
     peakFlow: state.leftPage.peakFlow,
@@ -66,6 +102,6 @@ const mapStateToProps = state => {
   };
 };
 
-const mapStateToDispatch = dispatch => ({});
+const mapStateToDispatch = (dispatch) => ({});
 
 export default connect(mapStateToProps, mapStateToDispatch)(index);

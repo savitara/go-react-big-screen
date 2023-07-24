@@ -1,4 +1,5 @@
 import fetch from 'dva/fetch';
+import API_CONFIG from '../../config/config.js';
 
 function parseJSON(response) {
   return response.json();
@@ -22,9 +23,28 @@ function checkStatus(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 export default function request(url, options) {
-  return fetch(url, options)
+  const apiUrl = process.env.NODE_ENV === 'production' ? API_CONFIG.production : API_CONFIG.development;
+
+  // 请求拦截器 - 可在请求前做一些处理
+  if (options && options.beforeRequest) {
+    options.beforeRequest();
+  }
+
+  return fetch(apiUrl + url, options)
     .then(checkStatus)
     .then(parseJSON)
-    .then(data => ({ data }))
-    .catch(err => ({ err }));
+    .then(data => {
+      // 响应拦截器 - 可在获取数据后做一些处理
+      if (options && options.afterResponse) {
+        options.afterResponse(data);
+      }
+      return { data };
+    })
+    .catch(err => {
+      // 错误处理拦截器 - 可在错误发生后做一些处理
+      if (options && options.errorHandler) {
+        options.errorHandler(err);
+      }
+      return { err };
+    });
 }
