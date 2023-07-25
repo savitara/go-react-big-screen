@@ -10,8 +10,90 @@ class UserSituation extends PureComponent {
       return <div>暂无数据。</div>;
     }
 
-    // 假设路段的最大车位数为 1000
-    const maxParkingSpaces = 1000;
+    const option = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      legend: {},
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'value'
+      },
+      yAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      },
+      series: [
+        {
+          name: 'Direct',
+          type: 'bar',
+          stack: 'total',
+          label: {
+            show: true
+          },
+          emphasis: {
+            focus: 'series'
+          },
+          data: [320, 302, 301, 334, 390, 330, 320]
+        },
+        {
+          name: 'Mail Ad',
+          type: 'bar',
+          stack: 'total',
+          label: {
+            show: true
+          },
+          emphasis: {
+            focus: 'series'
+          },
+          data: [120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+          name: 'Affiliate Ad',
+          type: 'bar',
+          stack: 'total',
+          label: {
+            show: true
+          },
+          emphasis: {
+            focus: 'series'
+          },
+          data: [220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+          name: 'Video Ad',
+          type: 'bar',
+          stack: 'total',
+          label: {
+            show: true
+          },
+          emphasis: {
+            focus: 'series'
+          },
+          data: [150, 212, 201, 154, 190, 330, 410]
+        },
+        {
+          name: 'Search Engine',
+          type: 'bar',
+          stack: 'total',
+          label: {
+            show: true
+          },
+          emphasis: {
+            focus: 'series'
+          },
+          data: [820, 832, 901, 934, 1290, 1330, 1320]
+        }
+      ]
+    };
 
     const config = {
       // 单位
@@ -34,6 +116,7 @@ class UserSituation extends PureComponent {
       <div style={{ position: 'relative', marginBottom: '10px' }}>
         <CapsuleChart
           config={config}
+          option={option} // Pass the option object as a prop (optional, if CapsuleChart accepts ECharts options)
           style={{
             width: '5.85rem',
             height: '2.625rem',

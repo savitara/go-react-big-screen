@@ -255,7 +255,7 @@ export const OfflinePortalOptions = params => ({
         show: true,
       },
     },
-   
+
   ],
   series: [
 
@@ -290,5 +290,276 @@ export const OfflinePortalOptions = params => ({
         fontSize: 12, // 可以自定义标签字体大小
       },
     },
+  ],
+});
+
+// 人员和设备状态
+export const PersonnelAndEquipmentStatusOptions = (
+  onDutyPersonnel,
+  offDutyPersonnel,
+  onlineEquipment,
+  offlineEquipment
+) => ({
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+    }
+  },
+  legend: {},
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: {
+    type: 'value'
+  },
+  yAxis: {
+    type: 'category',
+    data: ['人员',  '设备']
+  },
+  series: [
+    {
+      name: '人数',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: onDutyPersonnel
+    },
+    {
+      name: '人数',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: offDutyPersonnel
+    },
+    {
+      name: '设备数',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: onlineEquipment
+    },
+    {
+      name: '设备数',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: offlineEquipment
+    }
+  ],
+});
+
+export const PersonnelStatusOptions = (
+  onDutyPersonnel,
+  offDutyPersonnel,
+) => ({
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+    }
+  },
+  legend: {},
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: {
+    axisLabel: {
+      color: '#ffffff', // 设置x轴标签字体颜色为深灰色 (#333)
+    },
+    type: 'value'
+  },
+  yAxis: {
+    type: 'category',
+    axisLabel: {
+      color: '#ffffff', // 设置x轴标签字体颜色为深灰色 (#333)
+    },
+    data: ['人员']
+  },
+  series: [
+    {
+      name: '在岗',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: onDutyPersonnel,
+      // 设置在岗人员柱状图的颜色为蓝色 (#3a9eff)
+      itemStyle: {
+        color: '#3a9eff',
+      },
+    },
+    {
+      name: '离岗',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: offDutyPersonnel,
+      // 设置离岗人员柱状图的颜色为红色 (#ff4b5c)
+      itemStyle: {
+        color: '#fadb14',
+      },
+    },
+  ],
+});
+
+
+export const EquipmentStatusOptions = (
+  onlineEquipment,
+  offlineEquipment,
+) => ({
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+    }
+  },
+  legend: {},
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: {
+    type: 'value',
+    axisLabel: {
+      color: '#ffffff', // 设置x轴标签字体颜色为深灰色 (#333)
+    },
+  },
+  yAxis: {
+    type: 'category',
+    data: ['设备'],
+    axisLabel: {
+      color: '#ffffff', // 设置x轴标签字体颜色为深灰色 (#333)
+    },
+  },
+  series: [
+    {
+      name: '在线',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: onlineEquipment,
+      // 设置在线设备柱状图的颜色为绿色 (#52c41a)
+      itemStyle: {
+        color: '#3a9eff',
+      },
+    },
+    {
+      name: '离线',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: offlineEquipment,
+      // 设置离线设备柱状图的颜色为黄色 (#fadb14)
+      itemStyle: {
+        color: '#fadb14',
+      },
+    },
+  ],
+});
+
+
+//分路段停车
+export const RoadParkingOptions = params => ({
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      // Use axis to trigger tooltip
+      type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+    }
+  },
+  legend: {},
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: {
+    axisLabel: {
+      color: '#ffffff', // 设置x轴标签字体颜色为深灰色 (#333)
+    },
+    type: 'value'
+  },
+  yAxis: {
+    axisLabel: {
+      color: '#ffffff', // 设置x轴标签字体颜色为深灰色 (#333)
+    },
+    type: 'category',
+    data: ['横河路', '中山路', '城东大道', '泉飞翼巷', '日月路', '程东路', '城都路']
+  },
+  series: [
+    {
+      name: '泊位占用',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [320, 302, 301, 334, 390, 330, 320]
+    },
+    {
+      name: '泊位空余',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [120, 132, 101, 134, 90, 230, 210]
+    }
+
   ],
 });

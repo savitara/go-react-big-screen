@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { CenterPage, CenterBottom, CenterBottomWidth, ModuleTitle, BottomBox, LeftDiv, RightDiv } from './style';
+import { CenterPage, CenterBottom, CenterBottomWidth, ModuleTitle, BottomBox, LeftDiv, RightDiv, DataBox } from './style';
 import Map from './charts/Map';
 import { connect } from 'dva';
 import OfflinePortal from './charts/OfflinePortal';
@@ -7,6 +7,8 @@ import Feedback from './charts/Feedback';
 import { BorderBox12, BorderBox13 } from '@jiaminghi/data-view-react';
 import TrafficSituation from './charts/TrafficSituation';
 import PieChart from './charts/PieChart'; //
+import BerthOperation from './charts/BerthOperation'; //
+
 
 class index extends PureComponent {
   constructor(props) {
@@ -15,7 +17,7 @@ class index extends PureComponent {
   }
 
   render() {
-    const { berthOperation, detailsList, mapData, parkingRecord } = this.props;
+    const { berthOperation,  mapData, parkingRecord } = this.props;
     console.log(parkingRecord); // 添加这行调试语句
     const parkingHabitsData = [
       { value: 335, name: '1到60分钟' },
@@ -31,6 +33,35 @@ class index extends PureComponent {
       { value: 310, name: '支付宝支付' },
       { value: 234, name: '云闪付' },
       // Add more data points as needed
+    ];
+    const detailsList = [
+      {
+        title: '订单总金额',
+        number: 2600.5,
+        unit: '元/月',
+      },
+      {
+        title: '停车记录总量',
+        number: 3130,
+        unit: '条/月',
+      }, {
+        title: '用户缴费率/月',
+        number: 85.5,
+        unit: '%',
+      }, {
+        title: '今日订单总额',
+        number: 2116.0,
+        unit: '元',
+      }, {
+        title: '用户缴费率/月',
+        number: 85.5,
+        unit: '%',
+      }, {
+        title: '今日订单总额',
+        number: 2116.0,
+        unit: '元',
+      },
+      // Add more items here if needed
     ];
     return (
       <CenterPage>
@@ -48,11 +79,22 @@ class index extends PureComponent {
                   <i className='iconfont'>&#xe78f;</i>
                   <span>路段实时视频</span>
                 </ModuleTitle>
+                <DataBox>
+                  <div className='detail-list'>
+                    {detailsList.map((item, index) => (
+                      <div className='detail-list-item' key={index}>
+                     
+                        <img
+                          src={require(`../../assets/images/center-details-data${index + 1}.png`)}
+                          alt={item.title}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </DataBox>
+
               </div>
             </BorderBox12>
-            <BorderBox13 className='pie-chart-borderBox13'>
-
-            </BorderBox13>
           </LeftDiv>
           <Map mapData={mapData} style={{ width: '20.625rem', height: '8.125rem' }} />
           <RightDiv>
@@ -63,7 +105,6 @@ class index extends PureComponent {
                   <span>支付渠道和停车习惯</span>
                 </ModuleTitle>
 
-                {/* 环形图 -支付、 停车习惯 */}
                 <div style={{ display: 'flex' }}>
                   <PieChart id="chart1" width="300px" height="5.375rem" data={paymentChannelsData} centerText="支付习惯" />
                   <PieChart id="chart2" width="300px" height="5.375rem" data={parkingHabitsData} centerText="停车习惯" />
@@ -75,46 +116,28 @@ class index extends PureComponent {
 
         <CenterBottomWidth>
           <div className='detail-list'>
-            {detailsList
-              ? detailsList.map((item, index) => {
-                return (
-                  <>
+          <>
                     <div className='detail-list-item' key={index}>
                       <ModuleTitle>
                         <i className='iconfont'>&#xe790;</i>
                         <span>泊位运营</span>
                       </ModuleTitle>
-                      {/* 柱状图 */}
                       <div className='offline-portal-box'>
                         {berthOperation ? (
-                          <OfflinePortal
-                            offlinePortalData={berthOperation.berthOperationPortalData}
-                          />
+                          <>
+                            <div style={{ display: 'flex' }}>
+                              <BerthOperation inline={true} />
+                            </div>
+                          </>
+
                         ) : (
                           ''
                         )}
                       </div>
-                      {/* <BottomBox>
-                        <div className='feedback-box'>
-                          {berthOperation
-                            ? berthOperation.feedback.map((item, index) => {
-                              return (
-                                <div className='feedback-box-item' key={index}>
-                                  <Feedback FeedbackData={item}></Feedback>
-                                  <span className='dis-text'>{item.title}</span>
-                                </div>
-                              );
-                            })
-                            : ''}
-                        </div>
-                      </BottomBox> */}
+                   
                     </div>
 
                   </>
-
-                );
-              })
-              : ''}
           </div>
         </CenterBottomWidth>
       </CenterPage>

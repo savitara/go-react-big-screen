@@ -5,12 +5,15 @@
  * @Date: 2023-07-18 17:11:09
  * @Description: 
  * @LastEditors: LZH
- * @LastEditTime: 2023-07-22 16:20:42
+ * @LastEditTime: 2023-07-24 17:04:34
  */
 import React, { PureComponent } from 'react';
 import { BorderBox13 } from '@jiaminghi/data-view-react';
 import BrowseCategories from './charts/BrowseCategories';
-import UserIdentityCategory from './charts/UserIdentityCategory';
+import RoadParking from './charts/RoadParking';
+import PersonnelAndEquipmentStatus from './charts/PersonnelAndEquipmentStatus';
+
+
 import OfflinePortal from './charts/OfflinePortal';
 import Feedback from './charts/Feedback';
 import { ModuleTitle } from '../../style/globalStyledSet';
@@ -47,18 +50,8 @@ class index extends PureComponent {
               <i className='iconfont'>&#xe7f7;</i>
               <span>路段车位使用</span>
             </ModuleTitle>
-            {/* <div className='right-top-content'>
-              <BrowseCategories
-                browseCategories={browseCategories}></BrowseCategories>
-              <img
-                alt='地球'
-                className='earth-gif'
-                src={require('../../assets/images/earth-rotate.gif')}
-              />
-            </div> */}
+            <RoadParking ></RoadParking>
 
-            <UserIdentityCategory
-              userIdentityCategory={userIdentityCategory}></UserIdentityCategory>
           </div>
         </RightTopBox>
 
@@ -66,18 +59,9 @@ class index extends PureComponent {
           <ModuleTitle>
             <i className='iconfont'>&#xe7fd;</i>
             <span>人员和设备情况</span>
-            {/* <PersonnelAndEquipmentStatus
-              personnelOnDuty={personnelOnDuty}
-              personnelOffDuty={personnelOffDuty}
-              equipmentOnline={equipmentOnline}
-              equipmentOffline={equipmentOffline}
-              ></PersonnelAndEquipmentStatus> */}
-            {/* <PersonnelAndEquipmentStatus
-              userIdentityCategory={userIdentityCategory}
-            ></PersonnelAndEquipmentStatus> */}
-            {/* 
-          <UserIdentityCategory
-            userIdentityCategory={userIdentityCategory}></UserIdentityCategory> */}
+
+            <PersonnelAndEquipmentStatus ></PersonnelAndEquipmentStatus>
+
           </ModuleTitle>
         </RightCenterBox>
 

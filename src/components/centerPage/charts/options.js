@@ -196,6 +196,242 @@ export const berthOperations = params => ({
   ],
 });
 
+//  柱状图
+export const berthTurnoverRateOperations = params => ({
+  color: ['#73A0FA', '#73DEB3', '#32C5E9', '#67E0E3'],
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      crossStyle: {
+        color: '#999',
+      },
+      lineStyle: {
+        type: 'dashed',
+      },
+      label: {
+        precision: 0, // 设置为0，确保只显示整数值
+      },
+    },
+  },
+  grid: {
+    left: '15',
+    right: '40',
+    bottom: '10',
+    top: '30',
+    containLabel: true,
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: params.xData,
+      name: '日期(月/日)', // 在此处添加 x 轴的名称
+      nameLocation: 'end', // 设置 x 轴名称的位置（可选）
+      nameGap: -20, // 调整名称与坐标轴之间的距离，适当调整这个值来实现尾部显示效果
+      nameTextStyle: {
+        color: '#BCDCF0', // 设置 x 轴名称的样式（可选）
+      },
+      axisLabel: {
+        color: '#BCDCF0',
+        textStyle: {
+          fontSize: 12,
+        },
+      },
+      splitLine: {
+        show: false,
+      },
+      axisTick: {
+        show: true,
+      },
+      axisLine: {
+        show: false,
+      },
+      boundaryGap: true,
+    },
+  ],
+
+  yAxis: [
+    {
+      type: 'value',
+      name: '周转率(次/天)',
+      // 添加 offset 属性来调整整个 y 轴相对于绘图区的偏移量
+      offset: -20,
+      nameTextStyle: {
+        color: '#BCDCFF',
+      },
+      axisLabel: {
+        color: '#BCDCF0',
+        textStyle: {
+          fontSize: 12,
+        },
+      },
+      splitLine: {
+        show: true,
+        lineStyle: {
+          color: '#252938',
+        },
+      },
+      axisTick: {
+        show: true,
+      },
+      axisLine: {
+        show: true,
+      },
+    },
+
+  ],
+  series: [
+    {
+      type: 'bar',
+      data: params.barData,
+      itemStyle: {
+        normal: {
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {
+              offset: 0,
+              color: 'rgba(34,224,214,.8)',
+            },
+            {
+              offset: 0.5,
+              color: 'rgba(5,137,186,1)',
+            },
+            {
+              offset: 1,
+              color: 'rgba(11,12,31,1)',
+            },
+          ]),
+          barBorderRadius: 7.5,
+        },
+      },
+      barMaxWidth: 15,
+      label: {
+        show: true,
+        position: 'top', // 在柱形的顶部显示标签
+        color: '#BCDCFF', // 可以自定义标签颜色
+        fontSize: 12, // 可以自定义标签字体大小
+      },
+    },
+  ],
+});
+
+//  柱状图
+export const berthUtilizationRateOperations = params => ({
+  color: ['#73A0FA', '#73DEB3', '#32C5E9', '#67E0E3'],
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      crossStyle: {
+        color: '#999',
+      },
+      lineStyle: {
+        type: 'dashed',
+      },
+      label: {
+        precision: 0, // 设置为0，确保只显示整数值
+      },
+    },
+  },
+  grid: {
+    left: '15',
+    right: '40',
+    bottom: '10',
+    top: '30',
+    containLabel: true,
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: params.xData,
+      name: '日期(月/日)', // 在此处添加 x 轴的名称
+      nameLocation: 'end', // 设置 x 轴名称的位置（可选）
+      nameGap: -20, // 调整名称与坐标轴之间的距离，适当调整这个值来实现尾部显示效果
+      nameTextStyle: {
+        color: '#BCDCF0', // 设置 x 轴名称的样式（可选）
+      },
+      axisLabel: {
+        color: '#BCDCF0',
+        textStyle: {
+          fontSize: 12,
+        },
+      },
+      splitLine: {
+        show: false,
+      },
+      axisTick: {
+        show: true,
+      },
+      axisLine: {
+        show: false,
+      },
+      boundaryGap: true,
+    },
+  ],
+
+  yAxis: [
+    {
+      type: 'value',
+      name: '利用率(次/天)',
+      // 添加 offset 属性来调整整个 y 轴相对于绘图区的偏移量
+      offset: -20,
+      nameTextStyle: {
+        color: '#BCDCFF',
+      },
+      axisLabel: {
+        color: '#BCDCF0',
+        textStyle: {
+          fontSize: 12,
+        },
+      },
+      splitLine: {
+        show: true,
+        lineStyle: {
+          color: '#252938',
+        },
+      },
+      axisTick: {
+        show: true,
+      },
+      axisLine: {
+        show: true,
+      },
+    },
+
+  ],
+  series: [
+    {
+      type: 'bar',
+      data: params.barData,
+      itemStyle: {
+        normal: {
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {
+              offset: 0,
+              color: 'rgba(34,224,214,.8)',
+            },
+            {
+              offset: 0.5,
+              color: 'rgba(5,137,186,1)',
+            },
+            {
+              offset: 1,
+              color: 'rgba(11,12,31,1)',
+            },
+          ]),
+          barBorderRadius: 7.5,
+        },
+      },
+      barMaxWidth: 15,
+      label: {
+        show: true,
+        position: 'top', // 在柱形的顶部显示标签
+        color: '#BCDCFF', // 可以自定义标签颜色
+        fontSize: 12, // 可以自定义标签字体大小
+      },
+    },
+  ],
+});
+
 
 export const trafficOptions = (params) => ({
   title: {
@@ -366,6 +602,7 @@ export const mapOptions = (params) => ({
     },
   },
   geo: {
+    tag: 'map',
     nameMap: {
       China: '中国',
     },
@@ -373,12 +610,12 @@ export const mapOptions = (params) => ({
     label: {
       normal: {
         show: true, //显示省份标签
-        textStyle: {color: '#585858', fontSize: 12}, //省份标签字体颜色
+        textStyle: { color: '#585858', fontSize: 12 }, //省份标签字体颜色
       },
       emphasis: {
         //对应的鼠标悬浮效果
         show: true,
-        textStyle: {color: '#fff'},
+        textStyle: { color: '#fff' },
       },
     },
     zoom: 1.2,

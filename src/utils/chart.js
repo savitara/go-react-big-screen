@@ -1,12 +1,7 @@
-/*
- * ECharts 组件基础部分
- * 传入 option 和渲染方式 renderer
- * */
-
 import React, { PureComponent } from 'react';
 import * as echarts from 'echarts';
 import 'zrender/lib/svg/svg';
-import { debounce } from './index'; // 一个节流函数
+import { debounce } from './index'; // A throttle function
 
 export default class Chart extends PureComponent {
   constructor(props) {
@@ -18,36 +13,36 @@ export default class Chart extends PureComponent {
     this.chart = null;
   }
   async componentDidMount() {
-    // 初始化图表
+    // Initialize the chart
     await this.initChart(this.el);
-    // 将传入的配置(包含数据)注入
+    // Inject the passed configuration (including data)
     this.setOption(this.props.option);
-    // 监听屏幕缩放，重新绘制 echart 图表
+    // Listen for screen resize and redraw the ECharts chart
     window.addEventListener('resize', debounce(this.resize, 100));
+    // Add the mouse click event listener
+    this.chart.getZr().on('click', this.handleChartClick);
   }
 
   componentDidUpdate() {
-    // 每次更新组件都重置
+    // Reset the chart on each update
     this.setOption(this.props.option);
   }
 
   componentWillUnmount() {
-    // 组件卸载前卸载图表
+    // Unmount the chart before the component is unmounted
     this.dispose();
   }
+
   render() {
     const { width, height } = this.state;
 
     return (
-      <div
-        className='default-chart'
-        ref={el => (this.el = el)}
-        style={{ width, height }}
-      />
+      <div className='default-chart' ref={el => (this.el = el)} style={{ width, height }} />
     );
   }
+
   initChart = el => {
-    // renderer 用于配置渲染方式 可以是 svg 或者 canvas
+    // renderer is used to configure the rendering mode (svg or canvas)
     const renderer = this.props.renderer || 'canvas';
 
     return new Promise(resolve => {
@@ -61,6 +56,7 @@ export default class Chart extends PureComponent {
       }, 0);
     });
   };
+
   setOption = option => {
     if (!this.chart) {
       return;
@@ -71,6 +67,7 @@ export default class Chart extends PureComponent {
 
     this.chart.setOption(option, notMerge, lazyUpdate);
   };
+
   dispose = () => {
     if (!this.chart) {
       return;
@@ -79,10 +76,20 @@ export default class Chart extends PureComponent {
     this.chart.dispose();
     this.chart = null;
   };
+
   resize = () => {
     this.chart && this.chart.resize();
   };
+
   getInstance = () => {
     return this.chart;
+  };
+
+  handleChartClick = params => {
+    // Get the coordinates of the click event
+    const { offsetX, offsetY } = params.event;
+    console.log('Click coordinates:', offsetX, offsetY);
+    // Execute other actions if needed
+    
   };
 }
