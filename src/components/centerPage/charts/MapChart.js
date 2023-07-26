@@ -90,7 +90,7 @@ class MapChart extends PureComponent {
                 }
             }
         }
-        console.log('seriesProvincialName:', this.state.seriesProvincialName,'\nseriesName:', this.state.seriesName);
+        console.log('seriesProvincialName:', this.state.seriesProvincialName, '\nseriesName:', this.state.seriesName);
         try {
             // 使用 getGeoJson 函数发起 HTTP 请求来获取数据文件内容
 
@@ -116,7 +116,7 @@ class MapChart extends PureComponent {
                 this.setState({
                     selectedProvince: name,
                     cityMapData: res.data,
-                    seriesProvincialName:'',
+                    seriesProvincialName: '',
                     seriesName: '',
                 });
             }
@@ -126,31 +126,9 @@ class MapChart extends PureComponent {
         }
     };
     // 在回退按钮的点击事件处理函数中
-    handleBackButtonClick = () => {
+     handleBackButtonClick = () => {
         console.log('点击了回退按钮');
-        // const { currentMapLevel } = this.state;
-        //
-        // if (currentMapLevel === 'county') {
-        //     // 如果当前地图级别为区县级地图，则回退到市级地图
-        //     this.setState({
-        //         selectedProvince: null, // 清空选中的省份
-        //         cityMapData: null, // 清空地级地图数据
-        //         currentMapLevel: 'province', // 设置回市级地图级别
-        //     });
-        // } else if (currentMapLevel === 'province') {
-        //     // 如果当前地图级别为市级地图，则回退到省级地图
-        //     this.setState({
-        //         selectedProvince: null, // 清空选中的省份
-        //         cityMapData: null, // 清空市级地图数据
-        //         currentMapLevel: 'country', // 设置回省级地图级别
-        //     });
-        // } else {
-        //     // 如果当前地图级别为全国地图，则无需再回退
-        //     // 可以在这里进行其他逻辑处理，例如弹出提示信息
-        //     // 或者禁用回退按钮
-        // }
-        //
-        // this.renderChart(); // 重新渲染地图
+        alert('点击了回退按钮');
     };
 
     renderChart() {
@@ -208,28 +186,20 @@ class MapChart extends PureComponent {
                         },
                     },
                 },
-                // // 添加工具栏
-                // toolbox: {
-                //     show: true,
-                //     feature: {
-                //         // 添加地图回退按钮
-                //         myBackButton: {
-                //             show: true,
-                //             title: '回退', // 回退按钮的显示文字
-                //             icon: '', // 可以使用图片作为图标，或者直接使用 'back' 表示默认回退图标
-                //             onclick: this.handleBackButtonClick, // 点击回退按钮的事件处理函数
-                //         },
-                //     },
-                // },
                 toolbox: {
                     show: true,
                     orient: 'vertical',
                     left: 'right',
                     top: 'center',
                     feature: {
-                        dataView: { readOnly: false },
-                        restore: {},
-                        saveAsImage: {}
+                        myBackButton: {
+                            show: true,
+                            title: '回退',
+                            icon: 'image://https://echarts.apache.org/zh/images/favicon.png',
+                            onclick: function () {
+                                alert('myBackButton')
+                            }
+                        }
                     }
                 },
             }
@@ -256,9 +226,7 @@ class MapChart extends PureComponent {
 
         }
 
-        console.log('执行 setOption 前，option内容：', option);
         myChart.setOption(option);
-        console.log('执行 setOption 后，option内容：', option);
         myChart.on('click', this.handleMapClick);
     }
 
