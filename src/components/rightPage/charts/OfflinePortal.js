@@ -13,6 +13,7 @@ class OfflinePortal extends PureComponent {
   render() {
     const { renderer } = this.state;
     const { offlinePortalData } = this.props;
+
     return (
       <div
         style={{

@@ -505,13 +505,72 @@ export const EquipmentStatusOptions = (
   ],
 });
 
+//
+// //分路段停车
+// export const RoadParkingOptions = params => ({
+//   tooltip: {
+//     trigger: 'axis',
+//     axisPointer: {
+//       // Use axis to trigger tooltip
+//       type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+//     }
+//   },
+//   legend: {},
+//   grid: {
+//     left: '3%',
+//     right: '4%',
+//     bottom: '3%',
+//     containLabel: true
+//   },
+//   xAxis: {
+//     axisLabel: {
+//       color: '#ffffff', // 设置x轴标签字体颜色为深灰色 (#333)
+//     },
+//     type: 'value'
+//   },
+//   yAxis: {
+//     axisLabel: {
+//       color: '#ffffff', // 设置x轴标签字体颜色为深灰色 (#333)
+//     },
+//     type: 'category',
+//     data: ['横河路', '中山路', '城东大道', '泉飞翼巷', '日月路', '程东路', '城都路']
+//   },
+//   series: [
+//     {
+//       name: '泊位占用',
+//       type: 'bar',
+//       stack: 'total',
+//       label: {
+//         show: true
+//       },
+//       emphasis: {
+//         focus: 'series'
+//       },
+//       data: [320, 302, 301, 334, 390, 330, 320]
+//     },
+//     {
+//       name: '泊位空余',
+//       type: 'bar',
+//       stack: 'total',
+//       label: {
+//         show: true
+//       },
+//       emphasis: {
+//         focus: 'series'
+//       },
+//       data: [120, 132, 101, 134, 90, 230, 210]
+//     }
+//
+//   ],
+// });
 
 //分路段停车
-export const RoadParkingOptions = params => ({
+export const RoadParkingOptions  = (
+    params
+)  => ({
   tooltip: {
     trigger: 'axis',
     axisPointer: {
-      // Use axis to trigger tooltip
       type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
     }
   },
@@ -529,11 +588,9 @@ export const RoadParkingOptions = params => ({
     type: 'value'
   },
   yAxis: {
-    axisLabel: {
-      color: '#ffffff', // 设置x轴标签字体颜色为深灰色 (#333)
-    },
     type: 'category',
-    data: ['横河路', '中山路', '城东大道', '泉飞翼巷', '日月路', '程东路', '城都路']
+    // data: ['横河路', '中山路', '城东大道', '泉飞翼巷', '日月路', '程东路', '城都路']
+    data : params.dataCategory
   },
   series: [
     {
@@ -546,7 +603,8 @@ export const RoadParkingOptions = params => ({
       emphasis: {
         focus: 'series'
       },
-      data: [320, 302, 301, 334, 390, 330, 320]
+      // data: [320, 302, 301, 334, 390, 330, 320]
+      data : params.berthOccupation
     },
     {
       name: '泊位空余',
@@ -558,7 +616,8 @@ export const RoadParkingOptions = params => ({
       emphasis: {
         focus: 'series'
       },
-      data: [120, 132, 101, 134, 90, 230, 210]
+      // data: [120, 132, 101, 134, 90, 230, 210]
+      data : params.berthVacancy
     }
 
   ],
