@@ -19,6 +19,7 @@ class Map extends PureComponent {
     // 执行其他操作，如果需要的话
   };
 
+
   render() {
     const { renderer } = this.state;
     const { mapData } = this.props;

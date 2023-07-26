@@ -602,10 +602,10 @@ export const mapOptions = (params) => ({
     },
   },
   geo: {
-    tag: 'map',
-    nameMap: {
-      China: '中国',
-    },
+    // tag: 'map',
+    // nameMap: {
+    //   China: '中国',
+    // },
     map: 'china',
     label: {
       normal: {

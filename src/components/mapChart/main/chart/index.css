@@ -1,0 +1,33 @@
+.chart-container{
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-toolbar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.chart-setting-btn, .fullscreen-btn{
+  float: right;
+  font-size: 18px;
+  color: #2d97c9;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.chart-toolbar-extra{
+  float: right;
+}
+
+.chart-container-full-screen{
+  position: fixed;
+  display: flex;
+  background-color: #ffffff;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import * as echarts from 'echarts';
 import 'zrender/lib/svg/svg';
-import { debounce } from './index'; // A throttle function
+import { debounce } from './index'; // 一个节流函数
 
 export default class Chart extends PureComponent {
   constructor(props) {
@@ -12,24 +12,25 @@ export default class Chart extends PureComponent {
     };
     this.chart = null;
   }
+
   async componentDidMount() {
-    // Initialize the chart
+    // 初始化图表
     await this.initChart(this.el);
-    // Inject the passed configuration (including data)
+    // 注入传入的配置（包括数据）
     this.setOption(this.props.option);
-    // Listen for screen resize and redraw the ECharts chart
+    // 监听屏幕大小变化并重新绘制ECharts图表
     window.addEventListener('resize', debounce(this.resize, 100));
-    // Add the mouse click event listener
-    this.chart.getZr().on('click', this.handleChartClick);
+    // 添加鼠标点击事件监听
+    this.chart.on('click', this.handleChartClick);
   }
 
   componentDidUpdate() {
-    // Reset the chart on each update
+    // 每次更新重设图表
     this.setOption(this.props.option);
   }
 
   componentWillUnmount() {
-    // Unmount the chart before the component is unmounted
+    // 组件卸载前销毁图表
     this.dispose();
   }
 
@@ -42,7 +43,7 @@ export default class Chart extends PureComponent {
   }
 
   initChart = el => {
-    // renderer is used to configure the rendering mode (svg or canvas)
+    // renderer 用于配置渲染模式（svg 或 canvas）
     const renderer = this.props.renderer || 'canvas';
 
     return new Promise(resolve => {
@@ -86,10 +87,9 @@ export default class Chart extends PureComponent {
   };
 
   handleChartClick = params => {
-    // Get the coordinates of the click event
+    // 获取鼠标点击事件的坐标
     const { offsetX, offsetY } = params.event;
-    console.log('Click coordinates:', offsetX, offsetY);
-    // Execute other actions if needed
-    
+    console.log('点击坐标：', offsetX, offsetY);
+    // 根据需要执行其他操作
   };
 }
