@@ -14,8 +14,13 @@ class MapChart extends PureComponent {
             selectedProvince: null, // 用于存储当前选中的省份名称
             cityMapData: null, // 用于存储市级地图数据
             initialized: false, // 用于标识地图实例是否已初始化
-            seriesName: '',
-            seriesProvincialName: '',
+            seriesName: '',//用于存储当前选中的市级名称
+            currentProvincialName: '',//用于存储当前选中的省级名称,用于判断下钻
+            zoomLevel: 0, // 用于记录地图的层级，0表示全国地图，1表示省级地图，2表示市级地图
+            BackProvincialName: '',//用于存储当前选中的省级名称,用于回退
+            BackProvincialCityData: '',//城市数据，用于回退
+            backProvincialFlag: false,//用于判断是否回退
+
         };
         this.chartInstance = null; // 存储地图实例的引用
     }
@@ -51,46 +56,48 @@ class MapChart extends PureComponent {
         }
     }
 
-    // 点击地图的事件处理函数
-    handleMapClick = async (params) => {
-        console.log(params);
-        // 获取点击位置的名称（名称）
-        const {name} = params;
-        // const {
-        //     seriesName,
-        //     name,
-        //     // data: { adcode },
-        // } = params
-        // 如果没有名称信息，说明点击的不是省份区域，直接返回
-        if (!name) return;
-
-        console.log('点击了:', name);
+    handleChinaProvincialData(name) {
         let adcode = 0;
         //遍历省级行政
         for (let i in chinaProvincialData.chinaProvincialData.features) {
             if (chinaProvincialData.chinaProvincialData.features[i].properties.name === name) {
                 console.log(chinaProvincialData.chinaProvincialData.features[i].properties);
                 adcode = chinaProvincialData.chinaProvincialData.features[i].properties.adcode;
-                let seriesProvincialName = adcode + '-' + name
+                let currentProvincialName = adcode + '-' + name
                 this.setState({
-                    seriesProvincialName: seriesProvincialName,
+                    currentProvincialName: currentProvincialName,
+                    BackProvincialName: name,
                 });
             }
         }
+        return adcode;
+    }
+
+    // 点击地图的事件处理函数
+    handleMapClick = async (params) => {
+        console.log(params);
+        // 获取点击位置的名称（名称）
+        const {name} = params;
+        // 如果没有名称信息，说明点击的不是省份区域，直接返回
+        if (!name) return;
+
+        console.log('点击了:', name);
+        let adcode = this.handleChinaProvincialData(name);
+        // //遍历省级行政
         //点击的不是省级行政而是市级行政
         if (adcode === 0) {
             let cityMapDataFeatures = this.state.cityMapData.features
             for (let i in cityMapDataFeatures) {
                 if (cityMapDataFeatures[i].properties.name === name) {
                     let adcode = cityMapDataFeatures[i].properties.adcode;
-                    let seriesName = this.state.seriesProvincialName + '-' + adcode + '-' + name
+                    let seriesName = this.state.currentProvincialName + '-' + adcode + '-' + name
                     this.setState({
                         seriesName: seriesName,
                     });
                 }
             }
         }
-        console.log('seriesProvincialName:', this.state.seriesProvincialName, '\nseriesName:', this.state.seriesName);
+        console.log('currentProvincialName:', this.state.currentProvincialName, '\nseriesName:', this.state.seriesName);
         try {
             // 使用 getGeoJson 函数发起 HTTP 请求来获取数据文件内容
 
@@ -103,11 +110,12 @@ class MapChart extends PureComponent {
                 this.setState({
                     selectedProvince: name,
                     cityMapData: res.data, // 返回的是市级地图的 GeoJSON 数据
+                    BackProvincialCityData: res.data,
                 });
             }  // 可下钻到三级地图（23个省、5个自治区 的市级区域）
-            else if (EXISTING_THIRD_LAYER_REGION.find(i => `${i.adcode}-${i.name}` === this.state.seriesProvincialName)) {
+            else if (EXISTING_THIRD_LAYER_REGION.find(i => `${i.adcode}-${i.name}` === this.state.currentProvincialName)) {
                 // 台湾，无法下钻（暂无市级区域geojson数据）
-                if (this.state.seriesProvincialName.includes(TAIWAN_ADCODE)) return
+                if (this.state.currentProvincialName.includes(TAIWAN_ADCODE)) return
                 const mapName = this.state.seriesName
                 console.log(mapName)
                 const res = await getGeoJson('city', mapName)
@@ -116,7 +124,7 @@ class MapChart extends PureComponent {
                 this.setState({
                     selectedProvince: name,
                     cityMapData: res.data,
-                    seriesProvincialName: '',
+                    currentProvincialName: '',
                     seriesName: '',
                 });
             }
@@ -126,14 +134,37 @@ class MapChart extends PureComponent {
         }
     };
     // 在回退按钮的点击事件处理函数中
-     handleBackButtonClick = () => {
-        console.log('点击了回退按钮');
-        alert('点击了回退按钮');
+    handleBackButtonClick = () => {
+        const {zoomLevel} = this.state;
+        if (zoomLevel === 0) {
+            // 当处于全国地图时，点击回退按钮无效
+        } else if (zoomLevel === 1) {
+            // 当处于省级地图时，进行回退到全国地图
+            this.setState({
+                selectedProvince: null,
+                cityMapData: null,
+                zoomLevel: 0,
+            });
+        } else if (zoomLevel === 2) {
+            this.handleChinaProvincialData(this.state.BackProvincialName)
+            // 当处于市级地图时，进行回退到省级地图
+            const provinceName = this.state.BackProvincialName; // 获取市级地图所属的省份名称
+            const provincialCityData = this.state.BackProvincialCityData
+            console.log(provinceName);
+
+            this.setState({
+                selectedProvince: provinceName, // 设置选中的省份为市级地图所属的省份名称
+                cityMapData: provincialCityData, // 设置市级地图数据为省级地图数据
+                zoomLevel: 1,
+                backProvincialFlag: true,
+            });
+        }
     };
+
 
     renderChart() {
         const {mapData} = this.props;
-        const {selectedProvince, cityMapData} = this.state;
+        const {selectedProvince, cityMapData, zoomLevel} = this.state;
         const chartDom = document.getElementById(`mapContainer_${this.props.id}`);
         const myChart = echarts.init(chartDom);
 
@@ -196,36 +227,31 @@ class MapChart extends PureComponent {
                             show: true,
                             title: '回退',
                             icon: 'image://https://echarts.apache.org/zh/images/favicon.png',
-                            onclick: function () {
-                                alert('myBackButton')
-                            }
+                            onclick: () => {
+                                this.handleBackButtonClick(); // 使用箭头函数确保this指向正确
+                            },
                         }
                     }
                 },
             }
             console.log(option);
             echarts.registerMap(selectedProvince, cityMapData);
+            // 更新zoomLevel
+            if (zoomLevel === 0) {
+                this.setState({zoomLevel: 1});
+            } else if (zoomLevel === 1 && !this.state.backProvincialFlag) {
+                this.setState({zoomLevel: 2});
+            }
+            this.setState({backProvincialFlag: false});
         } else {
             // 全国地图渲染，使用全国数据和全国地图选项
             option = {
                 ...mapOptions(),
-                // // 添加工具栏
-                // toolbox: {
-                //     show: true,
-                //     feature: {
-                //         // 添加地图回退按钮
-                //         myBackButton: {
-                //             show: true,
-                //             title: '回退', // 回退按钮的显示文字
-                //             icon: 'image://你的回退图标URL', // 可以使用图片作为图标，或者直接使用 'back' 表示默认回退图标
-                //             onclick: this.handleBackButtonClick, // 点击回退按钮的事件处理函数
-                //         },
-                //     },
-                // },
             };
+            // 重置zoomLevel
+            this.setState({zoomLevel: 0});
 
         }
-
         myChart.setOption(option);
         myChart.on('click', this.handleMapClick);
     }
@@ -236,6 +262,8 @@ class MapChart extends PureComponent {
         const chartDom = document.getElementById(`mapContainer_${id}`);
         const myChart = echarts.getInstanceByDom(chartDom);
         myChart.off('click', this.handleMapClick);
+        // 重置zoomLevel
+        this.setState({zoomLevel: 0});
     }
 
     render() {
