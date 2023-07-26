@@ -5,6 +5,7 @@ import {mapOptions} from './options';
 // 导入处理函数
 import {EXISTING_SECOND_LAYER_REGION, EXISTING_THIRD_LAYER_REGION, getGeoJson, TAIWAN_ADCODE} from './cityData';
 import chinaProvincialData from './cityData';
+import {getBackButtonImageUrl} from "./iconImageForURL";
 
 class MapChart extends PureComponent {
     constructor(props) {
@@ -61,7 +62,7 @@ class MapChart extends PureComponent {
         //遍历省级行政
         for (let i in chinaProvincialData.chinaProvincialData.features) {
             if (chinaProvincialData.chinaProvincialData.features[i].properties.name === name) {
-                console.log(chinaProvincialData.chinaProvincialData.features[i].properties);
+                // console.log(chinaProvincialData.chinaProvincialData.features[i].properties);
                 adcode = chinaProvincialData.chinaProvincialData.features[i].properties.adcode;
                 let currentProvincialName = adcode + '-' + name
                 this.setState({
@@ -75,13 +76,12 @@ class MapChart extends PureComponent {
 
     // 点击地图的事件处理函数
     handleMapClick = async (params) => {
-        console.log(params);
         // 获取点击位置的名称（名称）
         const {name} = params;
         // 如果没有名称信息，说明点击的不是省份区域，直接返回
-        if (!name) return;
+        if (!name || '南海诸岛' === name) return;
 
-        console.log('点击了:', name);
+        // console.log('点击了:', name);
         let adcode = this.handleChinaProvincialData(name);
         // //遍历省级行政
         //点击的不是省级行政而是市级行政
@@ -97,7 +97,7 @@ class MapChart extends PureComponent {
                 }
             }
         }
-        console.log('currentProvincialName:', this.state.currentProvincialName, '\nseriesName:', this.state.seriesName);
+        // console.log('currentProvincialName:', this.state.currentProvincialName, '\nseriesName:', this.state.seriesName);
         try {
             // 使用 getGeoJson 函数发起 HTTP 请求来获取数据文件内容
 
@@ -105,7 +105,7 @@ class MapChart extends PureComponent {
             if (EXISTING_SECOND_LAYER_REGION.find((i) => i.adcode === adcode)) {
                 const mapName = `${adcode}-${name}`;
                 const res = await getGeoJson('province', mapName);
-                console.log(res.data);
+                // console.log(res.data);
                 // 更新选中的省份状态和市级地图数据，触发重新渲染
                 this.setState({
                     selectedProvince: name,
@@ -117,9 +117,9 @@ class MapChart extends PureComponent {
                 // 台湾，无法下钻（暂无市级区域geojson数据）
                 if (this.state.currentProvincialName.includes(TAIWAN_ADCODE)) return
                 const mapName = this.state.seriesName
-                console.log(mapName)
+                // console.log(mapName)
                 const res = await getGeoJson('city', mapName)
-                console.log(res.data);
+                // console.log(res.data);
                 // 更新选中的省份状态和市级地图数据，触发重新渲染
                 this.setState({
                     selectedProvince: name,
@@ -150,7 +150,7 @@ class MapChart extends PureComponent {
             // 当处于市级地图时，进行回退到省级地图
             const provinceName = this.state.BackProvincialName; // 获取市级地图所属的省份名称
             const provincialCityData = this.state.BackProvincialCityData
-            console.log(provinceName);
+            // console.log(provinceName);
 
             this.setState({
                 selectedProvince: provinceName, // 设置选中的省份为市级地图所属的省份名称
@@ -162,7 +162,7 @@ class MapChart extends PureComponent {
     };
 
 
-    renderChart() {
+    async renderChart() {
         const {mapData} = this.props;
         const {selectedProvince, cityMapData, zoomLevel} = this.state;
         const chartDom = document.getElementById(`mapContainer_${this.props.id}`);
@@ -171,8 +171,9 @@ class MapChart extends PureComponent {
         let option;
 
         if (selectedProvince && cityMapData) {
-            myChart.clear(); // 清除图表
-
+            // myChart.clear(); // 清除图表。
+            let backButtonImage = 'image://' +   getBackButtonImageUrl()
+            console.log(backButtonImage)
             // 下级地图渲染，使用 cityMapData 和相应的市级地图选项
 
             option = {
@@ -226,7 +227,9 @@ class MapChart extends PureComponent {
                         myBackButton: {
                             show: true,
                             title: '回退',
-                            icon: 'image://https://echarts.apache.org/zh/images/favicon.png',
+                            // icon: 'image://https://echarts.apache.org/zh/images/favicon.png',
+                            icon: backButtonImage,
+                            iconSize: [130, 130], // 设置图标的宽度和高度
                             onclick: () => {
                                 this.handleBackButtonClick(); // 使用箭头函数确保this指向正确
                             },
@@ -234,7 +237,7 @@ class MapChart extends PureComponent {
                     }
                 },
             }
-            console.log(option);
+            // console.log(option);
             echarts.registerMap(selectedProvince, cityMapData);
             // 更新zoomLevel
             if (zoomLevel === 0) {
@@ -247,11 +250,15 @@ class MapChart extends PureComponent {
             // 全国地图渲染，使用全国数据和全国地图选项
             option = {
                 ...mapOptions(),
+                toolbox: {
+                    show: false,
+                },
             };
             // 重置zoomLevel
             this.setState({zoomLevel: 0});
 
         }
+        console.log(option)
         myChart.setOption(option);
         myChart.on('click', this.handleMapClick);
     }

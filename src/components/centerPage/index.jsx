@@ -9,7 +9,6 @@ import TrafficSituation from './charts/TrafficSituation';
 import PieChart from './charts/PieChart'; //
 import BerthOperation from './charts/BerthOperation'; //
 // import MapChart from '../mapChart';
-import MapPostion from "../mapChart/chart"; //
 import MapChart from "./charts/MapChart"; //
 class index extends PureComponent {
   constructor(props) {
@@ -19,7 +18,6 @@ class index extends PureComponent {
 
   render() {
     const { berthOperation, parkingRecord } = this.props;
-    console.log(parkingRecord); // 添加这行调试语句
     const parkingHabitsData = [
       { value: 335, name: '1到60分钟' },
       { value: 234, name: '1到12小时' },
@@ -109,13 +107,9 @@ class index extends PureComponent {
             style={{
               display: 'inline-block', // 添加此样式以使组件并排显示
             }}
-
-
             id="MapId" // You can provide a unique id for the map container
             mapData={mapData} // Pass the map data to the Map component
           />
-          {/*  <MapPostion></MapPostion>*/}
-          {/*<MapChart style={{ width: '20.625rem', height: '8.125rem' }} />*/}
           <RightDiv>
             <BorderBox12 className='top-borderBox12'>
               <div className='top'>
