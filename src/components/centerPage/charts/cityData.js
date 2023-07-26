@@ -152,14 +152,14 @@ export const TAIWAN_ADCODE = 710000
 // 获取GeoJSON数据
 export const getGeoJson = (type, name) => {
     // 获取中国的geojson数据
-    if (type === 'china') return axios.get('/geoJsonColl/china.json')
-
+    if (type === 'china') return axios.get('/geoJsonData/china.json');
+  
     // 获取省、直辖市、自治区的geojson数据
-    if (type === 'province') return axios.get(`/geoJsonColl/province/${name}.json`)
-
+    if (type === 'province') return axios.get(`/geoJsonData/province/${name}.json`);
+  
     // 获取区、县的geojson数据
-    return axios.get(`/geoJsonColl/city/${name}.json`)
-}
+    return axios.get(`/geoJsonData/city/${name}.json`);
+  };
 
 export default {
     chinaProvincialData
