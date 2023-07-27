@@ -69,13 +69,13 @@ export const TimeBox = styled.div`
   }
 `;
 
-
 export const TopCenter = styled.div`
   /* Copy the styles from CenterBottom here */
   display: flex;
   flex-wrap: wrap; /* Added to wrap items to the next row */
+  margin-top: 0.265rem; /* Scale down margin to 80% */
+  width: 100%; /* Scale down width to 80% */
 
-  width: 100%;
   .detail-list {
     display: flex;
     align-items: center;
@@ -83,40 +83,46 @@ export const TopCenter = styled.div`
     justify-content: space-around;
     width: 100%;
     /* Remove &-item block styles */
+
     .detail-list-item {
       display: flex;
       align-items: center;
       position: relative;
-      height: 1.5625rem;
-      padding: 0 0.125rem;
-      width: 32%;
-      border-radius: 5px;
-      border: 1px solid #343f4b;
+      height: 1.25rem; /* Scale down height to 80% */
+      padding: 0 0.1rem; /* Scale down padding to 80% */
+      width: 25.6%; /* Scale down width to 80% */
+      border-radius: 4px; /* Scale down border-radius to 80% */
+      border: 0.8px solid #343f4b; /* Scale down border thickness to 80% */
       background-color: rgba(19, 25, 47, 0.8);
-      margin: 0.25rem 0.5%; /* Add margin to create gaps between items */
+      margin: 0.2rem 0.4%; /* Scale down margin to 80% to create gaps between items */
+
       img {
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 1rem; /* Scale down image width to 80% */
+        height: 1rem; /* Scale down image height to 80% */
       }
+
       .detail-item-text {
-        margin-left: 0.125rem;
+        margin-left: 0.1rem; /* Scale down margin to 80% */
+
         h3 {
           color: #bcdcff;
-          font-size: 16px;
-          margin-bottom: 0.25rem;
+          font-size: 12.8px; /* Scale down font size to 80% */
+          margin-bottom: 0.2rem; /* Scale down margin to 80% */
         }
+
         span {
-          font-weight: 500px;
-          font-size: 0.25rem;
-          font-weight: bolder;
+          font-weight: 400; /* Font weight does not scale, so set to default value */
+          font-size: 0.2rem; /* Scale down font size to 80% */
+          font-weight: bolder; /* Font weight does not scale, so set to default value */
           background: linear-gradient(to bottom, #fff, #4db6e5);
           color: transparent;
           -webkit-background-clip: text;
           background-clip: text;
         }
+
         .unit {
-          font-size: 0.2rem;
-          margin-left: 0.125rem;
+          font-size: 0.16rem; /* Scale down font size to 80% */
+          margin-left: 0.1rem; /* Scale down margin to 80% */
         }
       }
     }

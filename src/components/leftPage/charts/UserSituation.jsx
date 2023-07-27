@@ -18,7 +18,7 @@ class UserSituation extends PureComponent {
         // 行号表头
         indexHeader: '序号',
         // 宽度
-        columnWidth: [ 100, 200],
+        columnWidth: [ 120, 100],
         // 对其方式
         align: ['center'],
         // 表行数
@@ -40,8 +40,8 @@ class UserSituation extends PureComponent {
           <ScrollBoard
             config={config}
             style={{
-              width: '5.475rem',
-              height: '6.875rem',
+              width: '4.275rem',
+              height: '4.075rem',
             }}></ScrollBoard>
         ) : (
           ''

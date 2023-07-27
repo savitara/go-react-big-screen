@@ -28,7 +28,7 @@ Project
 │  │  ├── style 全局样式
 │  │  └── utils 工具函数
 │  │
-│  ├── index.js 主函数文件
+│  ├── index.jsx 主函数文件
 │  └── router.jsx 路由定义文件
 │
 └── .roadhogrc.mock.js 导出模拟数据
@@ -42,9 +42,9 @@ Project
 
 ### 数据请求模拟
 
-项目采用 Dva 自带模拟数据方式，数据放置在 `mock` 文件夹中，需在 `.roadhogrc.mock.js` 中进行导出，然后在主文件 `index.js` 中进行注册。
+项目采用 Dva 自带模拟数据方式，数据放置在 `mock` 文件夹中，需在 `.roadhogrc.mock.js` 中进行导出，然后在主文件 `index.jsx` 中进行注册。
 
-接口 Api 请求函数写在 `services/index.js` 中，并由 `models/*` 文件里 `effects` 对象的异步函数发起请求，由于在 `subscriptions` 里对路由进行了监听触发异步函数，所以当打开界面会自动触发对应函数，具体写法请参照 Dva 文档。
+接口 Api 请求函数写在 `services/index.jsx` 中，并由 `models/*` 文件里 `effects` 对象的异步函数发起请求，由于在 `subscriptions` 里对路由进行了监听触发异步函数，所以当打开界面会自动触发对应函数，具体写法请参照 Dva 文档。
 
 请求函数使用 `Dva` 自带的 `utils/request.js` 统一使用 Get 请求，默认不支持 POST，需自行修改。
 
@@ -52,7 +52,7 @@ Project
 
 ### 图表组件
 
-图表组件主要使用了 ECharts 和 DataV 可视化框架来进行开发。图表文件在 `components/*/charts` 中，配置文件在 `charts/options.js` 里，动态数据由各个 `page/index.js` 进行接受和导入。ECharts 渲染函数统一封装在了 `utils/chart.js` 中。
+图表组件主要使用了 ECharts 和 DataV 可视化框架来进行开发。图表文件在 `components/*/charts` 中，配置文件在 `charts/options.js` 里，动态数据由各个 `page/index.jsx` 进行接受和导入。ECharts 渲染函数统一封装在了 `utils/chart.js` 中。
 
 ### 样式编写
 
@@ -131,7 +131,7 @@ function refreshRem() {
 
 ### 解决 Dva 版本 history 报错的问题
 
-找到 node_modules 中的 dva 包，修改 lib/index.js。
+找到 node_modules 中的 dva 包，修改 lib/index.jsx。
 
 22 行：
 

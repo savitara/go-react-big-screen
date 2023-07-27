@@ -227,7 +227,6 @@ class MapChart extends PureComponent {
                         myBackButton: {
                             show: true,
                             title: '回退',
-                            // icon: 'image://https://echarts.apache.org/zh/images/favicon.png',
                             icon: backButtonImage,
                             iconSize: [130, 130], // 设置图标的宽度和高度
                             onclick: () => {

@@ -16,8 +16,10 @@ class TrafficSituation extends PureComponent {
     return (
       <div
         style={{
-          width: '5.375rem',
-          height: '3.125rem',
+          // width: '5.375rem',
+          // height: '3.125rem',
+          width: '4.3rem', /* Scale down width to 80% */
+          height: '2.5rem', /* Scale down height to 80% */
         }}>
         {trafficSitua ? (
           <Chart renderer={renderer} option={trafficOptions(trafficSitua)} />

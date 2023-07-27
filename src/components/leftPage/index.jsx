@@ -62,17 +62,17 @@ class index extends PureComponent {
                 <span>停车场实时泊位利用率(24小时)</span>
               </ModuleTitle>
               <Space direction='vertical'>
-                <DatePicker
-                  locale={locale}
-                  onChange={this.handleChange}
-                  defaultValue={startDate} // 设置默认值
-                />
+                {/*<DatePicker*/}
+                {/*  locale={locale}*/}
+                {/*  onChange={this.handleChange}*/}
+                {/*  defaultValue={startDate} // 设置默认值*/}
+                {/*/>*/}
               </Space>
               {/* 图表 */}
               <TrafficSituation trafficSitua={trafficSitua}></TrafficSituation>
             </div>
           </BorderBox12>
-          
+
         </LeftTopBox>
 
         {/* 底部图表 */}

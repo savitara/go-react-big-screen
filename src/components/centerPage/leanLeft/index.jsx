@@ -1,9 +1,54 @@
-/*
- * @FileName: index.jsx
- * @version: 
- * @Author: LZH
- * @Date: 2023-07-22 16:25:56
- * @Description: 
- * @LastEditors: LZH
- * @LastEditTime: 2023-07-22 16:26:04
- */
+import React, {PureComponent} from 'react';
+import {ModuleTitle,  LeftDiv,  DataBox} from '../style';
+import {BorderBox12, BorderBox13} from '@jiaminghi/data-view-react';
+import TrafficSituation from '../charts/TrafficSituation';
+class LeanLeft extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
+    render() {
+        const { roofDataList, parkingRecord } = this.props;
+
+        return (
+
+
+                    <LeftDiv>
+
+                        <BorderBox12 className='left-top-borderBox12'>
+                            <div className='left-top'>
+                                <ModuleTitle>
+                                    <i className='iconfont'>&#xe78f;</i>
+                                    <span>停车记录(每月)</span>
+                                </ModuleTitle>
+                                <TrafficSituation trafficSitua={parkingRecord}></TrafficSituation>
+                                <ModuleTitle>
+                                    <i className='iconfont'>&#xe78f;</i>
+                                    <span>路段实时视频</span>
+                                </ModuleTitle>
+                                <DataBox>
+                                    <div className='detail-list'>
+                                        {roofDataList && roofDataList.map((item, index) => (
+                                            <div className='detail-list-item' key={index}>
+                                                <img
+                                                    src={require(`../../../assets/images/center-details-data${index + 1}.png`)}
+                                                    alt={item.title}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </DataBox>
+
+                            </div>
+                        </BorderBox12>
+                    </LeftDiv>
+
+
+
+
+        );
+    }
+}
+
+export default LeanLeft;

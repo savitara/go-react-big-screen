@@ -152,13 +152,13 @@ export const BottomBox = styled.div`
           }
         }
       }
-     
+
     }
   }
 `;
 
 export const LeftDiv = styled.div`
-  flex: 1;
+  //flex: 1;
   display: flex;
 `;
 
