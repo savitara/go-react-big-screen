@@ -38,7 +38,7 @@ export const LeftTopBox = styled.div`
 export const LeftBottomBox = styled.div`
   position: relative;
   margin-top: 0.25rem;
-  height: 3.15rem;
+  height: 3.685rem;
   width: 100%;
   .left-bottom-borderBox13 {
     width: inherit;

@@ -33,85 +33,78 @@ class index extends PureComponent {
     }
 
     render() {
-        const {offline, browseCategories, userIdentityCategory, personnelAndEquipmentStatusData,roadParkingData} = this.props;
-
+        const {
+            offline,
+            browseCategories,
+            userIdentityCategory,
+            personnelAndEquipmentStatusData,
+            roadParkingData
+        } = this.props;
+        const showLeftPage = true;
         return (
-            <RightPage>
-                {/*<RightTopBox>*/}
-                {/*    <div className='right-top'>*/}
-                {/*        <ModuleTitle>*/}
-                {/*            <i className='iconfont'>&#xe7f7;</i>*/}
-                {/*            <span>路段车位使用</span>*/}
-                {/*        </ModuleTitle>*/}
-                {/*        <RoadParking roadParkingData={roadParkingData}></RoadParking>*/}
+            <>
+                {showLeftPage && (<RightPage>
+                        {roadParkingData && (
+                            <RightTopBox>
+                                <div className='right-top'>
+                                    <ModuleTitle>
+                                        <i className='iconfont'>&#xe7f7;</i>
+                                        <span>路段车位使用</span>
+                                    </ModuleTitle>
+                                    <RoadParking roadParkingData={roadParkingData}></RoadParking>
 
-                {/*    </div>*/}
-                {/*</RightTopBox>*/}
-                {roadParkingData && (
-                    <RightTopBox>
-                        <div className='right-top'>
-                            <ModuleTitle>
-                                <i className='iconfont'>&#xe7f7;</i>
-                                <span>路段车位使用</span>
-                            </ModuleTitle>
-                            <RoadParking roadParkingData={roadParkingData}></RoadParking>
+                                </div>
+                            </RightTopBox>
+                        )}
 
-                        </div>
-                    </RightTopBox>
+                        {personnelAndEquipmentStatusData && (
+                            <RightCenterBox>
+                                <ModuleTitle>
+                                    <i className='iconfont'>&#xe7fd;</i>
+                                    <span>人员和设备情况</span>
+                                </ModuleTitle>
+                                <PersonnelAndEquipmentStatus statusData={personnelAndEquipmentStatusData}/>
+                            </RightCenterBox>
+                        )}
+                        <RightBottomBox>
+                            <BorderBox13 className='right-bottom-borderBox13'>
+                                <div >
+                                    <ModuleTitle>
+                                        <i className='iconfont'>&#xe790;</i>
+                                        <span>今日用户统计</span>
+                                    </ModuleTitle>
+                                    <div className='right-bottom'>
+                                        {/* 柱状图 */}
+                                        <div className='offline-portal-box'>
+                                            {offline ? (
+                                                <OfflinePortal
+                                                    offlinePortalData={offline.offlinePortalData}
+                                                />
+                                            ) : (
+                                                ''
+                                            )}
+                                        </div>
+                                        {/* 支付用户转化率 */}
+                                        <div className='feedback-box'>
+                                            {offline
+                                                ? offline.feedback.map((item, index) => {
+                                                    return (
+                                                        <div className='feedback-box-item' key={index}>
+                                                            <Feedback FeedbackData={item}></Feedback>
+                                                            <span className='dis-text'>{item.title}</span>
+                                                        </div>
+                                                    );
+                                                })
+                                                : ''}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </BorderBox13>
+                        </RightBottomBox>
+                    </RightPage>
                 )}
-
-                {/*<RightCenterBox>*/}
-                {/*  <ModuleTitle>*/}
-                {/*    <i className='iconfont'>&#xe7fd;</i>*/}
-                {/*    <span>人员和设备情况</span>*/}
-
-                {/*    <PersonnelAndEquipmentStatus statusData={personnelAndEquipmentStatusData} ></PersonnelAndEquipmentStatus>*/}
-
-                {/*  </ModuleTitle>*/}
-                {/*</RightCenterBox>*/}
-                {personnelAndEquipmentStatusData && (
-                    <RightCenterBox>
-                        <ModuleTitle>
-                            <i className='iconfont'>&#xe7fd;</i>
-                            <span>人员和设备情况</span>
-                        </ModuleTitle>
-                        <PersonnelAndEquipmentStatus statusData={personnelAndEquipmentStatusData}/>
-                    </RightCenterBox>
-                )}
-                <RightBottomBox>
-                    <BorderBox13 className='right-bottom-borderBox13'>
-                        <div className='right-bottom'>
-                            <ModuleTitle>
-                                <i className='iconfont'>&#xe790;</i>
-                                <span>今日用户统计</span>
-                            </ModuleTitle>
-                            {/* 支付用户转化率 */}
-                            <div className='feedback-box'>
-                                {offline
-                                    ? offline.feedback.map((item, index) => {
-                                        return (
-                                            <div className='feedback-box-item' key={index}>
-                                                <Feedback FeedbackData={item}></Feedback>
-                                                <span className='dis-text'>{item.title}</span>
-                                            </div>
-                                        );
-                                    })
-                                    : ''}
-                            </div>
-                            {/* 柱状图 */}
-                            <div className='offline-portal-box'>
-                                {offline ? (
-                                    <OfflinePortal
-                                        offlinePortalData={offline.offlinePortalData}
-                                    />
-                                ) : (
-                                    ''
-                                )}
-                            </div>
-                        </div>
-                    </BorderBox13>
-                </RightBottomBox>
-            </RightPage>
+            </>
         );
     }
 }

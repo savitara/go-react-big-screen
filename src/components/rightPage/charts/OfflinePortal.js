@@ -15,11 +15,13 @@ class OfflinePortal extends PureComponent {
     const { offlinePortalData } = this.props;
 
     return (
+
       <div
-        style={{
-          width: '5.375rem',
-          height: '2.875rem',
-        }}>
+          style={{
+              width: '2.6875rem', // 缩小为原来的一半
+              height: '1.4375rem', // 缩小为原来的一半
+          }}
+      >
         <Chart
           renderer={renderer}
           option={OfflinePortalOptions(offlinePortalData)}

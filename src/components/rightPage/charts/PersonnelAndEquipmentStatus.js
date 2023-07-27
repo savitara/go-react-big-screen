@@ -32,11 +32,11 @@ class PersonnelAndEquipmentStatus extends PureComponent {
         return (
             <div>
                 {/* 在岗人员图表 */}
-                <div style={{width: '50%', height: '2.875rem', display: 'inline-block'}}>
+                <div style={{width: '50%', height: '1.2rem', display: 'inline-block'}}>
                     <Chart renderer={renderer} option={personnelOption}/>
                 </div>
                 {/* 设备状态图表 */}
-                <div style={{width: '50%', height: '2.875rem', display: 'inline-block'}}>
+                <div style={{width: '50%', height: '1.2rem', display: 'inline-block'}}>
                     <Chart renderer={renderer} option={equipmentOption}/>
                 </div>
             </div>

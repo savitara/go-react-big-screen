@@ -13,7 +13,6 @@ class LeanLeft extends PureComponent {
 
         return (
 
-
                     <LeftDiv>
 
                         <BorderBox12 className='left-top-borderBox12'>
@@ -28,16 +27,16 @@ class LeanLeft extends PureComponent {
                                     <span>路段实时视频</span>
                                 </ModuleTitle>
                                 <DataBox>
-                                    <div className='detail-list'>
-                                        {roofDataList && roofDataList.map((item, index) => (
-                                            <div className='detail-list-item' key={index}>
-                                                <img
-                                                    src={require(`../../../assets/images/center-details-data${index + 1}.png`)}
-                                                    alt={item.title}
-                                                />
-                                            </div>
-                                        ))}
-                                    </div>
+                                    {/*<div className='detail-list'>*/}
+                                    {/*    {roofDataList && roofDataList.map((item, index) => (*/}
+                                    {/*        <div className='detail-list-item' key={index}>*/}
+                                    {/*            <img*/}
+                                    {/*                src={require(`../../../assets/images/center-details-data${index + 1}.png`)}*/}
+                                    {/*                alt={item.title}*/}
+                                    {/*            />*/}
+                                    {/*        </div>*/}
+                                    {/*    ))}*/}
+                                    {/*</div>*/}
                                 </DataBox>
 
                             </div>

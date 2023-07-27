@@ -273,7 +273,7 @@ class MapChart extends PureComponent {
     }
 
     render() {
-        const {id, width, height} = this.props;
+        const {id} = this.props;
 
         return (
             <div>
@@ -281,8 +281,8 @@ class MapChart extends PureComponent {
                 <div
                     id={`mapContainer_${id}`}
                     style={{
-                        width: '10.625rem',
-                        height: '8.125rem',
+                        width: '13.625rem',
+                        height: '5.115rem',
                     }}
                 ></div>
             </div>

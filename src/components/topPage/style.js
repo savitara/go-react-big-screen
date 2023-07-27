@@ -73,7 +73,7 @@ export const TopCenter = styled.div`
   /* Copy the styles from CenterBottom here */
   display: flex;
   flex-wrap: wrap; /* Added to wrap items to the next row */
-  margin-top: 0.265rem; /* Scale down margin to 80% */
+  margin-top: 0.265rem;
   width: 100%; /* Scale down width to 80% */
 
   .detail-list {
@@ -88,7 +88,7 @@ export const TopCenter = styled.div`
       display: flex;
       align-items: center;
       position: relative;
-      height: 1.25rem; /* Scale down height to 80% */
+      height: 0.725rem; /* Scale down height to 80% */
       padding: 0 0.1rem; /* Scale down padding to 80% */
       width: 25.6%; /* Scale down width to 80% */
       border-radius: 4px; /* Scale down border-radius to 80% */
@@ -97,8 +97,8 @@ export const TopCenter = styled.div`
       margin: 0.2rem 0.4%; /* Scale down margin to 80% to create gaps between items */
 
       img {
-        width: 1rem; /* Scale down image width to 80% */
-        height: 1rem; /* Scale down image height to 80% */
+        width: 0.5rem; /* Scale down image width to 80% */
+        height: 0.5rem; /* Scale down image height to 80% */
       }
 
       .detail-item-text {
@@ -107,7 +107,7 @@ export const TopCenter = styled.div`
         h3 {
           color: #bcdcff;
           font-size: 12.8px; /* Scale down font size to 80% */
-          margin-bottom: 0.2rem; /* Scale down margin to 80% */
+          margin-bottom: 0.1rem; /* Scale down margin to 80% */
         }
 
         span {
