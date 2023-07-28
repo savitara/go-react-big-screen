@@ -1,25 +1,34 @@
 import React, { PureComponent } from 'react';
-import Chart from '../../../utils/chart';
-
+import echarts from 'echarts'; // 导入 Echarts 库
 
 class PieChart extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      renderer: 'canvas',
-    };
+  componentDidMount() {
+    // 组件加载后调用绘制图表的方法
+    this.renderChart();
   }
 
-  render() {
+  componentDidUpdate(prevProps) {
+    // 如果组件接收到新的数据或中心文本，更新图表
+    if (prevProps.data !== this.props.data || prevProps.centerText !== this.props.centerText) {
+      this.renderChart();
+    }
+  }
+
+  renderChart() {
     const { data, centerText } = this.props;
-    const { renderer } = this.state; // 获取 renderer 的值
+
+    // 获取图表容器的 DOM 元素
+    const chartDom = document.getElementById(`pieChartContainer_${this.props.id}`);
+
+    // 初始化 Echarts 实例
+    const myChart = echarts.init(chartDom);
 
     // 定义环形图的配置项
     const option = {
       series: [
         {
           type: 'pie',
-          radius: ['20%', '30%'],
+          radius: ['10%', '15%'],
           avoidLabelOverlap: false,
           label: {
             show: true, // 显示label
@@ -30,15 +39,15 @@ class PieChart extends PureComponent {
           emphasis: {
             label: {
               show: true,
-              fontSize: '20',
+              fontSize: '10',
               fontWeight: 'bold',
               color: '#fff', // 字体颜色设置为白色
             },
           },
           labelLine: {
             show: true, // 显示labelLine
-            length: 10,
-            length2: 20, // 控制labelLine的长度
+            length: 5,
+            length2: 10, // 控制labelLine的长度
           },
           data: data,
         },
@@ -51,40 +60,28 @@ class PieChart extends PureComponent {
           left: 'center',
           top: 'center',
           style: {
-            // text: centerText, // 使用外部传入的中心文本
-            text: '', // 使用外部传入的中心文本
-
+            text: centerText, // 使用外部传入的中心文本
             textAlign: 'center',
             fill: '#fff', // 文本颜色设置为白色
-            fontSize: 20,
+            fontSize: 10,
             fontWeight: 'bold',
           },
         },
       ],
     };
-    const chartContainerStyle = {
-      // width: '4.375rem', // 添加宽度以控制图表容器的大小
-      // height: '4.375rem',
-      width: '3.65rem', // 添加宽度以控制图表容器的大小
-      height: '2.95rem',
-      position: 'relative',
-      overflow: 'hidden',
-    };
-    const chartStyle = {
-      position: 'absolute',
-      top: '-1rem',
-      left: 0,
-      right: 0,
-      bottom: 0,
-    };
+
+    // 使用配置项设置图表内容
+    myChart.setOption(option);
+  }
+
+  render() {
+    const { id, width, height } = this.props;
+
     return (
-
-        <div style={chartContainerStyle}>
-          <div style={chartStyle}>
-            <Chart renderer={renderer} option={option} />
-          </div>
-        </div>
-
+      <div>
+        {/* 放置图表容器 */}
+        <div id={`pieChartContainer_${id}`} style={{ width, height }}></div>
+      </div>
     );
   }
 }

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const LeftPage = styled.div`
   width: 5.25rem;
   height: auto;
-  padding: 0.2rem;
+  padding: 0 0.2rem 0.2rem 0.2rem;
   padding-bottom: 0px;
 `;
 
@@ -38,7 +38,7 @@ export const LeftTopBox = styled.div`
 export const LeftBottomBox = styled.div`
   position: relative;
   margin-top: 0.25rem;
-  height: 3.685rem;
+  height: 3.885rem;
   width: 100%;
   .left-bottom-borderBox13 {
     width: inherit;

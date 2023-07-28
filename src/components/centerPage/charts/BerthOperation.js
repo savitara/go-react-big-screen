@@ -1,8 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, {PureComponent} from 'react';
 import Chart from '../../../utils/chart';
-import { berthOperations } from './options';
-import { berthTurnoverRateOperations } from './options';
-import { berthUtilizationRateOperations } from './options';
+import {berthOperations, FeedbackOptions} from './options';
+import {berthTurnoverRateOperations} from './options';
+import {berthUtilizationRateOperations} from './options';
+import {CapsuleChart} from "@jiaminghi/data-view-react";
+import {ModuleTitle} from "../style";
 
 class BerthOperation extends PureComponent {
     constructor(props) {
@@ -13,8 +15,10 @@ class BerthOperation extends PureComponent {
     }
 
     render() {
-        const { renderer } = this.state;
-        const { inline } = this.props;
+        const {renderer} = this.state;
+        const {inline} = this.props;
+        const {identityCategory,rankingIdentityCategory} = this.props;
+
         const offlinePortalData = {
             "xData": [
                 "2/21",
@@ -57,21 +61,87 @@ class BerthOperation extends PureComponent {
             width: '5.25rem', // 添加宽度以控制图表大小
             height: '1.905rem',
         };
+        const capsuleChartConfig = {
+            // 单位
+            unit: '单位（%）',
+            showValue: false,
+            data: [],
+        };
+        const config = {
+            ...capsuleChartConfig,
+            ...identityCategory,
+        };
 
+       const rankingConfig = {
+            ...capsuleChartConfig,
+            ...rankingIdentityCategory,
+        }
         return (
             <div style={containerStyle}>
-                <div style={chartStyle}>
-                    <Chart
-                        renderer={renderer}
-                        option={berthTurnoverRateOperations(offlinePortalData)}
-                    />
+                <div>
+                    <ModuleTitle>
+                        <i className='iconfont'>&#xe790;</i>
+                        <span>停车场周转率</span>
+                    </ModuleTitle>
+                    <div style={{display: 'flex'}}>
+                        <div style={chartStyle}>
+                            <Chart
+                                renderer={renderer}
+                                option={berthTurnoverRateOperations(offlinePortalData)}
+                            />
+                        </div>
+                    </div>
+
                 </div>
-                <div style={chartStyle}>
-                    <Chart
-                        renderer={renderer}
-                        option={berthUtilizationRateOperations(UtilizationRateData)}
-                    />
+                <div>
+                    <ModuleTitle>
+                        <i className='iconfont'>&#xe790;</i>
+                        <span>停车场周转率排行</span>
+                    </ModuleTitle>
+                    <div style={{display: 'flex'}}>
+
+                        <div >
+                            <CapsuleChart
+                                config={rankingConfig}
+                                style={chartStyle}
+                            />
+                        </div>
+                    </div>
                 </div>
+
+                <div>
+                    <ModuleTitle>
+                        <i className='iconfont'>&#xe790;</i>
+                        <span>停车场利用率</span>
+                    </ModuleTitle>
+                    <div style={{display: 'flex'}}>
+                        <div style={chartStyle}>
+                            <Chart
+                                renderer={renderer}
+                                option={berthUtilizationRateOperations(UtilizationRateData)}
+                            />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div>
+                    <ModuleTitle>
+                        <i className='iconfont'>&#xe790;</i>
+                        <span>停车场占用率</span>
+                    </ModuleTitle>
+                    <div style={{display: 'flex'}}>
+                        <div>
+
+                            <CapsuleChart
+                                config={config}
+                                style={chartStyle}
+                            />
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
         );
     }

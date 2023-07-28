@@ -42,69 +42,67 @@ class index extends PureComponent {
         } = this.props;
         const showLeftPage = true;
         return (
-            <>
-                {showLeftPage && (<RightPage>
-                        {roadParkingData && (
-                            <RightTopBox>
-                                <div className='right-top'>
-                                    <ModuleTitle>
-                                        <i className='iconfont'>&#xe7f7;</i>
-                                        <span>路段车位使用</span>
-                                    </ModuleTitle>
-                                    <RoadParking roadParkingData={roadParkingData}></RoadParking>
+            <RightPage>
+                {roadParkingData && (
+                    <RightTopBox>
+                        <div className='right-top'>
+                            <ModuleTitle>
+                                <i className='iconfont'>&#xe7f7;</i>
+                                <span>路段车位使用</span>
+                            </ModuleTitle>
+                            <RoadParking roadParkingData={roadParkingData}></RoadParking>
 
-                                </div>
-                            </RightTopBox>
-                        )}
-
-                        {personnelAndEquipmentStatusData && (
-                            <RightCenterBox>
-                                <ModuleTitle>
-                                    <i className='iconfont'>&#xe7fd;</i>
-                                    <span>人员和设备情况</span>
-                                </ModuleTitle>
-                                <PersonnelAndEquipmentStatus statusData={personnelAndEquipmentStatusData}/>
-                            </RightCenterBox>
-                        )}
-                        <RightBottomBox>
-                            <BorderBox13 className='right-bottom-borderBox13'>
-                                <div >
-                                    <ModuleTitle>
-                                        <i className='iconfont'>&#xe790;</i>
-                                        <span>今日用户统计</span>
-                                    </ModuleTitle>
-                                    <div className='right-bottom'>
-                                        {/* 柱状图 */}
-                                        <div className='offline-portal-box'>
-                                            {offline ? (
-                                                <OfflinePortal
-                                                    offlinePortalData={offline.offlinePortalData}
-                                                />
-                                            ) : (
-                                                ''
-                                            )}
-                                        </div>
-                                        {/* 支付用户转化率 */}
-                                        <div className='feedback-box'>
-                                            {offline
-                                                ? offline.feedback.map((item, index) => {
-                                                    return (
-                                                        <div className='feedback-box-item' key={index}>
-                                                            <Feedback FeedbackData={item}></Feedback>
-                                                            <span className='dis-text'>{item.title}</span>
-                                                        </div>
-                                                    );
-                                                })
-                                                : ''}
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </BorderBox13>
-                        </RightBottomBox>
-                    </RightPage>
+                        </div>
+                    </RightTopBox>
                 )}
-            </>
+
+                {personnelAndEquipmentStatusData && (
+                    <RightCenterBox>
+                        <ModuleTitle>
+                            <i className='iconfont'>&#xe7fd;</i>
+                            <span>人员和设备情况</span>
+                        </ModuleTitle>
+                        <PersonnelAndEquipmentStatus statusData={personnelAndEquipmentStatusData}/>
+                    </RightCenterBox>
+                )}
+                <RightBottomBox>
+                    <BorderBox13 className='right-bottom-borderBox13'>
+                        <div>
+                            <ModuleTitle>
+                                <i className='iconfont'>&#xe790;</i>
+                                <span>今日用户统计</span>
+                            </ModuleTitle>
+                            <div className='right-bottom'>
+                                {/* 柱状图 */}
+                                <div className='offline-portal-box'>
+                                    {offline ? (
+                                        <OfflinePortal
+                                            offlinePortalData={offline.offlinePortalData}
+                                        />
+                                    ) : (
+                                        ''
+                                    )}
+                                </div>
+                                {/* 支付用户转化率 */}
+                                <div className='feedback-box'>
+                                    {offline
+                                        ? offline.feedback.map((item, index) => {
+                                            return (
+                                                <div className='feedback-box-item' key={index}>
+                                                    <Feedback FeedbackData={item}></Feedback>
+                                                    <span className='dis-text'>{item.title}</span>
+                                                </div>
+                                            );
+                                        })
+                                        : ''}
+                                </div>
+                            </div>
+
+                        </div>
+                    </BorderBox13>
+                </RightBottomBox>
+            </RightPage>
+
         );
     }
 }

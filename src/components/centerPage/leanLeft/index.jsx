@@ -9,7 +9,7 @@ class LeanLeft extends PureComponent {
     }
 
     render() {
-        const { roofDataList, parkingRecord } = this.props;
+        const { roofDataList } = this.props;
 
         return (
 
@@ -17,11 +17,11 @@ class LeanLeft extends PureComponent {
 
                         <BorderBox12 className='left-top-borderBox12'>
                             <div className='left-top'>
-                                <ModuleTitle>
-                                    <i className='iconfont'>&#xe78f;</i>
-                                    <span>停车记录(每月)</span>
-                                </ModuleTitle>
-                                <TrafficSituation trafficSitua={parkingRecord}></TrafficSituation>
+                                {/*<ModuleTitle>*/}
+                                {/*    <i className='iconfont'>&#xe78f;</i>*/}
+                                {/*    <span>停车记录(每月)</span>*/}
+                                {/*</ModuleTitle>*/}
+                                {/*<TrafficSituation trafficSitua={parkingRecord}></TrafficSituation>*/}
                                 <ModuleTitle>
                                     <i className='iconfont'>&#xe78f;</i>
                                     <span>路段实时视频</span>

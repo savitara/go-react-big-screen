@@ -171,7 +171,6 @@ class MapChart extends PureComponent {
         let option;
 
         if (selectedProvince && cityMapData) {
-            // myChart.clear(); // 清除图表。
             let backButtonImage = 'image://' +   getBackButtonImageUrl()
             console.log(backButtonImage)
             // 下级地图渲染，使用 cityMapData 和相应的市级地图选项
@@ -221,14 +220,15 @@ class MapChart extends PureComponent {
                 toolbox: {
                     show: true,
                     orient: 'vertical',
-                    left: 'right',
+                    // left: 'right',
+                    right: 60,
                     top: 'center',
                     feature: {
                         myBackButton: {
                             show: true,
                             title: '回退',
                             icon: backButtonImage,
-                            iconSize: [130, 130], // 设置图标的宽度和高度
+                            iconSize: [180, 180], // 设置图标的宽度和高度
                             onclick: () => {
                                 this.handleBackButtonClick(); // 使用箭头函数确保this指向正确
                             },

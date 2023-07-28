@@ -51,10 +51,9 @@ class index extends PureComponent {
     render() {
         const {userSitua, trafficSitua, accessFrequency, peakFlow} = this.props;
         const {startDate} = this.state;
-        const showLeftPage = true;
+
         return (
-            <>
-                {showLeftPage && (<LeftPage>
+           <LeftPage>
                     {/* 顶部图表 */}
                     <LeftTopBox>
                         <BorderBox12 className='left-top-borderBox12'>
@@ -91,8 +90,7 @@ class index extends PureComponent {
                         </BorderBox13>
                     </LeftBottomBox>
 
-                </LeftPage>)}
-            </>
+                </LeftPage>
 
         );
     }

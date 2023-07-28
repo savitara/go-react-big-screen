@@ -145,9 +145,11 @@ export const RightDiv = styled.div`
 
 
 export const DataBox = styled.div`
+  width: 4.3rem;
+  //height: 7.0825rem;
   display: flex;
   flex-wrap: wrap;
-  width: 96%;
+  //width: 96%;
   margin: 0 10px; /* 添加 DataBox 元素的左右边距 */
 
   .detail-list {
