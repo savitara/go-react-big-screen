@@ -580,7 +580,7 @@ export const trafficOptions = (params) => ({
   ],
 });
 
-export const mapOptions = (params) => ({
+export const mapOptions = (eChart) => ({
   title: {
     show: false,
     text: '全国停车热力图',
@@ -643,21 +643,22 @@ export const mapOptions = (params) => ({
       coordinateSystem: 'geo',
       blurSize: 10,//颜色变化范围
       pointSize: 8, // 调整热力点的大小，使其更小
-      data: [
-        {
-          value: [107.38, 23.19, 120]
-        },
-        {
-          value: [111, 37.86, 1140]
-        },
-        {
-          value: [121, 36.86, 114]
-        },
-        {
-          value: [116.37, 23.19, 120]
-        },
-        // 添加更多热力点数据
-      ],
+      data: eChart.heatMapMarkerPositions,
+      // data: [
+      //   {
+      //     value: [107.38, 23.19, 120]
+      //   },
+      //   {
+      //     value: [111, 37.86, 1140]
+      //   },
+      //   {
+      //     value: [121, 36.86, 114]
+      //   },
+      //   {
+      //     value: [116.37, 23.19, 120]
+      //   },
+      //   // 添加更多热力点数据
+      // ],
     },
   ],
 });

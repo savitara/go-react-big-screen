@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>React 大数据可视化</title>
-  <link rel="stylesheet" href="index.css" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React 大数据可视化</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 </head>
 <body>
 
-  <div id="root"></div>
-  <script src="index.js"></script>
+<div id="root"></div>
+<script src="index.js"></script>
 
 </body>
+
+<!--隐藏高德左下角的水印-->
+<style>
+    .amap-logo {
+        display: none;
+        opacity: 0 !important;
+    }
+
+    .amap-copyright {
+        opacity: 0;
+    }
+</style>
+
 </html>

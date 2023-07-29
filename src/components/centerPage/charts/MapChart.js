@@ -6,6 +6,7 @@ import {mapOptions} from './options';
 import {EXISTING_SECOND_LAYER_REGION, EXISTING_THIRD_LAYER_REGION, getGeoJson, TAIWAN_ADCODE} from './cityData';
 import chinaProvincialData from './cityData';
 import {getBackButtonImageUrl} from "./iconImageForURL";
+import AaLiMap from "./AaLiMap";
 
 class MapChart extends PureComponent {
     constructor(props) {
@@ -21,9 +22,18 @@ class MapChart extends PureComponent {
             BackProvincialName: '',//用于存储当前选中的省级名称,用于回退
             BackProvincialCityData: '',//城市数据，用于回退
             backProvincialFlag: false,//用于判断是否回退
-
+            centerPosition: [],//用于存储当前选中的省级中心点
+            amapZoom: 5,//amap的缩放
+            amapZoomLevel: {
+                china: 5,
+                province: 7,
+                city: 8,
+                country: 10,
+            },//缩放层级
+            centerPositionStack: [],//
         };
         this.chartInstance = null; // 存储地图实例的引用
+
     }
 
     async componentDidMount() {
@@ -33,8 +43,9 @@ class MapChart extends PureComponent {
 
     componentDidUpdate(prevProps, prevState) {
         // 如果组件接收到新的数据或选中的省份发生变化，更新图表
+
         if (
-            prevProps.mapData !== this.props.mapData ||
+
             prevState.selectedProvince !== this.state.selectedProvince
         ) {
             // 在组件更新时销毁旧的地图实例
@@ -81,7 +92,7 @@ class MapChart extends PureComponent {
         // 如果没有名称信息，说明点击的不是省份区域，直接返回
         if (!name || '南海诸岛' === name) return;
 
-        // console.log('点击了:', name);
+        console.log('点击了:', name);
         let adcode = this.handleChinaProvincialData(name);
         // //遍历省级行政
         //点击的不是省级行政而是市级行政
@@ -97,21 +108,30 @@ class MapChart extends PureComponent {
                 }
             }
         }
-        // console.log('currentProvincialName:', this.state.currentProvincialName, '\nseriesName:', this.state.seriesName);
         try {
-            // 使用 getGeoJson 函数发起 HTTP 请求来获取数据文件内容
 
             // 可下钻到二级地图（23个省、5个自治区、4个直辖市、2个特别行政区）
             if (EXISTING_SECOND_LAYER_REGION.find((i) => i.adcode === adcode)) {
                 const mapName = `${adcode}-${name}`;
+                // 使用 getGeoJson 函数发起 HTTP 请求来获取数据文件内容
+
                 const res = await getGeoJson('province', mapName);
-                // console.log(res.data);
                 // 更新选中的省份状态和市级地图数据，触发重新渲染
                 this.setState({
                     selectedProvince: name,
                     cityMapData: res.data, // 返回的是市级地图的 GeoJSON 数据
                     BackProvincialCityData: res.data,
                 });
+                //     联动右侧高德地图,设置中心点为省会城市
+
+                let centerPosition = res.data.features[0].properties.center
+
+                this.setState({
+                    centerPosition: centerPosition,
+                    amapZoom: this.state.amapZoomLevel.province,
+                    centerPositionStack: [...this.state.centerPositionStack, [centerPosition]],
+                });
+
             }  // 可下钻到三级地图（23个省、5个自治区 的市级区域）
             else if (EXISTING_THIRD_LAYER_REGION.find(i => `${i.adcode}-${i.name}` === this.state.currentProvincialName)) {
                 // 台湾，无法下钻（暂无市级区域geojson数据）
@@ -125,7 +145,26 @@ class MapChart extends PureComponent {
                     selectedProvince: name,
                     cityMapData: res.data,
                     currentProvincialName: '',
-                    seriesName: '',
+                    // seriesName: '',
+                });
+                //     联动右侧高德地图,设置中心点为点击的城市
+                // console.log('点击的市级城市中心:',res.data.features[0].properties.center)
+                let centerPosition = res.data.features[0].properties.center
+                this.setState({
+                    centerPosition: centerPosition,
+                    amapZoom: this.state.amapZoomLevel.city,
+                    centerPositionStack: [...this.state.centerPositionStack, [centerPosition]],
+                });
+            } else {
+                // console.log('点击的是县级行政')
+                const getSeriesName = this.state.seriesName
+                const mapName = getSeriesName.split('-')[1]
+                //    联动右侧高德地图,设置中心点为点击的县级
+                const res = await getGeoJson('county', mapName)
+                let centerPosition = res.data.features[0].properties.center
+                this.setState({
+                    centerPosition: centerPosition,
+                    amapZoom: this.state.amapZoomLevel.country,
                 });
             }
 
@@ -145,12 +184,21 @@ class MapChart extends PureComponent {
                 cityMapData: null,
                 zoomLevel: 0,
             });
+            //  联动右侧高德地图,回归到全国地图
+            let centerPosition = this.state.centerPositionStack[this.state.centerPositionStack.length - 1]
+            console.log(this.state.centerPositionStack)
+            this.setState({
+                centerPositionStack: this.state.centerPositionStack.pop(),
+                centerPosition: centerPosition.flat(),
+                amapZoom: this.state.amapZoomLevel.china,
+            })
+            console.log(this.state.centerPositionStack)
+
         } else if (zoomLevel === 2) {
             this.handleChinaProvincialData(this.state.BackProvincialName)
             // 当处于市级地图时，进行回退到省级地图
             const provinceName = this.state.BackProvincialName; // 获取市级地图所属的省份名称
             const provincialCityData = this.state.BackProvincialCityData
-            // console.log(provinceName);
 
             this.setState({
                 selectedProvince: provinceName, // 设置选中的省份为市级地图所属的省份名称
@@ -158,12 +206,22 @@ class MapChart extends PureComponent {
                 zoomLevel: 1,
                 backProvincialFlag: true,
             });
+            //     联动右侧高德地图,回归到省级地图
+            let centerPosition = this.state.centerPositionStack[this.state.centerPositionStack.length - 1]
+            console.log(this.state.centerPositionStack)
+            this.setState({
+                centerPositionStack: this.state.centerPositionStack.pop(),
+                centerPosition: centerPosition.flat(),
+                amapZoom: this.state.amapZoomLevel.province,
+            })
+            console.log(this.state.centerPositionStack)
+
         }
     };
 
 
     async renderChart() {
-        const {mapData} = this.props;
+        const {mapChartData} = this.props;
         const {selectedProvince, cityMapData, zoomLevel} = this.state;
         const chartDom = document.getElementById(`mapContainer_${this.props.id}`);
         const myChart = echarts.init(chartDom);
@@ -171,8 +229,7 @@ class MapChart extends PureComponent {
         let option;
 
         if (selectedProvince && cityMapData) {
-            let backButtonImage = 'image://' +   getBackButtonImageUrl()
-            console.log(backButtonImage)
+            let backButtonImage = 'image://' + getBackButtonImageUrl()
             // 下级地图渲染，使用 cityMapData 和相应的市级地图选项
 
             option = {
@@ -246,9 +303,10 @@ class MapChart extends PureComponent {
             }
             this.setState({backProvincialFlag: false});
         } else {
+
             // 全国地图渲染，使用全国数据和全国地图选项
             option = {
-                ...mapOptions(),
+                ...mapOptions(mapChartData.eChart),
                 toolbox: {
                     show: false,
                 },
@@ -257,7 +315,6 @@ class MapChart extends PureComponent {
             this.setState({zoomLevel: 0});
 
         }
-        console.log(option)
         myChart.setOption(option);
         myChart.on('click', this.handleMapClick);
     }
@@ -273,18 +330,35 @@ class MapChart extends PureComponent {
     }
 
     render() {
-        const {id} = this.props;
+        // const {id,markerPosition} = this.props;
+        const {
+            id,
+            mapChartData
+        } = this.props;
+        let centerPosition = this.state.centerPosition
+        let amapZoom = this.state.amapZoom
 
+        if (centerPosition.length === 0) {
+            centerPosition.push(mapChartData.aMap.centerPosition.longitude)
+            centerPosition.push(mapChartData.aMap.centerPosition.latitude)
+        }
         return (
-            <div>
+
+            <div style={{display: 'flex', flexWrap: 'nowrap', marginRight: '0.3rem'}}>
                 {/* 放置地图容器 */}
                 <div
                     id={`mapContainer_${id}`}
                     style={{
-                        width: '13.625rem',
+                        width: '8.625rem',
                         height: '5.115rem',
+                        flex: '1', // 让地图容器占据剩余空间
                     }}
                 ></div>
+
+                <AaLiMap style={{flex: '1'}} centerPosition={centerPosition} amapZoom={amapZoom}
+                         markerPositions={mapChartData.aMap.markerPositions}/>
+
+
             </div>
         );
     }

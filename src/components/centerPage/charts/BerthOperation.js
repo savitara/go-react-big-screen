@@ -55,6 +55,7 @@ class BerthOperation extends PureComponent {
             display: 'flex',
             flexDirection: 'row', // 设置水平排列
             justifyContent: 'space-between', // 平均分配空间，将两个图表挤到两边
+            gap: '0.8rem',
         };
 
         const chartStyle = {

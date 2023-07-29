@@ -15,13 +15,8 @@ class LeanLeft extends PureComponent {
 
                     <LeftDiv>
 
-                        <BorderBox12 className='left-top-borderBox12'>
+                        <BorderBox12 className='left-top-borderBox12'  style={{ marginLeft: 0 }}>
                             <div className='left-top'>
-                                {/*<ModuleTitle>*/}
-                                {/*    <i className='iconfont'>&#xe78f;</i>*/}
-                                {/*    <span>停车记录(每月)</span>*/}
-                                {/*</ModuleTitle>*/}
-                                {/*<TrafficSituation trafficSitua={parkingRecord}></TrafficSituation>*/}
                                 <ModuleTitle>
                                     <i className='iconfont'>&#xe78f;</i>
                                     <span>路段实时视频</span>

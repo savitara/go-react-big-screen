@@ -135,6 +135,7 @@ export const BottomBox = styled.div`
 export const LeftDiv = styled.div`
   //align-self: flex-start; /* 将 LeftDiv 自身对齐方式设置为左侧对齐 */
   display: flex;
+
 `;
 
 export const RightDiv = styled.div`

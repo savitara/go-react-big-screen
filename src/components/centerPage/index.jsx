@@ -6,6 +6,8 @@ import BerthOperation from './charts/BerthOperation'; //
 import MapChart from "./charts/MapChart"; //
 import LeanLeft from "./leanLeft";
 import LeanRight from "./leanRight";
+import AaLiMap from "./charts/AaLiMap";
+
 class index extends PureComponent {
     constructor(props) {
         super(props);
@@ -13,60 +15,69 @@ class index extends PureComponent {
     }
 
     render() {
-        const {berthOperation, roofDataList, parkingRecord, parkingHabitsData,identityCategory,rankingIdentityCategory} = this.props;
+        const {
+            berthOperation,
+            roofDataList,
+            parkingRecord,
+            parkingHabitsData,
+            identityCategory,
+            rankingIdentityCategory,
+            mapChartData
+        } = this.props;
 
-        const mapData = [
-            {value: [107.38, 23.19, 120]},
-            {value: [111, 37.86, 1140]},
-            {value: [121, 36.86, 114]},
-            {value: [116.37, 23.19, 120]},
-        ];
-        const showLeftPage = true;
+        // const mapData = [
+        //     {value: [107.38, 23.19, 120]},
+        //     {value: [111, 37.86, 1140]},
+        //     {value: [121, 36.86, 114]},
+        //     {value: [116.37, 23.19, 120]},
+        // ];
 
         return (
             <>
-                {showLeftPage && ( <CenterPage>
-                    <div style={{display: 'flex'}}>
+                {mapChartData && (<CenterPage>
+                        <div style={{display: 'flex'}}>
 
-                        <LeanLeft roofDataList={roofDataList} ></LeanLeft>
+                            <LeanLeft roofDataList={roofDataList}></LeanLeft>
 
-                        <MapChart
-                            style={{
-                                display: 'inline-block', // 添加此样式以使组件并排显示
-                            }}
-                            id="MapId" // You can provide a unique id for the map container
-                            mapData={mapData} // Pass the map data to the Map component
-                        />
+                            <MapChart
+                                style={{
+                                    display: 'inline-block', // 添加此样式以使组件并排显示
+                                }}
+                                id="MapId" // You can provide a unique id for the map container
+                                // mapData={mapData} // Pass the map data to the Map component
+                                mapChartData={mapChartData}
+                            />
+                            <LeanRight parkingHabitsData={parkingHabitsData} parkingRecord={parkingRecord}> </LeanRight>
 
-                        <LeanRight parkingHabitsData={parkingHabitsData} parkingRecord={parkingRecord}> </LeanRight>
+                        </div>
 
-                    </div>
+                        <CenterBottomWidth>
+                            <div className='detail-list'>
+                                <>
+                                    <div className='detail-list-item' key={index}>
 
-                    <CenterBottomWidth>
-                        <div className='detail-list'>
-                            <>
-                                <div className='detail-list-item' key={index}>
+                                        <div className='offline-portal-box'>
+                                            {berthOperation ? (
+                                                <>
+                                                    <div style={{display: 'flex'}}>
+                                                        <BerthOperation inline={true}
+                                                                        identityCategory={identityCategory}
+                                                                        rankingIdentityCategory={rankingIdentityCategory}/>
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                ''
+                                            )}
+                                        </div>
 
-                                    <div className='offline-portal-box'>
-                                        {berthOperation ? (
-                                            <>
-                                                <div style={{display: 'flex'}}>
-                                                    <BerthOperation inline={true} identityCategory={identityCategory} rankingIdentityCategory={rankingIdentityCategory}/>
-                                                </div>
-                                            </>
-                                        ) : (
-                                            ''
-                                        )}
+
                                     </div>
 
+                                </>
+                            </div>
+                        </CenterBottomWidth>
 
-                                </div>
-
-                            </>
-                        </div>
-                    </CenterBottomWidth>
-
-                </CenterPage>
+                    </CenterPage>
                 )}
             </>
 
@@ -82,6 +93,7 @@ const mapStateToProps = state => {
         parkingRecord: state.centerPage.parkingRecord,
         identityCategory: state.centerPage.identityCategory,
         rankingIdentityCategory: state.centerPage.rankingIdentityCategory,
+        mapChartData: state.centerPage.mapChartData,
     };
 };
 
