@@ -186,13 +186,11 @@ class MapChart extends PureComponent {
             });
             //  联动右侧高德地图,回归到全国地图
             let centerPosition = this.state.centerPositionStack[this.state.centerPositionStack.length - 1]
-            console.log(this.state.centerPositionStack)
             this.setState({
                 centerPositionStack: this.state.centerPositionStack.pop(),
                 centerPosition: centerPosition.flat(),
                 amapZoom: this.state.amapZoomLevel.china,
             })
-            console.log(this.state.centerPositionStack)
 
         } else if (zoomLevel === 2) {
             this.handleChinaProvincialData(this.state.BackProvincialName)
@@ -208,13 +206,11 @@ class MapChart extends PureComponent {
             });
             //     联动右侧高德地图,回归到省级地图
             let centerPosition = this.state.centerPositionStack[this.state.centerPositionStack.length - 1]
-            console.log(this.state.centerPositionStack)
             this.setState({
                 centerPositionStack: this.state.centerPositionStack.pop(),
                 centerPosition: centerPosition.flat(),
                 amapZoom: this.state.amapZoomLevel.province,
             })
-            console.log(this.state.centerPositionStack)
 
         }
     };
