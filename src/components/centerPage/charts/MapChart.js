@@ -345,7 +345,7 @@ class MapChart extends PureComponent {
                 <div
                     id={`mapContainer_${id}`}
                     style={{
-                        width: '8.625rem',
+                        width: '9.655rem',
                         height: '5.115rem',
                         flex: '1', // 让地图容器占据剩余空间
                     }}

@@ -206,3 +206,11 @@ export const DataBox = styled.div`
     }
   }
 `;
+
+export const BorderRadiusBox1 = styled.div`
+
+  border-radius: 5px;
+  border: 1px solid #343f4b;
+  background-color: rgba(19, 25, 47, 0.8);
+
+`;

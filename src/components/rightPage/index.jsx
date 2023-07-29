@@ -25,6 +25,7 @@ import {
     RightCenterBox,
     RightBottomBox,
 } from './style';
+import {BorderRadiusBox1} from "../centerPage/style";
 
 class index extends PureComponent {
     constructor(props) {
@@ -43,6 +44,7 @@ class index extends PureComponent {
         const showLeftPage = true;
         return (
             <RightPage>
+                <BorderRadiusBox1>
                 {roadParkingData && (
                     <RightTopBox>
                         <div className='right-top'>
@@ -55,14 +57,17 @@ class index extends PureComponent {
                         </div>
                     </RightTopBox>
                 )}
+                    </BorderRadiusBox1>
 
                 {personnelAndEquipmentStatusData && (
                     <RightCenterBox>
+                        <BorderRadiusBox1>
                         <ModuleTitle>
                             <i className='iconfont'>&#xe7fd;</i>
                             <span>人员和设备情况</span>
                         </ModuleTitle>
                         <PersonnelAndEquipmentStatus statusData={personnelAndEquipmentStatusData}/>
+                            </BorderRadiusBox1>
                     </RightCenterBox>
                 )}
                 <RightBottomBox>

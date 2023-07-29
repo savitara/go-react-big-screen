@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 export const RightPage = styled.div`
-  width: 6.25rem;
+  //width: 6.25rem;
   height: auto;
   padding: 0px 0.2rem;
+  width: 5.25rem;
+
 `;
 
 export const RightTopBox = styled.div`
