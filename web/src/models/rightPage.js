@@ -1,4 +1,4 @@
-import { getRightPageData } from '../services/index';
+import { getRightPageData } from '../services';
 export default {
   // 命名空间 (必填)
   namespace: 'rightPage',
