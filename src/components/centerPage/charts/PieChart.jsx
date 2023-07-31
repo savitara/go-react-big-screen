@@ -66,24 +66,26 @@ class PieChart extends PureComponent {
       // width: '4.375rem', // 添加宽度以控制图表容器的大小
       // height: '4.375rem',
       width: '3.65rem', // 添加宽度以控制图表容器的大小
-      height: '2.95rem',
+      // height: '2.95rem',
+      height: '1.55rem',
+
       position: 'relative',
       overflow: 'hidden',
     };
     const chartStyle = {
       position: 'absolute',
-      top: '-1rem',
+      top: '-0.5rem',
       left: 0,
       right: 0,
       bottom: 0,
     };
     return (
 
-        <div style={chartContainerStyle}>
-          <div style={chartStyle}>
-            <Chart renderer={renderer} option={option} />
-          </div>
+      <div style={chartContainerStyle}>
+        <div style={chartStyle}>
+          <Chart renderer={renderer} option={option} />
         </div>
+      </div>
 
     );
   }
