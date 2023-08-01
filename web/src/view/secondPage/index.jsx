@@ -8,31 +8,35 @@ import TopPage from '../../components/topPage';
 import LeftPage from '../../components/leftPage';
 import CenterPage from '../../components/centerPage';
 import RightPage from '../../components/rightPage';
-import {Link} from "react-router-dom";
+import {push} from "connected-react-router";
 
-class SecondPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
+
+
+function SecondPage({ dispatch }) {
+    // 添加跳转到HomePage的函数
+    const goToHomePage = () => {
+        dispatch(push('/'));
+    };
+
+
     return (
-      <IndexPageStyle>
-        {/* 右上角日期 */}
-        <TopPage />
-        <IndexPageContent>
-          {/* 左侧内容 */}
-          {/*<LeftPage />*/}
-          {/* 中间内容 */}
-          {/*<CenterPage className='center-page' />*/}
-          {/*/!* 右侧内容 *!/*/}
-          <RightPage />
-            <Link to="/">前往首页页面</Link>
+        <IndexPageStyle>
+            {/* 右上角日期 */}
+            <TopPage />
+            <IndexPageContent>
+                {/* 左侧内容 */}
+                {/*<LeftPage />*/}
+                {/* 中间内容 */}
+                {/*<CenterPage className='center-page' />*/}
+                {/*/!* 右侧内容 *!/*/}
+                <RightPage />
 
-        </IndexPageContent>
-      </IndexPageStyle>
+                {/* 添加跳转按钮 */}
+                <button onClick={goToHomePage}>跳转到HomePage</button>
+            </IndexPageContent>
+
+        </IndexPageStyle>
     );
-  }
 }
 
 export default connect()(SecondPage);

@@ -1,10 +1,9 @@
 import React, {Fragment} from 'react';
 import {Router, Route, Switch} from 'dva/router';
-// import IndexPage from './IndexPage';
 import {Iconstyle} from '../assets/icon/iconfont';
 import {Globalstyle} from '../style/global.js';
-// import SecondPage from "../view/secondPage";
 import HomePage from "../view/homePage";
+import SecondPage from "../view/secondPage";
 
 function RouterConfig({history}) {
     const route = () => {
@@ -17,7 +16,7 @@ function RouterConfig({history}) {
                 {/* 路由管理 */}
                 <Switch>
                     <Route path='/' exact component={HomePage}/>
-                    {/*<Route path='/second' exact component={SecondPage}/>*/}
+                    <Route path='/second' exact component={SecondPage}/>
 
                 </Switch>
             </Fragment>
