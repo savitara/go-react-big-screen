@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import pageBg from '../assets/pageBg.png';
+import pageBg from '../../assets/pageBg.png';
 
 export const IndexPageStyle = styled.div`
   position: relative;

@@ -13,7 +13,7 @@ app.model(require('./models/centerPage').default);
 app.model(require('./models/rightPage').default);
 
 // 4. Router
-app.router(require('./router').default);
+app.router(require('./routers/router').default);
 
 // 5. Start
 app.start('#root');
