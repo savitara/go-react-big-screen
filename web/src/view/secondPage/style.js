@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import pageBg from '../../assets/pageBg.png';
 
-export const IndexPageStyle = styled.div`
+export const PageStyle = styled.div`
   position: relative;
   overflow: hidden;
   margin: 0px;
@@ -9,7 +9,7 @@ export const IndexPageStyle = styled.div`
   background: url(${pageBg}) center center no-repeat;
   background-size: cover;
 `;
-export const IndexPageContent = styled.div`
+export const PageContent = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;

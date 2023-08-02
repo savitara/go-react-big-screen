@@ -1,4 +1,5 @@
 import { getLeftPageData } from '../services';
+// 注意要在index.js 添加 app.model(require('./models/leftPage').default);
 export default {
   // 命名空间 (必填)
   namespace: 'leftPage',
@@ -11,7 +12,7 @@ export default {
     setup({ dispatch, history }) {
       return history.listen((location, action) => {
         // 参数可以直接简写成{pathname}
-        if (location.pathname === '/' || location.pathname === '/second') {
+        if (location.pathname === '/v1'  ){
           dispatch({ type: 'getLeftPageData' });
         }
       });

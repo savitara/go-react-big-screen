@@ -4,6 +4,7 @@ import {Iconstyle} from '../assets/icon/iconfont';
 import {Globalstyle} from '../style/global.js';
 import HomePage from "../view/homePage";
 import SecondPage from "../view/secondPage";
+import V1 from "../view/v1";
 
 function RouterConfig({history}) {
     const route = () => {
@@ -16,6 +17,7 @@ function RouterConfig({history}) {
                 {/* 路由管理 */}
                 <Switch>
                     <Route path='/' exact component={HomePage}/>
+                    <Route path='/v1' exact component={V1}/>
                     <Route path='/second' exact component={SecondPage}/>
 
                 </Switch>

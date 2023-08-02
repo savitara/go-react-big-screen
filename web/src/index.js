@@ -11,6 +11,8 @@ const app = dva();
 app.model(require('./models/leftPage').default);
 app.model(require('./models/centerPage').default);
 app.model(require('./models/rightPage').default);
+app.model(require('./models/homePage').default);
+app.model(require('./models/secondPage').default);
 
 // 4. Router
 app.router(require('./routers/router').default);

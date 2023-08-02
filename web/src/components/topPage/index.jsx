@@ -13,7 +13,7 @@ class index extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      title: '大数据可视化平台',
+      // title: '大数据可视化平台',
       timeStr: '',
       weekday: [
         '星期天',
@@ -46,8 +46,8 @@ class index extends PureComponent {
   }
 
   render() {
-    const { title } = this.state;
-    const { roofDataList } = this.props;
+    // const { title } = this.state;
+    const { roofDataList ,title} = this.props;
     return (
       <Fragment>
         <TopBox>

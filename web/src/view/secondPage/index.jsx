@@ -3,11 +3,11 @@
 
 import React, { Component } from 'react';
 import { connect } from 'dva';
-import { IndexPageStyle, IndexPageContent } from './style';
-import TopPage from '../../components/topPage';
-import LeftPage from '../../components/leftPage';
-import CenterPage from '../../components/centerPage';
-import RightPage from '../../components/rightPage';
+import { PageStyle, PageContent } from './style';
+import TopPage from '../../components/secondPage/topPage';
+import LeftPage from '../../components/secondPage/leftPage';
+import CenterPage from '../../components/secondPage/centerPage';
+import RightPage from '../../components/secondPage/rightPage';
 import {push} from "connected-react-router";
 
 
@@ -20,22 +20,22 @@ function SecondPage({ dispatch }) {
 
 
     return (
-        <IndexPageStyle>
+        <PageStyle>
             {/* 右上角日期 */}
-            <TopPage />
-            <IndexPageContent>
+            <TopPage title={'数据大屏'}/>
+            <PageContent>
                 {/* 左侧内容 */}
                 {/*<LeftPage />*/}
                 {/* 中间内容 */}
-                {/*<CenterPage className='center-page' />*/}
+                <CenterPage className='center-page' />
                 {/*/!* 右侧内容 *!/*/}
-                <RightPage />
+                {/*<RightPage />*/}
 
                 {/* 添加跳转按钮 */}
-                <button onClick={goToHomePage}>跳转到HomePage</button>
-            </IndexPageContent>
+                <text onClick={goToHomePage}>跳转到HomePage</text>
+            </PageContent>
 
-        </IndexPageStyle>
+        </PageStyle>
     );
 }
 
