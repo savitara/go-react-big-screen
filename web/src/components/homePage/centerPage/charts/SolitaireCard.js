@@ -64,9 +64,9 @@ class SolitaireCard extends PureComponent {
                         <Space key={index} size={16}>
                             {/* 遍历分组中的元素，并创建div */}
                             {group.map((item, idx) => (
-                                <div key={idx}>
+                                <div key={idx} >
                                     {/* 标题 */}
-                                    <h3>{item.title}</h3>
+                                    <h3 className={"title"}>{item.title}</h3>
                                     {/* 描述 */}
                                     <p>{item.content}</p>
                                 </div>

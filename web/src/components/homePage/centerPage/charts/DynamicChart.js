@@ -2,6 +2,7 @@ import React, {PureComponent} from "react";
 import {Space, Table, Tag} from 'antd';
 import {DataTableDiv, SolitaireChartDiv} from "../style";
 import PieChart from "./PieChart";
+import EchartComponent from "./EchartComponent";
 
 class DynamicChart extends PureComponent {
     render() {
@@ -31,14 +32,18 @@ class DynamicChart extends PureComponent {
             ]
         }
         const {dynamicChartData} = this.props;
-
+        const chartType = dynamicChartData.type
+        const chartOption = dynamicChartData.chartOption
+        const chartTitle = dynamicChartData.title
         return (
             <>
                 <SolitaireChartDiv>
                     <div>
-                        <PieChart id="chart2"
-                                  data={parkingHabitsData.data}
-                                  centerText={parkingHabitsData.title}/>
+                        {/*<PieChart id="chart2"*/}
+                        {/*          data={parkingHabitsData.data}*/}
+                        {/*          centerText={parkingHabitsData.title}/>*/}
+
+                        <EchartComponent echartData={chartOption}></EchartComponent>
                     </div>
                 </SolitaireChartDiv>
 

@@ -314,6 +314,11 @@ export const SolitaireCardDiv = styled.div`
   //margin-top: 0.265rem;
   width: 5.5rem; /* Scale down width to 80% */
   height: 2.5rem;
+  color: aliceblue;
+  .title {
+    color: aliceblue;
+
+  }
 
 `;
 

@@ -14,6 +14,8 @@ class BoxData extends PureComponent {
     render() {
         const {title, dataTableData, solitaireCardData, solitaireChartData,dynamicChartData} = this.props;
         console.log(dataTableData)
+        let solitaireChartDataList=solitaireChartData.list
+        let dynamicChartDataList=dynamicChartData.list
         return (
 
             <DataCardDiv>
@@ -48,7 +50,7 @@ class BoxData extends PureComponent {
 
 
                                 {/*图表*/}
-                                    {solitaireChartData && solitaireChartData.map((item, index) => (
+                                    {solitaireChartDataList && solitaireChartDataList.map((item, index) => (
                                         <BorderRadiusBox2>
                                         <SolitaireChart solitaireChartData={item} key={index}>
                                         </SolitaireChart>
@@ -63,7 +65,7 @@ class BoxData extends PureComponent {
 
                     <div style={{display: 'flex'}}>
 
-                        {dynamicChartData && dynamicChartData.map((item, index) => (
+                        {dynamicChartDataList && dynamicChartDataList.map((item, index) => (
                             <BorderRadiusBox2>
                                 <DynamicChart dynamicChartData={item} key={index}></DynamicChart>
 

@@ -63,10 +63,50 @@
             }
           ]
         },
-        "solitaireChartData": [
-        ],
-        "DynamicChartData": [
-        ]
+        "solitaireChartData": {
+          "list": [
+            {
+              "title": "充电桩数量",
+              "type": "bar",
+              "chartOption": {
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "pie",
+              "chartOption": {
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "line",
+              "chartOption": {
+              }
+            }
+          ]
+        },
+        "dynamicChartData": {
+          "list": [
+            {
+              "title": "充电桩数量",
+              "type": "bar",
+              "chartOption": {
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "pie",
+              "chartOption": {
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "line",
+              "chartOption": {
+              }
+            }
+          ]
+        }
       },
       {
         "title": "路边停车场",
@@ -434,7 +474,6 @@
                 ]
               }
             },
-
             {
               "title": "停车场总数",
               "content": 1234
@@ -465,10 +504,50 @@
             }
           ]
         },
-        "solitaireChartData": [
-        ],
-        "DynamicChartData": [
-        ]
+        "solitaireChartData": {
+          "list": [
+            {
+              "title": "充电桩数量",
+              "type": "bar",
+              "chartOption": {
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "pie",
+              "chartOption": {
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "line",
+              "chartOption": {
+              }
+            }
+          ]
+        },
+        "dynamicChartData": {
+          "list": [
+            {
+              "title": "充电桩数量",
+              "type": "bar",
+              "chartOption": {
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "pie",
+              "chartOption": {
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "line",
+              "chartOption": {
+              }
+            }
+          ]
+        }
       },
       {
         "title": "立体车库",
@@ -550,10 +629,204 @@
             }
           ]
         },
-        "solitaireChartData": [
-        ],
-        "DynamicChartData": [
-        ]
+        "solitaireChartData": {
+          "list": [
+            {
+              "title": "充电桩数量",
+              "type": "pie",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "width": "1.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "series": [
+                    {
+                      "type": "pie",
+                      "radius": [
+                        "20%",
+                        "30%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#fff"
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": "20",
+                          "fontWeight": "bold",
+                          "color": "#fff"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 335,
+                          "name": "1到60分钟"
+                        },
+                        {
+                          "value": 234,
+                          "name": "1到12小时"
+                        },
+                        {
+                          "value": 310,
+                          "name": "12到24小时"
+                        },
+                        {
+                          "value": 160,
+                          "name": "24小时以上"
+                        },
+                        {
+                          "value": 100,
+                          "name": "48小时以上"
+                        }
+                      ]
+                    }
+                  ],
+                  "graphic": [
+                    {
+                      "type": "text",
+                      "left": "center",
+                      "top": "center",
+                      "style": {
+                        "text": "停车时长分布",
+                        "textAlign": "center",
+                        "fill": "#fff",
+                        "fontSize": 20,
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "line",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "width": "1.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "series": [
+                    {
+                      "type": "pie",
+                      "radius": [
+                        "20%",
+                        "30%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#fff"
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": "20",
+                          "fontWeight": "bold",
+                          "color": "#fff"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 335,
+                          "name": "1到60分钟"
+                        },
+                        {
+                          "value": 234,
+                          "name": "1到12小时"
+                        },
+                        {
+                          "value": 310,
+                          "name": "12到24小时"
+                        },
+                        {
+                          "value": 160,
+                          "name": "24小时以上"
+                        },
+                        {
+                          "value": 100,
+                          "name": "48小时以上"
+                        }
+                      ]
+                    }
+                  ],
+                  "graphic": [
+                    {
+                      "type": "text",
+                      "left": "center",
+                      "top": "center",
+                      "style": {
+                        "text": "停车时长分布",
+                        "textAlign": "center",
+                        "fill": "#fff",
+                        "fontSize": 20,
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "dynamicChartData": {
+          "list": [
+            {
+              "title": "充电桩数量",
+              "type": "bar",
+              "chartOption": {
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "pie",
+              "chartOption": {
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "line",
+              "chartOption": {
+              }
+            }
+          ]
+        }
       },
       {
         "title": "充电桩",
@@ -624,6 +897,458 @@
             {
               "title": "充电桩",
               "content": 1234
+            }
+          ]
+        },
+        "solitaireChartData": {
+          "list": [
+            {
+              "id": "1",
+              "title": "充电桩数量",
+              "type": "bar",
+              "chartOption": {
+              }
+            },
+            {
+              "id": "2",
+              "title": "充电桩数量",
+              "type": "pie",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "height": "4.375rem",
+                  "width": "3.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "series": [
+                    {
+                      "type": "pie",
+                      "radius": [
+                        "20%",
+                        "30%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#fff"
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": "20",
+                          "fontWeight": "bold",
+                          "color": "#fff"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 335,
+                          "name": "1到60分钟"
+                        },
+                        {
+                          "value": 234,
+                          "name": "1到12小时"
+                        },
+                        {
+                          "value": 310,
+                          "name": "12到24小时"
+                        },
+                        {
+                          "value": 160,
+                          "name": "24小时以上"
+                        },
+                        {
+                          "value": 100,
+                          "name": "48小时以上"
+                        }
+                      ]
+                    }
+                  ],
+                  "graphic": [
+                    {
+                      "type": "text",
+                      "left": "center",
+                      "top": "center",
+                      "style": {
+                        "text": "停车时长分布",
+                        "textAlign": "center",
+                        "fill": "#fff",
+                        "fontSize": 20,
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3",
+              "title": "充电桩数量",
+              "type": "line",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "height": "4.375rem",
+                  "width": "3.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "series": [
+                    {
+                      "type": "pie",
+                      "radius": [
+                        "20%",
+                        "30%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#fff"
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": "20",
+                          "fontWeight": "bold",
+                          "color": "#fff"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 335,
+                          "name": "1到60分钟"
+                        },
+                        {
+                          "value": 234,
+                          "name": "1到12小时"
+                        },
+                        {
+                          "value": 310,
+                          "name": "12到24小时"
+                        },
+                        {
+                          "value": 160,
+                          "name": "24小时以上"
+                        },
+                        {
+                          "value": 100,
+                          "name": "48小时以上"
+                        }
+                      ]
+                    }
+                  ],
+                  "graphic": [
+                    {
+                      "type": "text",
+                      "left": "center",
+                      "top": "center",
+                      "style": {
+                        "text": "停车时长分布",
+                        "textAlign": "center",
+                        "fill": "#fff",
+                        "fontSize": 20,
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "dynamicChartData": {
+          "list": [
+            {
+              "title": "充电桩数量",
+              "type": "bar",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "height": "4.375rem",
+                  "width": "3.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "series": [
+                    {
+                      "type": "pie",
+                      "radius": [
+                        "20%",
+                        "30%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#fff"
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": "20",
+                          "fontWeight": "bold",
+                          "color": "#fff"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 335,
+                          "name": "1到60分钟"
+                        },
+                        {
+                          "value": 234,
+                          "name": "1到12小时"
+                        },
+                        {
+                          "value": 310,
+                          "name": "12到24小时"
+                        },
+                        {
+                          "value": 160,
+                          "name": "24小时以上"
+                        },
+                        {
+                          "value": 100,
+                          "name": "48小时以上"
+                        }
+                      ]
+                    }
+                  ],
+                  "graphic": [
+                    {
+                      "type": "text",
+                      "left": "center",
+                      "top": "center",
+                      "style": {
+                        "text": "停车时长分布",
+                        "textAlign": "center",
+                        "fill": "#fff",
+                        "fontSize": 20,
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "pie",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "height": "4.375rem",
+                  "width": "3.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "series": [
+                    {
+                      "type": "pie",
+                      "radius": [
+                        "20%",
+                        "30%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#fff"
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": "20",
+                          "fontWeight": "bold",
+                          "color": "#fff"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 335,
+                          "name": "1到60分钟"
+                        },
+                        {
+                          "value": 234,
+                          "name": "1到12小时"
+                        },
+                        {
+                          "value": 310,
+                          "name": "12到24小时"
+                        },
+                        {
+                          "value": 160,
+                          "name": "24小时以上"
+                        },
+                        {
+                          "value": 100,
+                          "name": "48小时以上"
+                        }
+                      ]
+                    }
+                  ],
+                  "graphic": [
+                    {
+                      "type": "text",
+                      "left": "center",
+                      "top": "center",
+                      "style": {
+                        "text": "停车时长分布",
+                        "textAlign": "center",
+                        "fill": "#fff",
+                        "fontSize": 20,
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "title": "充电桩数量",
+              "type": "line",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "height": "4.375rem",
+                  "width": "3.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "series": [
+                    {
+                      "type": "pie",
+                      "radius": [
+                        "20%",
+                        "30%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#fff"
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": "20",
+                          "fontWeight": "bold",
+                          "color": "#fff"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 335,
+                          "name": "1到60分钟"
+                        },
+                        {
+                          "value": 234,
+                          "name": "1到12小时"
+                        },
+                        {
+                          "value": 310,
+                          "name": "12到24小时"
+                        },
+                        {
+                          "value": 160,
+                          "name": "24小时以上"
+                        },
+                        {
+                          "value": 100,
+                          "name": "48小时以上"
+                        }
+                      ]
+                    }
+                  ],
+                  "graphic": [
+                    {
+                      "type": "text",
+                      "left": "center",
+                      "top": "center",
+                      "style": {
+                        "text": "停车时长分布",
+                        "textAlign": "center",
+                        "fill": "#fff",
+                        "fontSize": 20,
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ]
+                }
+              }
             }
           ]
         }
