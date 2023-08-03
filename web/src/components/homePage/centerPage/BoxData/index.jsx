@@ -12,58 +12,68 @@ class BoxData extends PureComponent {
     }
 
     render() {
-        const {title, dataTableData, solitaireCardData, solitaireChartData,dynamicChartData} = this.props;
+        const {title, dataTableData, solitaireCardData, solitaireChartData, dynamicChartData} = this.props;
         console.log(dataTableData)
-        let solitaireChartDataList=solitaireChartData.list
-        let dynamicChartDataList=dynamicChartData.list
+        let solitaireChartDataList = solitaireChartData.list
+        let dynamicChartDataList = dynamicChartData.list
         return (
 
             <DataCardDiv>
+                {/*顶部标题*/}
                 <div className={'container'}>
                     <ModuleTitle>
-                        {/*<i className='iconfont'>&#xe88e;</i>*/}
                         <span>{title}</span>
                     </ModuleTitle>
                 </div>
 
                 <BorderRadiusBox1>
+                    {/*表格*/}
+                    <div style={{
+                        // margin: '0.2rem',
 
-                    {dataTableData &&(
-                        <BorderRadiusBox2>
-                            <DataTable tableData={dataTableData}></DataTable>
+                    }}>
+                        {dataTableData && (
+                            <BorderRadiusBox2>
+                                <DataTable tableData={dataTableData}></DataTable>
 
-                        </BorderRadiusBox2>
-                    )}
+                            </BorderRadiusBox2>
+                        )}
+                    </div>
 
+                    {/*图*/}
+                    <div style={{
+                        display: 'flex', maxWidth: '930px',
+                        margin: '0.2rem 0',
 
-                    <div style={{display: 'flex'}}>
+                        // margin: '0.2rem',
+
+                    }}>
                         {/*可能需要动态处理*/}
                         <BorderRadiusBox2>
                             <div style={{display: 'flex'}}>
                                 {/*卡片*/}
-                                    {solitaireCardData && (
-                                        <BorderRadiusBox2>
+                                {solitaireCardData && (
+                                    <BorderRadiusBox2 >
                                         <SolitaireCard solitaireCardData={solitaireCardData} >
                                         </SolitaireCard>
-                                        </BorderRadiusBox2>
-                                    )}
-
+                                    </BorderRadiusBox2>
+                                )}
 
                                 {/*图表*/}
-                                    {solitaireChartDataList && solitaireChartDataList.map((item, index) => (
-                                        <BorderRadiusBox2>
+                                {solitaireChartDataList && solitaireChartDataList.map((item, index) => (
+                                    <BorderRadiusBox2 >
                                         <SolitaireChart solitaireChartData={item} key={index}>
                                         </SolitaireChart>
-                                        </BorderRadiusBox2>
+                                    </BorderRadiusBox2>
 
-                                    ))}
+                                ))}
                             </div>
 
                         </BorderRadiusBox2>
                     </div>
 
 
-                    <div style={{display: 'flex'}}>
+                    <div style={{display: 'flex', maxWidth: '930px'}}>
 
                         {dynamicChartDataList && dynamicChartDataList.map((item, index) => (
                             <BorderRadiusBox2>

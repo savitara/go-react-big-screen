@@ -3,6 +3,9 @@ import { ModuleTitle, LeftDiv, DataBox, RightDiv, BorderRadiusBox1 } from '../st
 import { BorderBox12, BorderBox13 } from '@jiaminghi/data-view-react';
 import PieChart from "../charts/PieChart";
 import TrafficSituation from "../charts/TrafficSituation";
+import {BorderRadiusBox2} from "../../../homePage/centerPage/style";
+import SolitaireCard from "../../../homePage/centerPage/charts/SolitaireCard";
+import EchartComponent from "../../../homePage/centerPage/charts/EchartComponent";
 
 class LeanRight extends PureComponent {
     constructor(props) {
@@ -11,66 +14,33 @@ class LeanRight extends PureComponent {
     }
 
     render() {
-        const { parkingHabitsData, parkingRecord } = this.props;
+        const {  rightData } = this.props;
 
         return (
 
             <RightDiv>
-                {parkingHabitsData && (
-                    <div>
 
-                        
-                        {/* <BorderBox12 className='top-borderBox12'>
-                            <div style={{height:'3rem'}}>
+                <div >
 
-                                <ModuleTitle>
-                                    <i className='iconfont'>&#xe78f;</i>
-                                    <span>停车记录(每月)</span>
-                                </ModuleTitle>
-                                <TrafficSituation trafficSitua={parkingRecord}></TrafficSituation>
-                                <div className='top'>
-                                    <ModuleTitle>
-                                        <i className='iconfont'>&#xe78f;</i>
-                                        <span>停车习惯</span>
-                                    </ModuleTitle>
+                    <ModuleTitle>
+                        <i className='iconfont'>&#xe78f;</i>
+                        <span>{rightData.title}</span>
+                    </ModuleTitle>
+                    {/*卡片*/}
+                    {rightData.card && (
+                        <BorderRadiusBox2>
+                            <SolitaireCard solitaireCardData={rightData.card}>
+                            </SolitaireCard>
+                        </BorderRadiusBox2>
+                    )}
 
-                                    <div style={{margin: '0  0 0 20px'}}>
-                                        <PieChart id="chart2"
-                                                  data={parkingHabitsData.data}
-                                                  centerText={parkingHabitsData.title}/>
-                                    </div>
-                                </div>
-                            </div>
+                    {/* 图表 */}
+                    {rightData.chart && (
+                        <EchartComponent
+                            echartData={rightData.chart.chartOption}></EchartComponent>
+                    )}
 
-
-                        </BorderBox12> */}
-                        <BorderRadiusBox1>
-                            <div>
-
-                                <ModuleTitle>
-                                    <i className='iconfont'>&#xe78f;</i>
-                                    <span>停车记录(每月)</span>
-                                </ModuleTitle>
-                                <TrafficSituation trafficSitua={parkingRecord}></TrafficSituation>
-                               
-                            </div>
-                            <div className='top'>
-                                    <ModuleTitle>
-                                        <i className='iconfont'>&#xe78f;</i>
-                                        <span>停车习惯</span>
-                                    </ModuleTitle>
-                                    <div style={{ margin: '10px 0 0 20px' ,top:'20px'}}>
-                                        <PieChart id="chart2"
-                                            data={parkingHabitsData.data}
-                                            centerText={parkingHabitsData.title} />
-                                    </div>
-                              
-                                </div>
-
-                        </BorderRadiusBox1>
-                    </div>
-
-                )}
+                </div>
             </RightDiv>
 
         );

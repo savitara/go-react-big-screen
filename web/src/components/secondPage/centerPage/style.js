@@ -34,7 +34,7 @@ export const CenterPage = styled.div`
 //     }
 //   }
 // `;
-export const CenterBottomWidth = styled.div`
+export const CenterBottom = styled.div`
   display: flex;
   margin-bottom: 3.5rem;
   margin-top: 0.095rem;

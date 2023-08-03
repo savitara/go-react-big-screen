@@ -2,6 +2,9 @@ import React, {PureComponent} from 'react';
 import {ModuleTitle, LeftDiv, DataBox, BorderRadiusBox1} from '../style';
 import {BorderBox12, BorderBox13} from '@jiaminghi/data-view-react';
 import TrafficSituation from '../charts/TrafficSituation';
+import {BorderRadiusBox2} from "../../../homePage/centerPage/style";
+import SolitaireCard from "../../../homePage/centerPage/charts/SolitaireCard";
+import EchartComponent from "../../../homePage/centerPage/charts/EchartComponent";
 
 class LeanLeft extends PureComponent {
     constructor(props) {
@@ -10,42 +13,33 @@ class LeanLeft extends PureComponent {
     }
 
     render() {
-        const {roofDataList} = this.props;
+        const {leftData} = this.props;
 
         return (
 
             <LeftDiv>
 
-                {/*<BorderBox12 className='left-top-borderBox12'  style={{ marginLeft: 0 }}>*/}
-                {/*    <div className='left-top'>*/}
-                {/*        <ModuleTitle>*/}
-                {/*            <i className='iconfont'>&#xe78f;</i>*/}
-                {/*            <span>路段实时视频</span>*/}
-                {/*        </ModuleTitle>*/}
-                {/*        <DataBox>*/}
-                {/*            /!*<div className='detail-list'>*!/*/}
-                {/*            /!*    {roofDataList && roofDataList.map((item, index) => (*!/*/}
-                {/*            /!*        <div className='detail-list-item' key={index}>*!/*/}
-                {/*            /!*            <img*!/*/}
-                {/*            /!*                src={require(`../../../assets/images/center-details-data${index + 1}.png`)}*!/*/}
-                {/*            /!*                alt={item.title}*!/*/}
-                {/*            /!*            />*!/*/}
-                {/*            /!*        </div>*!/*/}
-                {/*            /!*    ))}*!/*/}
-                {/*            /!*</div>*!/*/}
-                {/*        </DataBox>*/}
+                <div >
 
-                {/*    </div>*/}
-                {/*</BorderBox12>*/}
-                <BorderRadiusBox1>
-                    <div style={{width:'5rem'}}>
-                        <ModuleTitle>
-                            <i className='iconfont'>&#xe78f;</i>
-                            <span>路段实时视频</span>
-                        </ModuleTitle>
-                    </div>
+                    <ModuleTitle>
+                        <i className='iconfont'>&#xe78f;</i>
+                        <span>{leftData.title}</span>
+                    </ModuleTitle>
+                    {/*卡片*/}
+                    {leftData.card && (
+                        <BorderRadiusBox2>
+                            <SolitaireCard solitaireCardData={leftData.card}>
+                            </SolitaireCard>
+                        </BorderRadiusBox2>
+                    )}
 
-                </BorderRadiusBox1>
+                    {/* 图表 */}
+                    {leftData.chart && (
+                        <EchartComponent
+                            echartData={leftData.chart.chartOption}></EchartComponent>
+                    )}
+
+                </div>
             </LeftDiv>
 
 

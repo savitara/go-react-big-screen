@@ -25,15 +25,33 @@
           "data": [
             {
               "key": "1",
-              "city": "广州",
+              "city": "深圳",
               "parkingNumber": 32,
               "totalParkingSpaces": 130
             },
             {
               "key": "2",
-              "city": "深圳",
-              "parkingNumber": 32,
-              "totalParkingSpaces": 130
+              "city": "柳州",
+              "parkingNumber": 28,
+              "totalParkingSpaces": 110
+            },
+            {
+              "key": "3",
+              "city": "佛山",
+              "parkingNumber": 25,
+              "totalParkingSpaces": 100
+            },
+            {
+              "key": "4",
+              "city": "东莞",
+              "parkingNumber": 30,
+              "totalParkingSpaces": 120
+            },
+            {
+              "key": "5",
+              "city": "南宁",
+              "parkingNumber": 29,
+              "totalParkingSpaces": 115
             }
           ],
           "title": "全国停车场分布"
@@ -65,24 +83,7 @@
         },
         "solitaireChartData": {
           "list": [
-            {
-              "title": "充电桩数量",
-              "type": "bar",
-              "chartOption": {
-              }
-            },
-            {
-              "title": "充电桩数量",
-              "type": "pie",
-              "chartOption": {
-              }
-            },
-            {
-              "title": "充电桩数量",
-              "type": "line",
-              "chartOption": {
-              }
-            }
+
           ]
         },
         "dynamicChartData": {
@@ -136,19 +137,41 @@
           "data": [
             {
               "key": "1",
-              "city": "广州",
+              "city": "深圳",
               "ParkingAreaNumber": 20,
               "ParkingSectionsNumber": 1132,
               "totalParkingSpaces": 1130
             },
             {
               "key": "2",
-              "city": "深圳",
+              "city": "柳州",
               "ParkingAreaNumber": 24,
               "ParkingSectionsNumber": 132,
               "totalParkingSpaces": 1160
+            },
+            {
+              "key": "3",
+              "city": "佛山",
+              "ParkingAreaNumber": 18,
+              "ParkingSectionsNumber": 982,
+              "totalParkingSpaces": 1000
+            },
+            {
+              "key": "4",
+              "city": "东莞",
+              "ParkingAreaNumber": 22,
+              "ParkingSectionsNumber": 1050,
+              "totalParkingSpaces": 1080
+            },
+            {
+              "key": "5",
+              "city": "南宁",
+              "ParkingAreaNumber": 19,
+              "ParkingSectionsNumber": 1036,
+              "totalParkingSpaces": 1050
             }
           ],
+
           "title": "全国路边分布"
         },
         "solitaireCardData": {
@@ -157,322 +180,6 @@
             {
               "title": "停车场总数",
               "content": 1234
-            },
-            {
-              "data": {
-                "topData": {},
-                "boxDataList": [
-                  {
-                    "title": "封闭停车场",
-                    "dataTableData": {
-                      "columns": [
-                        {
-                          "title": "城市",
-                          "dataIndex": "city",
-                          "key": "city"
-                        },
-                        {
-                          "title": "停车场数量",
-                          "dataIndex": "parkingNumber",
-                          "key": "parkingNumber"
-                        },
-                        {
-                          "title": "总车位数",
-                          "dataIndex": "totalParkingSpaces",
-                          "key": "totalParkingSpaces"
-                        }
-                      ],
-                      "data": [
-                        {
-                          "key": "1",
-                          "city": "广州",
-                          "parkingNumber": 32,
-                          "totalParkingSpaces": 130
-                        },
-                        {
-                          "key": "2",
-                          "city": "深圳",
-                          "parkingNumber": 32,
-                          "totalParkingSpaces": 130
-                        }
-                      ],
-                      "title": "全国停车场分布"
-                    },
-                    "solitaireCardData": {
-                      "limit": 4,
-                      "list": [
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "路场",
-                          "content": 1234
-                        },
-                        {
-                          "title": "立库",
-                          "content": 1234
-                        },
-                        {
-                          "title": "充",
-                          "content": 1234
-                        }
-                      ]
-                    },
-                    "solitaireChartData": [
-                    ],
-                    "DynamicChartData": [
-                    ]
-                  },
-                  {
-                    "title": "路边停车场",
-                    "dataTableData": {
-                      "columns": [
-                        {
-                          "title": "城市",
-                          "dataIndex": "city",
-                          "key": "city"
-                        },
-                        {
-                          "title": "停车区域数量",
-                          "dataIndex": "ParkingAreaNumber",
-                          "key": "ParkingAreaNumber"
-                        },
-                        {
-                          "title": "停车路段总数",
-                          "dataIndex": "ParkingSectionsNumber",
-                          "key": "ParkingSectionsNumber"
-                        },
-                        {
-                          "title": "车位总数",
-                          "dataIndex": "totalParkingSpaces",
-                          "key": "totalParkingSpaces"
-                        }
-                      ],
-                      "data": [
-                        {
-                          "key": "1",
-                          "city": "广州",
-                          "ParkingAreaNumber": 20,
-                          "ParkingSectionsNumber": 1132,
-                          "totalParkingSpaces": 1130
-                        },
-                        {
-                          "key": "2",
-                          "city": "深圳",
-                          "ParkingAreaNumber": 24,
-                          "ParkingSectionsNumber": 132,
-                          "totalParkingSpaces": 1160
-                        }
-                      ],
-                      "title": "全国路边分布"
-                    },
-                    "solitaireCardData": {
-                      "limit": 4,
-                      "list": [
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "路边停车场",
-                          "content": 1234
-                        },
-                        {
-                          "title": "立体车库",
-                          "content": 1234
-                        },
-                        {
-                          "title": "充电桩",
-                          "content": 1234
-                        }
-                      ]
-                    },
-                    "solitaireChartData": [
-                    ],
-                    "DynamicChartData": [
-                    ]
-                  },
-                  {
-                    "title": "立体车库",
-                    "dataTableData": {
-                      "columns": [
-                        {
-                          "title": "城市",
-                          "dataIndex": "city",
-                          "key": "city"
-                        },
-                        {
-                          "title": "车库数量",
-                          "dataIndex": "carportCount",
-                          "key": "carportCount"
-                        },
-                        {
-                          "title": "轿车车位总数",
-                          "dataIndex": "sedanParkingTotal",
-                          "key": "sedanParkingTotal"
-                        },
-                        {
-                          "title": "SUV车位总数",
-                          "dataIndex": "suvParkingTotal",
-                          "key": "suvParkingTotal"
-                        }
-                      ],
-                      "data": [
-                        {
-                          "key": "1",
-                          "city": "广州",
-                          "carportCount": 632,
-                          "sedanParkingTotal": 32,
-                          "suvParkingTotal": 130
-                        },
-                        {
-                          "key": "2",
-                          "city": "深圳",
-                          "carportCount": 302,
-                          "sedanParkingTotal": 732,
-                          "suvParkingTotal": 1360
-                        }
-                      ],
-                      "title": "全国立体车库分布"
-                    },
-                    "solitaireCardData": {
-                      "limit": 4,
-                      "list": [
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "路边停车场",
-                          "content": 1234
-                        },
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "立体车库",
-                          "content": 1234
-                        },
-                        {
-                          "title": "充电桩",
-                          "content": 1234
-                        }
-                      ]
-                    },
-                    "solitaireChartData": [
-                    ],
-                    "DynamicChartData": [
-                    ]
-                  },
-                  {
-                    "title": "充电桩",
-                    "dataTableData": {
-                      "columns": [
-                        {
-                          "title": "城市",
-                          "dataIndex": "city",
-                          "key": "city"
-                        },
-                        {
-                          "title": "充电桩数量",
-                          "dataIndex": "chargingPileCount",
-                          "key": "chargingPileCount"
-                        },
-                        {
-                          "title": "新能源充电桩总数",
-                          "dataIndex": "newEnergyChargingPileTotal",
-                          "key": "newEnergyChargingPileTotal"
-                        },
-                        {
-                          "title": "电动车充电桩总数",
-                          "dataIndex": "electricVehicleChargingPileTotal",
-                          "key": "electricVehicleChargingPileTotal"
-                        }
-                      ],
-                      "data": [
-                        {
-                          "key": "1",
-                          "city": "广州",
-                          "chargingPileCount": 32,
-                          "newEnergyChargingPileTotal": 130,
-                          "electricVehicleChargingPileTotal": 130
-                        },
-                        {
-                          "key": "2",
-                          "city": "深圳",
-                          "chargingPileCount": 32,
-                          "newEnergyChargingPileTotal": 130,
-                          "electricVehicleChargingPileTotal": 130
-                        }
-                      ],
-                      "title": "全国充电桩分布"
-                    },
-                    "solitaireCardData": {
-                      "limit": 4,
-                      "list": [
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "停车场总数",
-                          "content": 1234
-                        },
-                        {
-                          "title": "路边停车场",
-                          "content": 1234
-                        },
-                        {
-                          "title": "立体车库",
-                          "content": 1234
-                        },
-                        {
-                          "title": "充电桩",
-                          "content": 1234
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }
             },
             {
               "title": "停车场总数",
@@ -507,9 +214,56 @@
         "solitaireChartData": {
           "list": [
             {
-              "title": "充电桩数量",
+              "title": "停车时长分布",
               "type": "bar",
               "chartOption": {
+                "chartContainerStyle": {
+                  "width": "3.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "xAxis": {
+                    "type": "category",
+                    "data": ["1到60分钟", "1到12小时", "12到24小时", "24小时以上", "48小时以上"],
+                    "axisTick": {
+                      "alignWithLabel": true
+                    }
+                  },
+                  "yAxis": {
+                    "type": "value"
+                  },
+                  "series": [
+                    {
+                      "type": "bar",
+                      "data": [335, 234, 310, 160, 100],
+                      "itemStyle": {
+                        "color": "#007bff"
+                      }
+                    }
+                  ],
+                  "graphic": [
+                    {
+                      "type": "text",
+                      "left": "center",
+                      "top": "center",
+                      "style": {
+                        "textAlign": "center",
+                        "fill": "#fff",
+                        "fontSize": 20,
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ]
+                }
               }
             },
             {
@@ -517,35 +271,13 @@
               "type": "pie",
               "chartOption": {
               }
-            },
-            {
-              "title": "充电桩数量",
-              "type": "line",
-              "chartOption": {
-              }
             }
+
           ]
         },
         "dynamicChartData": {
           "list": [
-            {
-              "title": "充电桩数量",
-              "type": "bar",
-              "chartOption": {
-              }
-            },
-            {
-              "title": "充电桩数量",
-              "type": "pie",
-              "chartOption": {
-              }
-            },
-            {
-              "title": "充电桩数量",
-              "type": "line",
-              "chartOption": {
-              }
-            }
+
           ]
         }
       },
@@ -577,19 +309,41 @@
           "data": [
             {
               "key": "1",
-              "city": "广州",
+              "city": "深圳",
               "carportCount": 632,
               "sedanParkingTotal": 32,
               "suvParkingTotal": 130
             },
             {
               "key": "2",
-              "city": "深圳",
+              "city": "柳州",
               "carportCount": 302,
               "sedanParkingTotal": 732,
               "suvParkingTotal": 1360
+            },
+            {
+              "key": "3",
+              "city": "佛山",
+              "carportCount": 418,
+              "sedanParkingTotal": 620,
+              "suvParkingTotal": 1000
+            },
+            {
+              "key": "4",
+              "city": "东莞",
+              "carportCount": 520,
+              "sedanParkingTotal": 800,
+              "suvParkingTotal": 1160
+            },
+            {
+              "key": "5",
+              "city": "南宁",
+              "carportCount": 380,
+              "sedanParkingTotal": 700,
+              "suvParkingTotal": 1050
             }
           ],
+
           "title": "全国立体车库分布"
         },
         "solitaireCardData": {
@@ -807,24 +561,7 @@
         },
         "dynamicChartData": {
           "list": [
-            {
-              "title": "充电桩数量",
-              "type": "bar",
-              "chartOption": {
-              }
-            },
-            {
-              "title": "充电桩数量",
-              "type": "pie",
-              "chartOption": {
-              }
-            },
-            {
-              "title": "充电桩数量",
-              "type": "line",
-              "chartOption": {
-              }
-            }
+
           ]
         }
       },
@@ -856,19 +593,41 @@
           "data": [
             {
               "key": "1",
-              "city": "广州",
-              "chargingPileCount": 32,
+              "city": "深圳",
+              "chargingPileCount": 260,
               "newEnergyChargingPileTotal": 130,
               "electricVehicleChargingPileTotal": 130
             },
             {
               "key": "2",
-              "city": "深圳",
-              "chargingPileCount": 32,
-              "newEnergyChargingPileTotal": 130,
-              "electricVehicleChargingPileTotal": 130
+              "city": "柳州",
+              "chargingPileCount": 220,
+              "newEnergyChargingPileTotal": 110,
+              "electricVehicleChargingPileTotal": 110
+            },
+            {
+              "key": "3",
+              "city": "佛山",
+              "chargingPileCount": 240,
+              "newEnergyChargingPileTotal": 120,
+              "electricVehicleChargingPileTotal": 120
+            },
+            {
+              "key": "4",
+              "city": "东莞",
+              "chargingPileCount": 250,
+              "newEnergyChargingPileTotal": 125,
+              "electricVehicleChargingPileTotal": 125
+            },
+            {
+              "key": "5",
+              "city": "南宁",
+              "chargingPileCount": 230,
+              "newEnergyChargingPileTotal": 115,
+              "electricVehicleChargingPileTotal": 115
             }
           ],
+
           "title": "全国充电桩分布"
         },
         "solitaireCardData": {
@@ -915,7 +674,6 @@
               "type": "pie",
               "chartOption": {
                 "chartContainerStyle": {
-                  "height": "4.375rem",
                   "width": "3.65rem",
                   "height": "1.55rem",
                   "position": "relative",
@@ -1091,97 +849,9 @@
           "list": [
             {
               "title": "充电桩数量",
-              "type": "bar",
-              "chartOption": {
-                "chartContainerStyle": {
-                  "height": "4.375rem",
-                  "width": "3.65rem",
-                  "height": "1.55rem",
-                  "position": "relative",
-                  "overflow": "hidden"
-                },
-                "chartStyle": {
-                  "position": "absolute",
-                  "top": "-0.5rem",
-                  "left": "0",
-                  "right": "0",
-                  "bottom": "0"
-                },
-                "option": {
-                  "series": [
-                    {
-                      "type": "pie",
-                      "radius": [
-                        "20%",
-                        "30%"
-                      ],
-                      "avoidLabelOverlap": false,
-                      "label": {
-                        "show": true,
-                        "position": "outside",
-                        "formatter": "{b}",
-                        "color": "#fff"
-                      },
-                      "emphasis": {
-                        "label": {
-                          "show": true,
-                          "fontSize": "20",
-                          "fontWeight": "bold",
-                          "color": "#fff"
-                        }
-                      },
-                      "labelLine": {
-                        "show": true,
-                        "length": 10,
-                        "length2": 20
-                      },
-                      "data": [
-                        {
-                          "value": 335,
-                          "name": "1到60分钟"
-                        },
-                        {
-                          "value": 234,
-                          "name": "1到12小时"
-                        },
-                        {
-                          "value": 310,
-                          "name": "12到24小时"
-                        },
-                        {
-                          "value": 160,
-                          "name": "24小时以上"
-                        },
-                        {
-                          "value": 100,
-                          "name": "48小时以上"
-                        }
-                      ]
-                    }
-                  ],
-                  "graphic": [
-                    {
-                      "type": "text",
-                      "left": "center",
-                      "top": "center",
-                      "style": {
-                        "text": "停车时长分布",
-                        "textAlign": "center",
-                        "fill": "#fff",
-                        "fontSize": 20,
-                        "fontWeight": "bold"
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "title": "充电桩数量",
               "type": "pie",
               "chartOption": {
                 "chartContainerStyle": {
-                  "height": "4.375rem",
                   "width": "3.65rem",
                   "height": "1.55rem",
                   "position": "relative",
@@ -1268,7 +938,6 @@
               "type": "line",
               "chartOption": {
                 "chartContainerStyle": {
-                  "height": "4.375rem",
                   "width": "3.65rem",
                   "height": "1.55rem",
                   "position": "relative",

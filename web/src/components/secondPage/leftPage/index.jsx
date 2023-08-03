@@ -1,14 +1,16 @@
 import React, {PureComponent} from 'react';
-import {LeftPage, LeftTopBox, LeftBottomBox} from './style';
+import {LeftPage, LeftTopBox, LeftBottomBox, LeftCenterBox} from './style';
 import {ModuleTitle} from '../../../style/globalStyledSet';
 import {BorderBox12, BorderBox13} from '@jiaminghi/data-view-react';
-import TrafficSituation from './charts/TrafficSituation';
-import UserSituation from './charts/UserSituation';
 import {connect} from 'dva';
-import {DatePicker, Space} from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
-import locale from 'antd/es/date-picker/locale/zh_CN';
+import EchartComponent from "../../homePage/centerPage/charts/EchartComponent";
+import {BorderRadiusBox2} from "../../homePage/centerPage/style";
+import SolitaireCard from "../../homePage/centerPage/charts/SolitaireCard";
+import {CellBox} from "./charts/CellBox";
+import {SwitchBox} from "./charts/SwitchBox";
+
 
 class index extends PureComponent {
     constructor(props) {
@@ -48,49 +50,133 @@ class index extends PureComponent {
         }
     }
 
+
     render() {
-        const {userSitua, trafficSitua, accessFrequency, peakFlow} = this.props;
-        const {startDate} = this.state;
+        const {resData} = this.state;
+        let leftPage = null
+        let topBoxData = null
+        let bottomBoxData = null
+        let centerData = null
+        if (resData) {
+            leftPage = resData.leftData
+            if (leftPage.top) {
+                topBoxData = leftPage.top
+            }
+            if (leftPage.bottom) {
+                bottomBoxData = leftPage.bottom
+            }
+            if (leftPage.center) {
+                centerData = leftPage.center
+            }
+        }
 
         return (
-           <LeftPage>
-                    {/* 顶部图表 */}
-                    <LeftTopBox>
-                        <BorderBox12 className='left-top-borderBox12'>
-                            <div className='left-top'>
-                                <ModuleTitle>
-                                    <i className='iconfont'>&#xe78f;</i>
-                                    <span>停车场实时泊位利用率(24小时)</span>
-                                </ModuleTitle>
-                                <Space direction='vertical'>
-                                    {/*<DatePicker*/}
-                                    {/*  locale={locale}*/}
-                                    {/*  onChange={this.handleChange}*/}
-                                    {/*  defaultValue={startDate} // 设置默认值*/}
-                                    {/*/>*/}
-                                </Space>
-                                {/* 图表 */}
-                                <TrafficSituation trafficSitua={trafficSitua}></TrafficSituation>
-                            </div>
-                        </BorderBox12>
+            <>
 
-                    </LeftTopBox>
+                {leftPage && (
+                    <LeftPage>
+                        {/* 顶部数据区域 */}
 
-                    {/* 底部图表 */}
-                    <LeftBottomBox>
-                        <BorderBox13 className='left-bottom-borderBox13'>
-                            <div className='left-bottom'>
-                                <ModuleTitle>
-                                    <i className='iconfont'>&#xe88e;</i>
-                                    <span>车辆统计</span>
-                                </ModuleTitle>
-                                {/* 图表 */}
-                                <UserSituation userSitua={userSitua}></UserSituation>
-                            </div>
-                        </BorderBox13>
-                    </LeftBottomBox>
+                        {topBoxData && (
+                            <LeftTopBox>
+                                <BorderBox12 className='left-top-borderBox12'>
+                                    <div className='left-top'>
+                                        <ModuleTitle>
+                                            <i className='iconfont'>&#xe78f;</i>
+                                            <span>{topBoxData.title}</span>
+                                        </ModuleTitle>
+                                        {/*卡片*/}
+                                        {topBoxData.card && (
+                                            <BorderRadiusBox2>
+                                                <SolitaireCard solitaireCardData={topBoxData.card}>
+                                                </SolitaireCard>
+                                            </BorderRadiusBox2>
+                                        )}
 
-                </LeftPage>
+                                        {/* 图表 */}
+                                        {topBoxData.chart && (
+                                            <EchartComponent
+                                                echartData={topBoxData.chart.chartOption}></EchartComponent>
+                                        )}
+                                    </div>
+                                </BorderBox12>
+                            </LeftTopBox>
+                        )}
+                        {/*中部数据区域*/}
+                        { centerData && (
+                            <LeftCenterBox>
+                                <BorderRadiusBox2>
+                                    <div>
+                                        <ModuleTitle>
+                                            <i className='iconfont'>&#xe78f;</i>
+                                            <span>{centerData.title}</span>
+                                        </ModuleTitle>
+                                        {/*卡片*/}
+                                        {centerData.card && (
+                                            <BorderRadiusBox2>
+                                                <SolitaireCard solitaireCardData={centerData.card}>
+                                                </SolitaireCard>
+                                            </BorderRadiusBox2>
+                                        )}
+
+                                        {/* 图表 */}
+                                        {centerData.chart && (
+                                            <EchartComponent
+                                                echartData={centerData.chart.chartOption}></EchartComponent>
+                                        )}
+
+                                        {/* 组别单元格 */}
+                                        {bottomBoxData.cell && (
+                                            <CellBox
+                                                cellData={bottomBoxData.cell}></CellBox>
+                                        )}
+                                    </div>
+                                </BorderRadiusBox2>
+                            </LeftCenterBox>
+
+                        )}
+
+                        {/* 底部数据区域 */}
+                        {bottomBoxData && (
+                            <LeftBottomBox>
+                                <BorderBox13 className='left-bottom-borderBox13'>
+                                    <div className='left-bottom'>
+                                        <ModuleTitle>
+                                            <i className='iconfont'>&#xe78f;</i>
+                                            <span>{bottomBoxData.title}</span>
+                                        </ModuleTitle>
+                                        {/*卡片*/}
+                                        {bottomBoxData.card && (
+                                            <BorderRadiusBox2>
+                                                <SolitaireCard solitaireCardData={bottomBoxData.card}>
+                                                </SolitaireCard>
+                                            </BorderRadiusBox2>
+                                        )}
+
+                                        {/* 图表 */}
+                                        {bottomBoxData.chart && (
+                                            <EchartComponent
+                                                echartData={bottomBoxData.chart.chartOption}></EchartComponent>
+                                        )}
+
+
+                                        {/* 开关 */}
+                                        {bottomBoxData.switch && (
+                                            <SwitchBox
+                                                switchData={bottomBoxData.switch}></SwitchBox>
+                                        )}
+
+                                    </div>
+                                </BorderBox13>
+                            </LeftBottomBox>
+                        )}
+
+                    </LeftPage>
+                )}
+
+
+            </>
+
 
         );
     }
@@ -98,10 +184,7 @@ class index extends PureComponent {
 
 const mapStateToProps = (state) => {
     return {
-        accessFrequency: state.leftPage.accessFrequency,
-        peakFlow: state.leftPage.peakFlow,
-        userSitua: state.leftPage.userSitua,
-        trafficSitua: state.leftPage.trafficSitua,
+        resData: state.secondPage.data,
     };
 };
 

@@ -351,8 +351,8 @@ class MapChart extends PureComponent {
                     }}
                 ></div>
 
-                <AaLiMap style={{flex: '1'}} centerPosition={centerPosition} amapZoom={amapZoom}
-                         markerPositions={mapChartData.aMap.markerPositions}/>
+                {/*<AaLiMap style={{flex: '1'}} centerPosition={centerPosition} amapZoom={amapZoom}*/}
+                {/*         markerPositions={mapChartData.aMap.markerPositions}/>*/}
 
 
             </div>

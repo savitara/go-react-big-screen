@@ -8,24 +8,18 @@
  * @LastEditTime: 2023-07-24 17:04:34
  */
 import React, {PureComponent} from 'react';
-import {BorderBox13} from '@jiaminghi/data-view-react';
-import BrowseCategories from './charts/BrowseCategories';
-import RoadParking from './charts/RoadParking';
-import PersonnelAndEquipmentStatus from './charts/PersonnelAndEquipmentStatus';
-
-
-import OfflinePortal from './charts/OfflinePortal';
-import Feedback from './charts/Feedback';
+import {BorderBox12, BorderBox13} from '@jiaminghi/data-view-react';
 import {ModuleTitle} from '../../../style/globalStyledSet';
 import {connect} from 'dva';
-// import { PersonnelAndEquipmentStatus } from './charts/PersonnelAndEquipmentStatus'
 import {
     RightPage,
     RightTopBox,
     RightCenterBox,
     RightBottomBox,
 } from './style';
-import {BorderRadiusBox1} from "../centerPage/style";
+import {BorderRadiusBox2} from "../../homePage/centerPage/style";
+import SolitaireCard from "../../homePage/centerPage/charts/SolitaireCard";
+import EchartComponent from "../../homePage/centerPage/charts/EchartComponent";
 
 class index extends PureComponent {
     constructor(props) {
@@ -34,79 +28,115 @@ class index extends PureComponent {
     }
 
     render() {
-        const {
-            offline,
-            browseCategories,
-            userIdentityCategory,
-            personnelAndEquipmentStatusData,
-            roadParkingData
-        } = this.props;
-        const showLeftPage = true;
+        const {resData} = this.state;
+        let rightPage = null
+        let topBoxData = null
+        let bottomBoxData = null
+        let centerData = null
+        if (resData) {
+            rightPage = resData.rightData
+            if (rightPage.top) {
+                topBoxData = rightPage.top
+            }
+            if (rightPage.bottom) {
+                bottomBoxData = rightPage.bottom
+            }
+            if (rightPage.center) {
+                centerData = rightPage.center
+            }
+        }
+
         return (
-            <RightPage>
-                <BorderRadiusBox1>
-                {roadParkingData && (
-                    <RightTopBox>
-                        <div className='right-top'>
-                            <ModuleTitle>
-                                <i className='iconfont'>&#xe7f7;</i>
-                                <span>路段车位使用</span>
-                            </ModuleTitle>
-                            <RoadParking roadParkingData={roadParkingData}></RoadParking>
+            <>
+                {rightPage && (
+                    <RightPage>
+                        {/* 顶部数据区域 */}
 
-                        </div>
-                    </RightTopBox>
+                        {topBoxData && (
+                            <RightTopBox>
+                                <BorderBox12 className='left-top-borderBox12'>
+                                    <div className='left-top'>
+                                        <ModuleTitle>
+                                            <i className='iconfont'>&#xe78f;</i>
+                                            <span>{topBoxData.title}</span>
+                                        </ModuleTitle>
+                                        {/*卡片*/}
+                                        {topBoxData.card && (
+                                            <BorderRadiusBox2>
+                                                <SolitaireCard solitaireCardData={topBoxData.card}>
+                                                </SolitaireCard>
+                                            </BorderRadiusBox2>
+                                        )}
+
+                                        {/* 图表 */}
+                                        {topBoxData.chart && (
+                                            <EchartComponent
+                                                echartData={topBoxData.chart.chartOption}></EchartComponent>
+                                        )}
+                                    </div>
+                                </BorderBox12>
+                            </RightTopBox>
+                        )}
+                        {/*中部数据区域*/}
+                        {centerData && (
+                            <RightCenterBox>
+                                <BorderRadiusBox2>
+                                    <div>
+                                        <ModuleTitle>
+                                            <i className='iconfont'>&#xe78f;</i>
+                                            <span>{centerData.title}</span>
+                                        </ModuleTitle>
+                                        {/*卡片*/}
+                                        {centerData.card && (
+                                            <BorderRadiusBox2>
+                                                <SolitaireCard solitaireCardData={centerData.card}>
+                                                </SolitaireCard>
+                                            </BorderRadiusBox2>
+                                        )}
+
+                                        {/* 图表 */}
+                                        {centerData.chart && (
+                                            <EchartComponent
+                                                echartData={centerData.chart.chartOption}></EchartComponent>
+                                        )}
+                                    </div>
+                                </BorderRadiusBox2>
+                            </RightCenterBox>
+
+                        )}
+
+                        {/* 底部数据区域 */}
+                        {bottomBoxData && (
+                            <RightBottomBox>
+                                <BorderBox13 className='left-bottom-borderBox13'>
+                                    <div className='left-bottom'>
+                                        <ModuleTitle>
+                                            <i className='iconfont'>&#xe78f;</i>
+                                            <span>{bottomBoxData.title}</span>
+                                        </ModuleTitle>
+                                        {/*卡片*/}
+                                        {bottomBoxData.card && (
+                                            <BorderRadiusBox2>
+                                                <SolitaireCard solitaireCardData={bottomBoxData.card}>
+                                                </SolitaireCard>
+                                            </BorderRadiusBox2>
+                                        )}
+
+                                        {/* 图表 */}
+                                        {bottomBoxData.chart && (
+                                            <EchartComponent
+                                                echartData={bottomBoxData.chart.chartOption}></EchartComponent>
+                                        )}
+
+                                    </div>
+                                </BorderBox13>
+                            </RightBottomBox>
+                        )}
+                    </RightPage>
+
+
                 )}
-                    </BorderRadiusBox1>
-
-                {personnelAndEquipmentStatusData && (
-                    <RightCenterBox>
-                        <BorderRadiusBox1>
-                        <ModuleTitle>
-                            <i className='iconfont'>&#xe7fd;</i>
-                            <span>人员和设备情况</span>
-                        </ModuleTitle>
-                        <PersonnelAndEquipmentStatus statusData={personnelAndEquipmentStatusData}/>
-                            </BorderRadiusBox1>
-                    </RightCenterBox>
-                )}
-                <RightBottomBox>
-                    <BorderBox13 className='right-bottom-borderBox13'>
-                        <div>
-                            <ModuleTitle>
-                                <i className='iconfont'>&#xe790;</i>
-                                <span>今日用户统计</span>
-                            </ModuleTitle>
-                            <div className='right-bottom'>
-                                {/* 柱状图 */}
-                                <div className='offline-portal-box'>
-                                    {offline ? (
-                                        <OfflinePortal
-                                            offlinePortalData={offline.offlinePortalData}
-                                        />
-                                    ) : (
-                                        ''
-                                    )}
-                                </div>
-                                {/* 支付用户转化率 */}
-                                <div className='feedback-box'>
-                                    {offline
-                                        ? offline.feedback.map((item, index) => {
-                                            return (
-                                                <div className='feedback-box-item' key={index}>
-                                                    <Feedback FeedbackData={item}></Feedback>
-                                                    <span className='dis-text'>{item.title}</span>
-                                                </div>
-                                            );
-                                        })
-                                        : ''}
-                                </div>
-                            </div>
-
-                        </div>
-                    </BorderBox13>
-                </RightBottomBox>
-            </RightPage>
+            </>
 
         );
     }
@@ -114,11 +144,7 @@ class index extends PureComponent {
 
 const mapStateToProps = state => {
     return {
-        browseCategories: state.rightPage.browseCategories,
-        userIdentityCategory: state.rightPage.userIdentityCategory,
-        offline: state.rightPage.offline,
-        personnelAndEquipmentStatusData: state.rightPage.personnelAndEquipmentStatusData,
-        roadParkingData: state.rightPage.roadParkingData,
+        resData: state.secondPage.data,
     };
 };
 

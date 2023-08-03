@@ -24,9 +24,9 @@ function V1({ dispatch }) {
             {/* 右上角日期 */}
             <TopPage title={'数据大屏'}/>
             <IndexPageContent>
-                 左侧内容
+                 {/*左侧内容*/}
                 <LeftPage />
-                 中间内容
+                 {/*中间内容*/}
                 <CenterPage className='center-page' />
                 {/* 右侧内容 */}
                 <RightPage />

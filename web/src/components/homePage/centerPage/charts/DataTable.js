@@ -9,7 +9,6 @@ class DataTable extends PureComponent {
             <>
                 <DataTableDiv>
                     <div className={'title'}>{tableData.title}
-
                     </div>
                     <Table
                         columns={tableData.columns}

@@ -231,8 +231,10 @@ export const BorderRadiusBox2 = styled.div`
 
   border-radius: 5px;
   border: 1px solid #343f4b;
-  background-color: rgba(19, 25, 47, 0.8);
+  //background-color: rgba(19, 25, 47, 0.8);
+  background-color: rgba(24, 32, 60, 0.8);
 
+  //background-color: #313f5f;
 `;
 
 
@@ -240,11 +242,9 @@ export const DataTableDiv = styled.div`
 
   .title {
     margin: 0.125rem;
-    color: aliceblue;
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
+    color: #2480d0;
     font-size: 0.2rem;
+    font-weight: bold;
   }
 
   //去除鼠标悬浮的背景色
@@ -265,7 +265,7 @@ export const DataTableDiv = styled.div`
 
   .ant-table-thead > tr > th {
 
-    background-color: rgba(28, 41, 79, 0.5) !important;
+    background-color: #13172d !important;
     color: white; /* 添加这行代码来修改字体颜色为白色 */
     border-bottom: none;
 
@@ -275,7 +275,7 @@ export const DataTableDiv = styled.div`
 
   .ant-table-tbody tr:nth-child(n) {
     //background-color: rgba(28, 41, 79, 0.5) !important;
-    background-color: #060611 !important;
+    background-color: #13172d !important;
 
     color: white; /* 添加这行代码来修改字体颜色为白色 */
   }
@@ -283,18 +283,19 @@ export const DataTableDiv = styled.div`
   /*双数行背景颜色为半透明*/
 
   .ant-table-tbody tr:nth-child(2n) {
-    background-color: #060611 !important;
+    background-color: #13172d !important;
     color: white; /* 添加这行代码来修改字体颜色为白色 */
   }
 
+  /*表格边框颜色*/
 `;
 
 
 export const DataCardDiv = styled.div`{
   display: flex;
   flex-direction: column; /* 设置主轴方向为竖直方向 */
-  max-width: 930px; /* 根据计算结果设置最大宽度 */ //(width - (n-1) * spacing) / n
-
+  max-width: 900px; /* 根据计算结果设置最大宽度 */ //(width - (n-1) * spacing) / n
+  margin-left: 0.265rem; /* 设置左侧边距 */;
   .container {
 
     /* 可以添加其他样式，比如对齐、间距等 */
@@ -308,21 +309,25 @@ export const DataCardDiv = styled.div`{
 
 
 export const SolitaireCardDiv = styled.div`
-  /* Copy the styles from CenterBottom here */
   display: flex;
-  flex-wrap: wrap; /* Added to wrap items to the next row */
-  //margin-top: 0.265rem;
-  width: 5.5rem; /* Scale down width to 80% */
-  height: 2.5rem;
+  flex-wrap: wrap;
+  min-width: 4rem;
+  //min-height: 3rem;
+  margin: 0.2rem;
   color: aliceblue;
+
   .title {
     color: aliceblue;
+    font-weight: bold;
+  }
 
+  .content {
+    color: #0f7bda;
   }
 
 `;
 
 export const SolitaireChartDiv= styled.div`
-
+  //margin-left: 0.2rem;
 
 `;
