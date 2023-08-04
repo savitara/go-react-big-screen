@@ -14,8 +14,15 @@ class BoxData extends PureComponent {
     render() {
         const {title, dataTableData, solitaireCardData, solitaireChartData, dynamicChartData} = this.props;
         console.log(dataTableData)
-        let solitaireChartDataList = solitaireChartData.list
-        let dynamicChartDataList = dynamicChartData.list
+
+        let solitaireChartDataList =null
+        if( solitaireChartData){
+            solitaireChartDataList=solitaireChartData.list
+        }
+        let dynamicChartDataList = null
+        if( dynamicChartData){
+            dynamicChartDataList=dynamicChartData.list
+        }
         return (
 
             <DataCardDiv>
@@ -53,19 +60,18 @@ class BoxData extends PureComponent {
                             <div style={{display: 'flex'}}>
                                 {/*卡片*/}
                                 {solitaireCardData && (
-                                    <BorderRadiusBox2 >
-                                        <SolitaireCard solitaireCardData={solitaireCardData} >
+                                    <BorderRadiusBox2>
+                                        <SolitaireCard solitaireCardData={solitaireCardData}>
                                         </SolitaireCard>
                                     </BorderRadiusBox2>
                                 )}
 
                                 {/*图表*/}
                                 {solitaireChartDataList && solitaireChartDataList.map((item, index) => (
-                                    <BorderRadiusBox2 >
+                                    <BorderRadiusBox2>
                                         <SolitaireChart solitaireChartData={item} key={index}>
                                         </SolitaireChart>
                                     </BorderRadiusBox2>
-
                                 ))}
                             </div>
 
@@ -74,11 +80,10 @@ class BoxData extends PureComponent {
 
 
                     <div style={{display: 'flex', maxWidth: '930px'}}>
-
                         {dynamicChartDataList && dynamicChartDataList.map((item, index) => (
                             <BorderRadiusBox2>
+                                <h3 style={{color: '#ffffff'}}>{item.title}</h3>
                                 <DynamicChart dynamicChartData={item} key={index}></DynamicChart>
-
                             </BorderRadiusBox2>
                         ))}
                     </div>

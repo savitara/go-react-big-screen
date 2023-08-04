@@ -57,7 +57,7 @@
           "title": "全国停车场分布"
         },
         "solitaireCardData": {
-          "limit": 4,
+          "limit": 20,
           "list": [
             {
               "title": "停车场总数",
@@ -81,29 +81,160 @@
             }
           ]
         },
-        "solitaireChartData": {
-          "list": [
 
-          ]
-        },
         "dynamicChartData": {
           "list": [
             {
-              "title": "充电桩数量",
+              "title": "最近7日停车周转率",
               "type": "bar",
               "chartOption": {
+                "chartContainerStyle": {
+                  "width": "3.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "xAxis": {
+                    "type": "category",
+                    "data": ["Mon","Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+                  },
+                  "yAxis": {
+                    "type": "value"
+                  },
+                  "series": [
+                    {
+                      "data": [120, 200, 150, 80, 70, 110, 130],
+                      "type": "bar"
+                    }
+                  ]
+                }
               }
             },
             {
-              "title": "充电桩数量",
+              "title": "最近7日停车收入",
+              "type": "bar",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "width": "3.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "xAxis": {
+                    "type": "category",
+                    "data": ["Mon","Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+                  },
+                  "yAxis": {
+                    "type": "value"
+                  },
+                  "series": [
+                    {
+                      "data": [120, 200, 150, 80, 70, 110, 130],
+                      "type": "bar"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "title": "停车时长分布",
               "type": "pie",
               "chartOption": {
-              }
-            },
-            {
-              "title": "充电桩数量",
-              "type": "line",
-              "chartOption": {
+                "chartContainerStyle": {
+                  "width": "3.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "series": [
+                    {
+                      "type": "pie",
+                      "radius": [
+                        "20%",
+                        "30%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#fff"
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": "20",
+                          "fontWeight": "bold",
+                          "color": "#fff"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 335,
+                          "name": "1到60分钟"
+                        },
+                        {
+                          "value": 234,
+                          "name": "1到12小时"
+                        },
+                        {
+                          "value": 310,
+                          "name": "12到24小时"
+                        },
+                        {
+                          "value": 160,
+                          "name": "24小时以上"
+                        },
+                        {
+                          "value": 100,
+                          "name": "48小时以上"
+                        }
+                      ]
+                    }
+                  ],
+                  "graphic": [
+                    {
+                      "type": "text",
+                      "left": "center",
+                      "top": "center",
+                      "style": {
+                        "textAlign": "center",
+                        "fill": "#fff",
+                        "fontSize": 20,
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ]
+                }
               }
             }
           ]
@@ -171,11 +302,10 @@
               "totalParkingSpaces": 1050
             }
           ],
-
           "title": "全国路边分布"
         },
         "solitaireCardData": {
-          "limit": 4,
+          "limit": 3,
           "list": [
             {
               "title": "停车场总数",
@@ -183,22 +313,6 @@
             },
             {
               "title": "停车场总数",
-              "content": 1234
-            },
-            {
-              "title": "停车场总数",
-              "content": 1234
-            },
-            {
-              "title": "停车场总数",
-              "content": 1234
-            },
-            {
-              "title": "停车场总数",
-              "content": 1234
-            },
-            {
-              "title": "路边停车场",
               "content": 1234
             },
             {
@@ -214,7 +328,126 @@
         "solitaireChartData": {
           "list": [
             {
-              "title": "停车时长分布",
+              "title": "累计停车收费占比",
+              "type": "pie",
+              "chartOption": {
+
+                "option": {
+                  "title": {
+                    "text": "累计停车收费占比",
+                    "x": "center"
+                  },
+                  "tooltip": {
+                    "trigger": "item",
+                    "formatter": "{a} <br/>{b}: {c} ({d}%)"
+                  },
+                  "series": [
+                    {
+                      "name": "收费方式",
+                      "type": "pie",
+                      "radius": [
+                        "50%",
+                        "70%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#000",
+                        "fontSize": 12
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": 14,
+                          "fontWeight": "bold",
+                          "color": "#000"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 500,
+                          "name": "应收"
+                        },
+                        {
+                          "value": 400,
+                          "name": "实收"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "title": "今日收费占比",
+              "type": "pie",
+              "chartOption": {
+                "option": {
+                  "title": {
+                    "text": "今日收费占比",
+                    "x": "center"
+                  },
+                  "tooltip": {
+                    "trigger": "item",
+                    "formatter": "{a} <br/>{b}: {c} ({d}%)"
+                  },
+                  "series": [
+                    {
+                      "name": "收费方式",
+                      "type": "pie",
+                      "radius": [
+                        "50%",
+                        "70%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#000",
+                        "fontSize": 12
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": 14,
+                          "fontWeight": "bold",
+                          "color": "#000"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 300,
+                          "name": "应收"
+                        },
+                        {
+                          "value": 250,
+                          "name": "实收"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "dynamicChartData": {
+          "list": [
+            {
+              "title": "最近7月停车收入",
               "type": "bar",
               "chartOption": {
                 "chartContainerStyle": {
@@ -233,33 +466,86 @@
                 "option": {
                   "xAxis": {
                     "type": "category",
-                    "data": ["1到60分钟", "1到12小时", "12到24小时", "24小时以上", "48小时以上"],
-                    "axisTick": {
-                      "alignWithLabel": true
-                    }
+                    "data": ["Mon","Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
                   },
                   "yAxis": {
                     "type": "value"
                   },
                   "series": [
                     {
-                      "type": "bar",
-                      "data": [335, 234, 310, 160, 100],
-                      "itemStyle": {
-                        "color": "#007bff"
-                      }
+                      "data": [120, 200, 150, 80, 70, 110, 130],
+                      "type": "bar"
                     }
-                  ],
-                  "graphic": [
+                  ]
+                }
+              }
+            },
+            {
+              "title": "停车周转率TOP排行",
+              "type": "bar",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "width": "1.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "title": {
+                    "text": "停车周转率TOP排行",
+                    "x": "center"
+                  },
+                  "tooltip": {
+                    "trigger": "axis",
+                    "axisPointer": {
+                      "type": "shadow"
+                    }
+                  },
+                  "grid": {
+                    "left": "3%",
+                    "right": "4%",
+                    "bottom": "3%",
+                    "containLabel": true
+                  },
+                  "yAxis": {
+                    "type": "category",
+                    "data": [
+                      "停车场1",
+                      "停车场2",
+                      "停车场3",
+                      "停车场4",
+                      "停车场5"
+                    ],
+                    "axisLabel": {
+                      "interval": 0
+                    }
+                  },
+                  "xAxis": {
+                    "type": "value",
+                    "name": "周转率",
+                    "nameLocation": "middle",
+                    "nameGap": 30
+                  },
+                  "series": [
                     {
-                      "type": "text",
-                      "left": "center",
-                      "top": "center",
-                      "style": {
-                        "textAlign": "center",
-                        "fill": "#fff",
-                        "fontSize": 20,
-                        "fontWeight": "bold"
+                      "name": "周转率",
+                      "type": "bar",
+                      "data": [
+                        85,
+                        78,
+                        92,
+                        65,
+                        70
+                      ],
+                      "itemStyle": {
+                        "color": "#3398DB"
                       }
                     }
                   ]
@@ -267,17 +553,75 @@
               }
             },
             {
-              "title": "充电桩数量",
-              "type": "pie",
+              "title": "停车路段占用率",
+              "type": "bar",
               "chartOption": {
+                "chartContainerStyle": {
+                  "width": "1.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "title": {
+                    "text": "停车路段占用率",
+                    "x": "center"
+                  },
+                  "tooltip": {
+                    "trigger": "axis"
+                  },
+                  "xAxis": {
+                    "type": "category",
+                    "data": [
+                      "8:00",
+                      "9:00",
+                      "10:00",
+                      "11:00",
+                      "12:00",
+                      "13:00",
+                      "14:00"
+                    ]
+                  },
+                  "yAxis": {
+                    "type": "value",
+                    "name": "占用率 (%)",
+                    "nameLocation": "middle",
+                    "nameGap": 40
+                  },
+                  "series": [
+                    {
+                      "name": "占用率",
+                      "type": "line",
+                      "data": [
+                        80,
+                        70,
+                        65,
+                        60,
+                        55,
+                        50,
+                        45
+                      ],
+                      "itemStyle": {
+                        "color": "#33CC99"
+                      },
+                      "lineStyle": {
+                        "width": 2
+                      },
+                      "areaStyle": {
+                        "color": "#e0f3f0"
+                      }
+                    }
+                  ]
+                }
               }
             }
-
-          ]
-        },
-        "dynamicChartData": {
-          "list": [
-
           ]
         }
       },
@@ -343,7 +687,6 @@
               "suvParkingTotal": 1050
             }
           ],
-
           "title": "全国立体车库分布"
         },
         "solitaireCardData": {
@@ -384,13 +727,15 @@
           ]
         },
         "solitaireChartData": {
+        },
+        "dynamicChartData": {
           "list": [
             {
-              "title": "充电桩数量",
-              "type": "pie",
+              "title": "最近7月停车收入",
+              "type": "bar",
               "chartOption": {
                 "chartContainerStyle": {
-                  "width": "1.65rem",
+                  "width": "3.65rem",
                   "height": "1.55rem",
                   "position": "relative",
                   "overflow": "hidden"
@@ -403,77 +748,25 @@
                   "bottom": "0"
                 },
                 "option": {
+                  "xAxis": {
+                    "type": "category",
+                    "data": ["Mon","Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+                  },
+                  "yAxis": {
+                    "type": "value"
+                  },
                   "series": [
                     {
-                      "type": "pie",
-                      "radius": [
-                        "20%",
-                        "30%"
-                      ],
-                      "avoidLabelOverlap": false,
-                      "label": {
-                        "show": true,
-                        "position": "outside",
-                        "formatter": "{b}",
-                        "color": "#fff"
-                      },
-                      "emphasis": {
-                        "label": {
-                          "show": true,
-                          "fontSize": "20",
-                          "fontWeight": "bold",
-                          "color": "#fff"
-                        }
-                      },
-                      "labelLine": {
-                        "show": true,
-                        "length": 10,
-                        "length2": 20
-                      },
-                      "data": [
-                        {
-                          "value": 335,
-                          "name": "1到60分钟"
-                        },
-                        {
-                          "value": 234,
-                          "name": "1到12小时"
-                        },
-                        {
-                          "value": 310,
-                          "name": "12到24小时"
-                        },
-                        {
-                          "value": 160,
-                          "name": "24小时以上"
-                        },
-                        {
-                          "value": 100,
-                          "name": "48小时以上"
-                        }
-                      ]
-                    }
-                  ],
-                  "graphic": [
-                    {
-                      "type": "text",
-                      "left": "center",
-                      "top": "center",
-                      "style": {
-                        "text": "停车时长分布",
-                        "textAlign": "center",
-                        "fill": "#fff",
-                        "fontSize": 20,
-                        "fontWeight": "bold"
-                      }
+                      "data": [120, 200, 150, 80, 70, 110, 130],
+                      "type": "bar"
                     }
                   ]
                 }
               }
             },
             {
-              "title": "充电桩数量",
-              "type": "line",
+              "title": "7个月的日均泊位周转率",
+              "type": "bar",
               "chartOption": {
                 "chartContainerStyle": {
                   "width": "1.65rem",
@@ -489,80 +782,132 @@
                   "bottom": "0"
                 },
                 "option": {
+                  "title": {
+                    "text": "停车路段占用率",
+                    "x": "center"
+                  },
+                  "tooltip": {
+                    "trigger": "axis"
+                  },
+                  "xAxis": {
+                    "type": "category",
+                    "data": [
+                      "8:00",
+                      "9:00",
+                      "10:00",
+                      "11:00",
+                      "12:00",
+                      "13:00",
+                      "14:00"
+                    ]
+                  },
+                  "yAxis": {
+                    "type": "value",
+                    "name": "占用率 (%)",
+                    "nameLocation": "middle",
+                    "nameGap": 40
+                  },
                   "series": [
                     {
-                      "type": "pie",
-                      "radius": [
-                        "20%",
-                        "30%"
-                      ],
-                      "avoidLabelOverlap": false,
-                      "label": {
-                        "show": true,
-                        "position": "outside",
-                        "formatter": "{b}",
-                        "color": "#fff"
-                      },
-                      "emphasis": {
-                        "label": {
-                          "show": true,
-                          "fontSize": "20",
-                          "fontWeight": "bold",
-                          "color": "#fff"
-                        }
-                      },
-                      "labelLine": {
-                        "show": true,
-                        "length": 10,
-                        "length2": 20
-                      },
+                      "name": "占用率",
+                      "type": "line",
                       "data": [
-                        {
-                          "value": 335,
-                          "name": "1到60分钟"
-                        },
-                        {
-                          "value": 234,
-                          "name": "1到12小时"
-                        },
-                        {
-                          "value": 310,
-                          "name": "12到24小时"
-                        },
-                        {
-                          "value": 160,
-                          "name": "24小时以上"
-                        },
-                        {
-                          "value": 100,
-                          "name": "48小时以上"
-                        }
-                      ]
+                        80,
+                        70,
+                        65,
+                        60,
+                        55,
+                        50,
+                        45
+                      ],
+                      "itemStyle": {
+                        "color": "#33CC99"
+                      },
+                      "lineStyle": {
+                        "width": 2
+                      },
+                      "areaStyle": {
+                        "color": "#e0f3f0"
+                      }
                     }
-                  ],
-                  "graphic": [
+                  ]
+                }
+              }
+            },
+
+            {
+              "title": "停车周转率TOP排行",
+              "type": "bar",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "width": "1.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "title": {
+                    "text": "停车周转率TOP排行",
+                    "x": "center"
+                  },
+                  "tooltip": {
+                    "trigger": "axis",
+                    "axisPointer": {
+                      "type": "shadow"
+                    }
+                  },
+                  "grid": {
+                    "left": "3%",
+                    "right": "4%",
+                    "bottom": "3%",
+                    "containLabel": true
+                  },
+                  "yAxis": {
+                    "type": "category",
+                    "data": [
+                      "停车场1",
+                      "停车场2",
+                      "停车场3",
+                      "停车场4",
+                      "停车场5"
+                    ],
+                    "axisLabel": {
+                      "interval": 0
+                    }
+                  },
+                  "xAxis": {
+                    "type": "value",
+                    "name": "周转率",
+                    "nameLocation": "middle",
+                    "nameGap": 30
+                  },
+                  "series": [
                     {
-                      "type": "text",
-                      "left": "center",
-                      "top": "center",
-                      "style": {
-                        "text": "停车时长分布",
-                        "textAlign": "center",
-                        "fill": "#fff",
-                        "fontSize": 20,
-                        "fontWeight": "bold"
+                      "name": "周转率",
+                      "type": "bar",
+                      "data": [
+                        85,
+                        78,
+                        92,
+                        65,
+                        70
+                      ],
+                      "itemStyle": {
+                        "color": "#3398DB"
                       }
                     }
                   ]
                 }
               }
             }
-          ]
-        },
-        "dynamicChartData": {
-          "list": [
-
-          ]
+            ]
         }
       },
       {
@@ -627,7 +972,6 @@
               "electricVehicleChargingPileTotal": 115
             }
           ],
-
           "title": "全国充电桩分布"
         },
         "solitaireCardData": {
@@ -660,195 +1004,116 @@
           ]
         },
         "solitaireChartData": {
-          "list": [
-            {
-              "id": "1",
-              "title": "充电桩数量",
-              "type": "bar",
-              "chartOption": {
-              }
-            },
-            {
-              "id": "2",
-              "title": "充电桩数量",
-              "type": "pie",
-              "chartOption": {
-                "chartContainerStyle": {
-                  "width": "3.65rem",
-                  "height": "1.55rem",
-                  "position": "relative",
-                  "overflow": "hidden"
-                },
-                "chartStyle": {
-                  "position": "absolute",
-                  "top": "-0.5rem",
-                  "left": "0",
-                  "right": "0",
-                  "bottom": "0"
-                },
-                "option": {
-                  "series": [
-                    {
-                      "type": "pie",
-                      "radius": [
-                        "20%",
-                        "30%"
-                      ],
-                      "avoidLabelOverlap": false,
-                      "label": {
-                        "show": true,
-                        "position": "outside",
-                        "formatter": "{b}",
-                        "color": "#fff"
-                      },
-                      "emphasis": {
-                        "label": {
-                          "show": true,
-                          "fontSize": "20",
-                          "fontWeight": "bold",
-                          "color": "#fff"
-                        }
-                      },
-                      "labelLine": {
-                        "show": true,
-                        "length": 10,
-                        "length2": 20
-                      },
-                      "data": [
-                        {
-                          "value": 335,
-                          "name": "1到60分钟"
-                        },
-                        {
-                          "value": 234,
-                          "name": "1到12小时"
-                        },
-                        {
-                          "value": 310,
-                          "name": "12到24小时"
-                        },
-                        {
-                          "value": 160,
-                          "name": "24小时以上"
-                        },
-                        {
-                          "value": 100,
-                          "name": "48小时以上"
-                        }
-                      ]
-                    }
-                  ],
-                  "graphic": [
-                    {
-                      "type": "text",
-                      "left": "center",
-                      "top": "center",
-                      "style": {
-                        "text": "停车时长分布",
-                        "textAlign": "center",
-                        "fill": "#fff",
-                        "fontSize": 20,
-                        "fontWeight": "bold"
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "id": "3",
-              "title": "充电桩数量",
-              "type": "line",
-              "chartOption": {
-                "chartContainerStyle": {
-                  "height": "4.375rem",
-                  "width": "3.65rem",
-                  "height": "1.55rem",
-                  "position": "relative",
-                  "overflow": "hidden"
-                },
-                "chartStyle": {
-                  "position": "absolute",
-                  "top": "-0.5rem",
-                  "left": "0",
-                  "right": "0",
-                  "bottom": "0"
-                },
-                "option": {
-                  "series": [
-                    {
-                      "type": "pie",
-                      "radius": [
-                        "20%",
-                        "30%"
-                      ],
-                      "avoidLabelOverlap": false,
-                      "label": {
-                        "show": true,
-                        "position": "outside",
-                        "formatter": "{b}",
-                        "color": "#fff"
-                      },
-                      "emphasis": {
-                        "label": {
-                          "show": true,
-                          "fontSize": "20",
-                          "fontWeight": "bold",
-                          "color": "#fff"
-                        }
-                      },
-                      "labelLine": {
-                        "show": true,
-                        "length": 10,
-                        "length2": 20
-                      },
-                      "data": [
-                        {
-                          "value": 335,
-                          "name": "1到60分钟"
-                        },
-                        {
-                          "value": 234,
-                          "name": "1到12小时"
-                        },
-                        {
-                          "value": 310,
-                          "name": "12到24小时"
-                        },
-                        {
-                          "value": 160,
-                          "name": "24小时以上"
-                        },
-                        {
-                          "value": 100,
-                          "name": "48小时以上"
-                        }
-                      ]
-                    }
-                  ],
-                  "graphic": [
-                    {
-                      "type": "text",
-                      "left": "center",
-                      "top": "center",
-                      "style": {
-                        "text": "停车时长分布",
-                        "textAlign": "center",
-                        "fill": "#fff",
-                        "fontSize": 20,
-                        "fontWeight": "bold"
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          ]
         },
         "dynamicChartData": {
           "list": [
             {
-              "title": "充电桩数量",
+              "title": "最近7月充电桩收入",
+              "type": "bar",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "width": "3.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "xAxis": {
+                    "type": "category",
+                    "data": ["Mon","Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+                  },
+                  "yAxis": {
+                    "type": "value"
+                  },
+                  "series": [
+                    {
+                      "data": [120, 200, 150, 80, 70, 110, 130],
+                      "type": "bar"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "title": "最近7月充电功率趋势",
+              "type": "bar",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "width": "1.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "title": {
+                    "text": "停车路段占用率",
+                    "x": "center"
+                  },
+                  "tooltip": {
+                    "trigger": "axis"
+                  },
+                  "xAxis": {
+                    "type": "category",
+                    "data": [
+                      "8:00",
+                      "9:00",
+                      "10:00",
+                      "11:00",
+                      "12:00",
+                      "13:00",
+                      "14:00"
+                    ]
+                  },
+                  "yAxis": {
+                    "type": "value",
+                    "name": "占用率 (%)",
+                    "nameLocation": "middle",
+                    "nameGap": 40
+                  },
+                  "series": [
+                    {
+                      "name": "占用率",
+                      "type": "line",
+                      "data": [
+                        80,
+                        70,
+                        65,
+                        60,
+                        55,
+                        50,
+                        45
+                      ],
+                      "itemStyle": {
+                        "color": "#33CC99"
+                      },
+                      "lineStyle": {
+                        "width": 2
+                      },
+                      "areaStyle": {
+                        "color": "#e0f3f0"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+
+            {
+              "title": "充电时长分布",
               "type": "pie",
               "chartOption": {
                 "chartContainerStyle": {
@@ -922,93 +1187,6 @@
                       "left": "center",
                       "top": "center",
                       "style": {
-                        "text": "停车时长分布",
-                        "textAlign": "center",
-                        "fill": "#fff",
-                        "fontSize": 20,
-                        "fontWeight": "bold"
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "title": "充电桩数量",
-              "type": "line",
-              "chartOption": {
-                "chartContainerStyle": {
-                  "width": "3.65rem",
-                  "height": "1.55rem",
-                  "position": "relative",
-                  "overflow": "hidden"
-                },
-                "chartStyle": {
-                  "position": "absolute",
-                  "top": "-0.5rem",
-                  "left": "0",
-                  "right": "0",
-                  "bottom": "0"
-                },
-                "option": {
-                  "series": [
-                    {
-                      "type": "pie",
-                      "radius": [
-                        "20%",
-                        "30%"
-                      ],
-                      "avoidLabelOverlap": false,
-                      "label": {
-                        "show": true,
-                        "position": "outside",
-                        "formatter": "{b}",
-                        "color": "#fff"
-                      },
-                      "emphasis": {
-                        "label": {
-                          "show": true,
-                          "fontSize": "20",
-                          "fontWeight": "bold",
-                          "color": "#fff"
-                        }
-                      },
-                      "labelLine": {
-                        "show": true,
-                        "length": 10,
-                        "length2": 20
-                      },
-                      "data": [
-                        {
-                          "value": 335,
-                          "name": "1到60分钟"
-                        },
-                        {
-                          "value": 234,
-                          "name": "1到12小时"
-                        },
-                        {
-                          "value": 310,
-                          "name": "12到24小时"
-                        },
-                        {
-                          "value": 160,
-                          "name": "24小时以上"
-                        },
-                        {
-                          "value": 100,
-                          "name": "48小时以上"
-                        }
-                      ]
-                    }
-                  ],
-                  "graphic": [
-                    {
-                      "type": "text",
-                      "left": "center",
-                      "top": "center",
-                      "style": {
-                        "text": "停车时长分布",
                         "textAlign": "center",
                         "fill": "#fff",
                         "fontSize": 20,
@@ -1019,6 +1197,7 @@
                 }
               }
             }
+
           ]
         }
       }
