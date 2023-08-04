@@ -11,6 +11,7 @@ import {connect} from "dva";
 import {Button, Tooltip} from "antd";
 import {LeftCircleOutlined} from '@ant-design/icons';
 import {routerRedux} from "dva/router";
+import {getSecondPageDataByParams} from "../../../services";
 
 class index extends PureComponent {
     constructor(props) {
@@ -33,8 +34,19 @@ class index extends PureComponent {
     // 设置时间
     componentDidMount() {
         this.setTimingFn();
+        this.getSecondPageData();
     }
 
+    getSecondPageData() {
+        const { locationQuery} = this.state;
+        getSecondPageDataByParams(locationQuery).then(res => {
+            if (res) {
+                console.log(res)
+            }
+
+
+        })
+    }
 
     setTimingFn() {
         this.timing = setInterval(() => {
@@ -51,18 +63,26 @@ class index extends PureComponent {
         const {dispatch} = this.props;
         dispatch(
             routerRedux.push({
-                pathname:'/',
+                pathname: '/'
             })
         )
     };
+
     render() {
         // const { title } = this.state;
-        const {resData} = this.props;
+        const {resData, queryData} = this.state;
+
         let title = ''
         let dataList = []
-        if (resData) {
-            title = resData.topData.title;
-            dataList = resData.topData.dataList;
+        // if (resData) {
+        //     title = resData.topData.title;
+        //     dataList = resData.topData.dataList;
+        //     console.log(resData)
+        // }
+        if (queryData) {
+            title = queryData.topData.title;
+            dataList = queryData.topData.dataList;
+            console.log(queryData)
         }
 
         return (
@@ -100,7 +120,8 @@ class index extends PureComponent {
                     </div>
                     <div className='top_button'>
                         <Tooltip title="返回">
-                            <Button type="primary" shape="circle" onClick={() => this.handleClick()} icon={<LeftCircleOutlined />}/>
+                            <Button type="primary" shape="circle" onClick={() => this.handleClick()}
+                                    icon={<LeftCircleOutlined/>}/>
                         </Tooltip>
                     </div>
                     <TopCenter>
@@ -131,11 +152,24 @@ class index extends PureComponent {
 
 
 const mapStateToProps = state => {
+    const {data} = state.secondPage;
+    const locationQuery = state.secondPage.params;
+
+    let queryData = null
+    if (locationQuery) {
+        getSecondPageDataByParams(locationQuery).then(res => {
+            if (res) {
+                queryData = res
+            }
+            console.log(queryData)
+
+        })
+    }
     return {
-        resData: state.secondPage.data,
+        queryData: queryData,
+        resData: data,
     };
 };
-
 const mapStateToDispatch = dispatch => ({
     dispatch, // 将dispatch方法添加到props中
 });

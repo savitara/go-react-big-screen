@@ -1,0 +1,62 @@
+{
+  "data": {
+    "topData": {
+      "title": "封闭停车场",
+      "dataList": [
+        {
+          "title": "订单总金额",
+          "number": 2600000,
+          "unit": "元"
+        },
+        {
+          "title": "停车记录总量",
+          "number": 3130,
+          "unit": "条"
+        },
+        {
+          "title": "用户缴费率/月",
+          "number": 85,
+          "unit": "%"
+        },
+        {
+          "title": "月订单总额",
+          "number": 21016,
+          "unit": "元"
+        },
+        {
+          "title": "今日订单数",
+          "number": 85,
+          "unit": "条"
+        },
+        {
+          "title": "今日订单额",
+          "number": 2116,
+          "unit": "元"
+        },
+        {
+          "title": "充电桩数量",
+          "number": 185,
+          "unit": "个"
+        },
+        {
+          "title": "停车场数量",
+          "number": 21106,
+          "unit": "个"
+        },
+        {
+          "title": "立体车库数量",
+          "number": 306,
+          "unit": "个"
+        },
+        {
+          "title": "车库泊位数量",
+          "number": 48306,
+          "unit": "个"
+        }
+      ]
+    },
+    "centerData": {},
+    "leftData": {},
+    "rightData": {}
+  }
+}

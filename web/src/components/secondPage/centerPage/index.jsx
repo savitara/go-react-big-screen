@@ -13,11 +13,22 @@ class index extends PureComponent {
         this.state = {};
     }
 
+    // getPageData = (locationQuery) => {
+    //     getSecondPageDataByParams(locationQuery).then(res => {
+    //         if (res.data) {
+    //             // queryData= res.data
+    //             console.log(res.data)
+    //             // this.setState({
+    //             //     resData: res.data
+    //             // })
+    //         }
+    //     })
+    // }
 
     render() {
 
 
-        const {resData, queryData} = this.state;
+        const {resData, queryData, locationQuery} = this.state;
         let centerPage = null
         let topBoxData = null
         let bottomBoxData = null
@@ -47,7 +58,28 @@ class index extends PureComponent {
             }
 
         }
+        if (queryData) {
+            console.log(queryData)
 
+            centerPage = queryData.centerData
+            if (centerPage.leanTop) {
+                topBoxData = centerPage.leanTop
+            }
+            if (centerPage.leanBottom) {
+                bottomBoxData = centerPage.leanBottom
+                bottomBoxDataList = bottomBoxData.list
+            }
+            if (centerPage.leanCenter) {
+                centerData = centerPage.leanCenter
+            }
+            if (centerPage.leanLeft) {
+                leftData = centerPage.leanLeft
+            }
+            if (centerPage.leanRight) {
+                rightData = centerPage.leanRight
+            }
+
+        }
 
         return (
 
@@ -94,17 +126,15 @@ const mapStateToProps = state => {
     const locationQuery = state.secondPage.params;
     let queryData = null
     if (locationQuery) {
-         getSecondPageDataByParams(locationQuery).then(res => {
-            if (res.data) {
-                queryData= res.data
-                console.log(res.data)
-                // this.setState({
-                //     resData: res.data
-                // })
+        getSecondPageDataByParams(locationQuery).then(res => {
+            if (res) {
+                queryData = res
             }
+            // console.log(queryData)
         })
     }
     return {
+        locationQuery: locationQuery,
         resData: data,
         queryData: queryData,
     };
