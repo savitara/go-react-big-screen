@@ -27,7 +27,7 @@ class index extends PureComponent {
         return (
             <div style={{display: 'flex', margin: '0.2rem 0.2rem 0.2rem 0'}}>
                 {resData && resData.boxDataList && resData.boxDataList.map((item, index) => (
-                    <div onClick={() => this.handleClick(item.title)}>
+                    <div onClick={() => this.handleClick(item.id)}>
                         {/*// 将item作为参数传递给handleClick函数*/}
                         <BoxData
                             key={index}

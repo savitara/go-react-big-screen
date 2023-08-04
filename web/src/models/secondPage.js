@@ -26,9 +26,9 @@ export default {
     effects: {
         * getSecondPageData({payload,params}, {call, put}) {
             const data = yield call(getSecondPageData, payload); // 将参数传递给异步请求函数
-            data.params = params;
-            console.log('secondPage getSecondPageData', data);
             if (data) {
+                data.params = params;
+                console.log('secondPage getSecondPageData', data);
                 yield put({
                     type: 'setData',
                     payload: data,

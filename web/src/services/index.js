@@ -1,5 +1,5 @@
 import request from '../utils/request';
-
+import { get } from '../utils/axiosRequest';
 // V1版本
 // 在models中添加
 
@@ -34,10 +34,20 @@ export const getHomePageData = async () => {
   });
 };
 
-// 获取子页界面数据请求
+// 获取子页界顶部面数据请求
 export const getSecondPageData = async () => {
   return request('/api/secondPageData').then(response => {
     return response.data;
   });
+};
+
+export const getSecondPageDataByParams = async (params) => {
+  try {
+    const response =  await get('/api/secondPageData', { params });
+    return response.data;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
 };
 

@@ -5,6 +5,7 @@ import LeanLeft from "./leanLeft";
 import LeanRight from "./leanRight";
 import LeanCenter from "./leanCenter";
 import LeanBottom from "./leanBottom";
+import {getSecondPageDataByParams} from "../../../services";
 
 class index extends PureComponent {
     constructor(props) {
@@ -16,8 +17,7 @@ class index extends PureComponent {
     render() {
 
 
-        const {resData, locationQuery} = this.state;
-        console.log(locationQuery)
+        const {resData, queryData} = this.state;
         let centerPage = null
         let topBoxData = null
         let bottomBoxData = null
@@ -48,46 +48,65 @@ class index extends PureComponent {
 
         }
 
+
         return (
+
             <>
-                {centerPage && (
-                    <CenterPage>
+                {
+                    centerPage
+                    && (
+                        <CenterPage>
 
 
-                        <div style={{display: 'flex'}}>
+                            <div style={{
+                                display: 'flex'
+                            }
 
-                            <LeanLeft leftData={leftData}></LeanLeft>
-                            <LeanCenter centerData={centerData}> </LeanCenter>
+                            }>
 
-                            <LeanRight rightData={rightData}> </LeanRight>
+                                <LeanLeft leftData={leftData}></LeanLeft>
+                                <LeanCenter centerData={centerData}> </LeanCenter>
+                                <LeanRight rightData={rightData}> </LeanRight>
 
-                        </div>
-
-
-                        <div style={{display: 'flex'}}>
-                            {bottomBoxDataList.map((item, index) => (
-                                <LeanBottom key={index} bottomBoxData={item}
-                                            style={{display: 'inline-block'}}></LeanBottom>
-                            ))}
-                        </div>
+                            </div>
 
 
-                    </CenterPage>
-                )}
+                            <div style={{display: 'flex'}}>
+                                {bottomBoxDataList.map((item, index) => (
+                                    <LeanBottom key={index} bottomBoxData={item}
+                                                style={{display: 'inline-block'}}></LeanBottom>
+                                ))}
+                            </div>
+
+
+                        </CenterPage>
+                    )}
 
             </>
 
-        );
+        )
+            ;
     }
 }
 
 const mapStateToProps = state => {
-    const { data } = state.secondPage;
-    const locationQuery = data && data.params ? (data.params.location || {}).query : {};
-
+    const {data} = state.secondPage;
+    const locationQuery = state.secondPage.params;
+    let queryData = null
+    if (locationQuery) {
+         getSecondPageDataByParams(locationQuery).then(res => {
+            if (res.data) {
+                queryData= res.data
+                console.log(res.data)
+                // this.setState({
+                //     resData: res.data
+                // })
+            }
+        })
+    }
     return {
         resData: data,
-        locationQuery: locationQuery,
+        queryData: queryData,
     };
 };
 

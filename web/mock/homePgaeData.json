@@ -3,6 +3,7 @@
     "topData": {},
     "boxDataList": [
       {
+        "id": 1,
         "title": "封闭停车场",
         "dataTableData": {
           "columns": [
@@ -241,6 +242,7 @@
         }
       },
       {
+        "id": 2,
         "title": "路边停车场",
         "dataTableData": {
           "columns": [
@@ -626,6 +628,7 @@
         }
       },
       {
+        "id": 3,
         "title": "立体车库",
         "dataTableData": {
           "columns": [
@@ -911,6 +914,7 @@
         }
       },
       {
+        "id": 4,
         "title": "充电桩",
         "dataTableData": {
           "columns": [
