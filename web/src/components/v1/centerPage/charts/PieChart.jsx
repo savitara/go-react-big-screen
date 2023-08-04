@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Chart from '../../../utils/chart';
+import Chart from '../../../../utils/chart';
 
 
 class PieChart extends PureComponent {

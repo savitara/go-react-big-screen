@@ -1,5 +1,5 @@
 import axios from 'axios'
-import chinaProvincialData from '../../../../public/geoJsonData/china.json'
+import chinaProvincialData from '../../../../../public/geoJsonData/china.json'
 
 // 23个省
 const PROVINCE = [

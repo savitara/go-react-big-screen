@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
-import { formatTime } from '../../utils';
+import { formatTime } from '../../../utils';
 import {
   Decoration10,
   Decoration8,
@@ -83,7 +83,7 @@ class index extends PureComponent {
               {roofDataList && roofDataList.map((item, index) => (
                 <div className='detail-list-item' key={index}>
                   <img
-                    src={require(`../../assets/images/center-details-data${index + 1}.png`)}
+                    src={require(`../../../assets/images/center-details-data${index + 1}.png`)}
                     alt={item.title}
                   />
                   <div className='detail-item-text'>

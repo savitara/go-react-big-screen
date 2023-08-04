@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import Chart from '../../../utils/chart';
+import Chart from '../../../../utils/chart';
 import {PersonnelAndEquipmentStatusOptions} from './options';
 import {PersonnelStatusOptions} from './options';
 import {EquipmentStatusOptions} from './options';

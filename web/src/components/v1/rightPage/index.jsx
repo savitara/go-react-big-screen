@@ -16,7 +16,7 @@ import PersonnelAndEquipmentStatus from './charts/PersonnelAndEquipmentStatus';
 
 import OfflinePortal from './charts/OfflinePortal';
 import Feedback from './charts/Feedback';
-import {ModuleTitle} from '../../style/globalStyledSet';
+import {ModuleTitle} from '../../../style/globalStyledSet';
 import {connect} from 'dva';
 // import { PersonnelAndEquipmentStatus } from './charts/PersonnelAndEquipmentStatus'
 import {

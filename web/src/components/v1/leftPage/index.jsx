@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {LeftPage, LeftTopBox, LeftBottomBox} from './style';
-import {ModuleTitle} from '../../style/globalStyledSet';
+import {ModuleTitle} from '../../../style/globalStyledSet';
 import {BorderBox12, BorderBox13} from '@jiaminghi/data-view-react';
 import TrafficSituation from './charts/TrafficSituation';
 import UserSituation from './charts/UserSituation';

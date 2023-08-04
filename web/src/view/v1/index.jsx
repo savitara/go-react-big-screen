@@ -4,10 +4,10 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import { IndexPageStyle, IndexPageContent } from './style';
-import TopPage from '../../components/topPage';
-import LeftPage from '../../components/leftPage';
-import CenterPage from '../../components/centerPage';
-import RightPage from '../../components/rightPage';
+import TopPage from '../../components/v1/topPage';
+import LeftPage from '../../components/v1/leftPage';
+import CenterPage from '../../components/v1/centerPage';
+import RightPage from '../../components/v1/rightPage';
 import {push} from "connected-react-router";
 
 
