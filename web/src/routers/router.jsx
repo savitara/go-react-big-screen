@@ -6,6 +6,7 @@ import HomePage from "../view/homePage";
 import SecondPage from "../view/secondPage";
 import V1 from "../view/v1";
 import V2 from "../view/v2";
+import Garage from "../view/garage";
 
 function RouterConfig({history}) {
     const route = () => {
@@ -19,7 +20,7 @@ function RouterConfig({history}) {
                     <Route path='/home' exact component={HomePage}/>
                     <Route path='/v1' exact component={V1}/>
                     <Route path='/' exact component={V2}/>
-
+                    <Route path='/g' exact component={Garage}/>
                     <Route path='/second' exact component={SecondPage}/>
                 </Switch>
             </Fragment>

@@ -192,4 +192,10 @@ func ApiV2(router *gin.Engine) {
 		// 返回JSON响应
 		c.JSON(200, jsonData)
 	})
+
+	router.GET("/api/test", func(c *gin.Context) {
+
+		// 返回JSON响应
+		c.JSON(200, gin.H{"code": 200, "message": "success"})
+	})
 }

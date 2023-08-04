@@ -28,7 +28,7 @@ class LeanLeft extends PureComponent {
             },
             chartStyle: {
                 position: "absolute",
-                top: "-0.5rem",
+                top: "-0.1rem",
                 left: "0",
                 right: "0",
                 bottom: "0"

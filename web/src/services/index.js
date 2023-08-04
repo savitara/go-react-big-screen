@@ -51,3 +51,14 @@ export const getSecondPageDataByParams = async (params) => {
   }
 };
 
+
+export const getTest = async () => {
+  try {
+    const response =  await get('/api/test', );
+    return response;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
+
