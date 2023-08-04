@@ -8,6 +8,9 @@ import {
 
 import {TopBox, TimeBox, TopCenter} from './style';
 import {connect} from "dva";
+import {Button, Tooltip} from "antd";
+import {LeftCircleOutlined} from '@ant-design/icons';
+import {routerRedux} from "dva/router";
 
 class index extends PureComponent {
     constructor(props) {
@@ -44,6 +47,14 @@ class index extends PureComponent {
         }, 1000);
     }
 
+    handleClick = () => {
+        const {dispatch} = this.props;
+        dispatch(
+            routerRedux.push({
+                pathname:'/',
+            })
+        )
+    };
     render() {
         // const { title } = this.state;
         const {resData} = this.props;
@@ -87,6 +98,11 @@ class index extends PureComponent {
                             <h3>{this.state.timeStr}</h3>
                         </TimeBox>
                     </div>
+                    <div className='top_button'>
+                        <Tooltip title="返回">
+                            <Button type="primary" shape="circle" onClick={() => this.handleClick()} icon={<LeftCircleOutlined />}/>
+                        </Tooltip>
+                    </div>
                     <TopCenter>
                         <div className='detail-list'>
                             {dataList && dataList.map((item, index) => (
@@ -104,6 +120,7 @@ class index extends PureComponent {
                             ))}
                         </div>
                     </TopCenter>
+
                 </TopBox>
             </Fragment>
         );
@@ -119,6 +136,8 @@ const mapStateToProps = state => {
     };
 };
 
-const mapStateToDispatch = dispatch => ({});
+const mapStateToDispatch = dispatch => ({
+    dispatch, // 将dispatch方法添加到props中
+});
 
 export default connect(mapStateToProps, mapStateToDispatch)(index);

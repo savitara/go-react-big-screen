@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { TitleColor } from '../../../style/color'
 
 export const TopBox = styled.div`
+
   .top_box {
     display: flex;
     justify-content: center;
@@ -52,9 +53,23 @@ export const TopBox = styled.div`
           left: 50%;
           transform: translate(-50%);
         }
-      } // end title
-    } // end title-box
-  } // end top_box
+      }
+
+      // end title
+    }
+
+    // end title-box
+  }
+
+  .top_button {
+    margin-bottom: 0;
+  }
+  .top_box_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
 `;
 
 export const TimeBox = styled.div`

@@ -43,7 +43,7 @@ export const getSecondPageData = async () => {
 
 export const getSecondPageDataByParams = async (params) => {
   try {
-    const response =  await get('/api/secondPageData', { params });
+    const response =  await get('/api/secondPageData/query', { params });
     return response.data;
   } catch (error) {
     console.error('Error:', error);

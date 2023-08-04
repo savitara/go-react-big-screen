@@ -17,7 +17,7 @@ function SecondPage({dispatch}) {
 
     return (
         <PageStyle>
-            {/* 右上角日期 */}
+            {/* 顶部 */}
             <TopPage/>
             <PageContent>
                 <LeftPage />

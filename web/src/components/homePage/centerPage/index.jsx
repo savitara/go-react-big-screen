@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'dva';
-import {push} from 'connected-react-router'; // 引入push方法
 
 import BoxData from "./BoxData";
 import {routerRedux} from "dva/router";
