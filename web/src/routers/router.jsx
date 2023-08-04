@@ -13,13 +13,11 @@ function RouterConfig({history}) {
                 {/* 全局样式注册到界面中 */}
                 <Iconstyle></Iconstyle>
                 <Globalstyle></Globalstyle>
-
                 {/* 路由管理 */}
                 <Switch>
                     <Route path='/' exact component={HomePage}/>
                     <Route path='/v1' exact component={V1}/>
                     <Route path='/second' exact component={SecondPage}/>
-
                 </Switch>
             </Fragment>
         );

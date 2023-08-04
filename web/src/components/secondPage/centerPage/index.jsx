@@ -4,9 +4,6 @@ import {connect} from 'dva';
 import LeanLeft from "./leanLeft";
 import LeanRight from "./leanRight";
 import LeanCenter from "./leanCenter";
-import {BorderRadiusBox2} from "../../homePage/centerPage/style";
-import SolitaireCard from "../../homePage/centerPage/charts/SolitaireCard";
-import EchartComponent from "../../homePage/centerPage/charts/EchartComponent";
 import LeanBottom from "./leanBottom";
 
 class index extends PureComponent {
@@ -15,9 +12,12 @@ class index extends PureComponent {
         this.state = {};
     }
 
+
     render() {
 
-        const {resData} = this.state;
+
+        const {resData, locationQuery} = this.state;
+        console.log(locationQuery)
         let centerPage = null
         let topBoxData = null
         let bottomBoxData = null
@@ -26,6 +26,8 @@ class index extends PureComponent {
         let leftData = null
         let bottomBoxDataList = []
         if (resData) {
+            console.log(resData)
+
             centerPage = resData.centerData
             if (centerPage.leanTop) {
                 topBoxData = centerPage.leanTop
@@ -80,8 +82,12 @@ class index extends PureComponent {
 }
 
 const mapStateToProps = state => {
+    const { data } = state.secondPage;
+    const locationQuery = data && data.params ? (data.params.location || {}).query : {};
+
     return {
-        resData: state.secondPage.data,
+        resData: data,
+        locationQuery: locationQuery,
     };
 };
 
