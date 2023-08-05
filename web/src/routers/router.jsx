@@ -7,27 +7,30 @@ import SecondPage from "../view/secondPage";
 import V1 from "../view/v1";
 import V2 from "../view/v2";
 import Garage from "../view/garage";
+import V3 from "../view/v3";
 
 function RouterConfig({history}) {
-    const route = () => {
-        return (
-            <Fragment>
-                {/* 全局样式注册到界面中 */}
-                <Iconstyle></Iconstyle>
-                <Globalstyle></Globalstyle>
-                {/* 路由管理 */}
-                <Switch>
-                    <Route path='/home' exact component={HomePage}/>
-                    <Route path='/v1' exact component={V1}/>
-                    <Route path='/' exact component={V2}/>
-                    <Route path='/g' exact component={Garage}/>
-                    <Route path='/second' exact component={SecondPage}/>
-                </Switch>
-            </Fragment>
-        );
-    };
+  const route = () => {
+    return (
+      <Fragment>
+        {/* 全局样式注册到界面中 */}
+        <Iconstyle></Iconstyle>
+        <Globalstyle></Globalstyle>
+        {/* 路由管理 */}
+        <Switch>
+          <Route path='/home' exact component={HomePage}/>
+          <Route path='/v1' exact component={V1}/>
+          <Route path='/v2' exact component={V2}/>
+          <Route path='/' exact component={V3}/>
 
-    return <Router history={history}>{route()}</Router>;
+          <Route path='/g' exact component={Garage}/>
+          <Route path='/second' exact component={SecondPage}/>
+        </Switch>
+      </Fragment>
+    );
+  };
+
+  return <Router history={history}>{route()}</Router>;
 }
 
 export default RouterConfig;

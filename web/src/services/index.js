@@ -62,3 +62,30 @@ export const getTest = async () => {
   }
 };
 
+
+
+// V3
+
+
+// 获取右侧界面数据请求
+export const getRightPageDataV3 = async () => {
+  return request('/api/v3/rightPageData').then(response => {
+    return response.data;
+  });
+};
+
+
+// 获取左侧界面数据请求
+export const getLeftPageDataV3 = async () => {
+  return request('/api/v3/leftPageData').then(response => {
+    return response.data;
+  });
+};
+
+
+// 获取中间界面数据请求
+export const getCenterPageDataV3 = async () => {
+  return request('/api/v3/centerPageData').then(response => {
+    return response.data;
+  });
+};

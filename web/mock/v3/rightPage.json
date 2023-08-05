@@ -1,0 +1,270 @@
+{
+  "data": {
+    "rightData": {
+      "top": {
+        "title": "停车场实时占用率",
+        "chart": {
+          "chartOption": {
+            "chartContainerStyle": {
+              "width": "1.65rem",
+              "height": "1.55rem",
+              "position": "relative",
+              "overflow": "hidden"
+            },
+            "chartStyle": {
+              "position": "absolute",
+              "top": "-0.5rem",
+              "left": "0",
+              "right": "0",
+              "bottom": "0"
+            },
+            "option": {
+              "series": [
+                {
+                  "type": "pie",
+                  "radius": [
+                    "20%",
+                    "30%"
+                  ],
+                  "avoidLabelOverlap": false,
+                  "label": {
+                    "show": true,
+                    "position": "outside",
+                    "formatter": "{b}",
+                    "color": "#fff"
+                  },
+                  "emphasis": {
+                    "label": {
+                      "show": true,
+                      "fontSize": "20",
+                      "fontWeight": "bold",
+                      "color": "#fff"
+                    }
+                  },
+                  "labelLine": {
+                    "show": true,
+                    "length": 10,
+                    "length2": 20
+                  },
+                  "data": [
+                    {
+                      "value": 335,
+                      "name": "1到60分钟"
+                    },
+                    {
+                      "value": 234,
+                      "name": "1到12小时"
+                    },
+                    {
+                      "value": 310,
+                      "name": "12到24小时"
+                    },
+                    {
+                      "value": 160,
+                      "name": "24小时以上"
+                    },
+                    {
+                      "value": 100,
+                      "name": "48小时以上"
+                    }
+                  ]
+                }
+              ],
+              "graphic": [
+                {
+                  "type": "text",
+                  "left": "center",
+                  "top": "center",
+                  "style": {
+                    "text": "停车时长分布",
+                    "textAlign": "center",
+                    "fill": "#fff",
+                    "fontSize": 20,
+                    "fontWeight": "bold"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "center": {
+        "title": "停车路段周转率排行",
+        "chart": {
+          "type": "pie",
+          "chartOption": {
+            "chartContainerStyle": {
+              "width": "1.65rem",
+              "height": "1.55rem",
+              "position": "relative",
+              "overflow": "hidden"
+            },
+            "chartStyle": {
+              "position": "absolute",
+              "top": "-0.5rem",
+              "left": "0",
+              "right": "0",
+              "bottom": "0"
+            },
+            "option": {
+              "series": [
+                {
+                  "type": "pie",
+                  "radius": [
+                    "20%",
+                    "30%"
+                  ],
+                  "avoidLabelOverlap": false,
+                  "label": {
+                    "show": true,
+                    "position": "outside",
+                    "formatter": "{b}",
+                    "color": "#fff"
+                  },
+                  "emphasis": {
+                    "label": {
+                      "show": true,
+                      "fontSize": "20",
+                      "fontWeight": "bold",
+                      "color": "#fff"
+                    }
+                  },
+                  "labelLine": {
+                    "show": true,
+                    "length": 10,
+                    "length2": 20
+                  },
+                  "data": [
+                    {
+                      "value": 335,
+                      "name": "1到60分钟"
+                    },
+                    {
+                      "value": 234,
+                      "name": "1到12小时"
+                    },
+                    {
+                      "value": 310,
+                      "name": "12到24小时"
+                    },
+                    {
+                      "value": 160,
+                      "name": "24小时以上"
+                    },
+                    {
+                      "value": 100,
+                      "name": "48小时以上"
+                    }
+                  ]
+                }
+              ],
+              "graphic": [
+                {
+                  "type": "text",
+                  "left": "center",
+                  "top": "center",
+                  "style": {
+                    "text": "停车时长分布",
+                    "textAlign": "center",
+                    "fill": "#fff",
+                    "fontSize": 20,
+                    "fontWeight": "bold"
+                  }
+                }
+              ]
+            }
+          }
+        }
+
+      },
+      "bottom": {
+        "title": "停车时长分布",
+        "chart": {
+          "type": "pie",
+          "chartOption": {
+            "chartContainerStyle": {
+              "width": "1.65rem",
+              "height": "1.55rem",
+              "position": "relative",
+              "overflow": "hidden"
+            },
+            "chartStyle": {
+              "position": "absolute",
+              "top": "-0.5rem",
+              "left": "0",
+              "right": "0",
+              "bottom": "0"
+            },
+            "option": {
+              "series": [
+                {
+                  "type": "pie",
+                  "radius": [
+                    "20%",
+                    "30%"
+                  ],
+                  "avoidLabelOverlap": false,
+                  "label": {
+                    "show": true,
+                    "position": "outside",
+                    "formatter": "{b}",
+                    "color": "#fff"
+                  },
+                  "emphasis": {
+                    "label": {
+                      "show": true,
+                      "fontSize": "20",
+                      "fontWeight": "bold",
+                      "color": "#fff"
+                    }
+                  },
+                  "labelLine": {
+                    "show": true,
+                    "length": 10,
+                    "length2": 20
+                  },
+                  "data": [
+                    {
+                      "value": 335,
+                      "name": "1到60分钟"
+                    },
+                    {
+                      "value": 234,
+                      "name": "1到12小时"
+                    },
+                    {
+                      "value": 310,
+                      "name": "12到24小时"
+                    },
+                    {
+                      "value": 160,
+                      "name": "24小时以上"
+                    },
+                    {
+                      "value": 100,
+                      "name": "48小时以上"
+                    }
+                  ]
+                }
+              ],
+              "graphic": [
+                {
+                  "type": "text",
+                  "left": "center",
+                  "top": "center",
+                  "style": {
+                    "text": "停车时长分布",
+                    "textAlign": "center",
+                    "fill": "#fff",
+                    "fontSize": 20,
+                    "fontWeight": "bold"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

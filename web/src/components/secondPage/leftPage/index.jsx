@@ -52,7 +52,7 @@ class index extends PureComponent {
 
 
     render() {
-        const {resData} = this.state;
+        const {resData} = this.props;
         let leftPage = null
         let topBoxData = null
         let bottomBoxData = null

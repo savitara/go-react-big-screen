@@ -1,8 +1,8 @@
-import {getRightPageData} from '../services';
+import {getRightPageDataV3} from "../../services";
 // 注意要在index.js 添加 app.model(require('./models/rightPage').default);
 export default {
     // 命名空间 (必填)
-    namespace: 'rightPage',
+    namespace: 'rightPageV3',
 
     // 数据
     state: {},
@@ -12,8 +12,8 @@ export default {
         setup({dispatch, history}) {
             return history.listen((location, action) => {
                 // 参数可以直接简写成{pathname}
-                if ( location.pathname === '/v1' || location.pathname === '/g'|| location.pathname === '/v2') {
-                    dispatch({type: 'getRightPageData'});
+                if (location.pathname === '/') {
+                    dispatch({type: 'getRightPageDataV3'});
                 }
             });
         },
@@ -21,8 +21,8 @@ export default {
 
     // 异步请求
     effects: {
-        * getRightPageData({payload}, {call, put}) {
-            const data = yield call(getRightPageData);
+        * getRightPageDataV3({payload}, {call, put}) {
+            const data = yield call(getRightPageDataV3);
             if (data) {
                 yield put({
                     type: 'setData',

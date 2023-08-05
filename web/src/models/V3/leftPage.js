@@ -1,8 +1,8 @@
-import { getLeftPageData } from '../services';
+import { getLeftPageDataV3} from '../../services';
 // 注意要在index.js 添加 app.model(require('./models/leftPage').default);
 export default {
   // 命名空间 (必填)
-  namespace: 'leftPage',
+  namespace: 'leftPageV3',
 
   // 数据
   state: {},
@@ -12,8 +12,8 @@ export default {
     setup({ dispatch, history }) {
       return history.listen((location, action) => {
         // 参数可以直接简写成{pathname}
-        if ( location.pathname === '/v1' || location.pathname === '/g'|| location.pathname === '/v2'){
-          dispatch({ type: 'getLeftPageData' });
+        if (location.pathname === '/' ){
+          dispatch({ type: 'getLeftPageDataV3' });
         }
       });
     },
@@ -21,8 +21,8 @@ export default {
 
   // 异步请求
   effects: {
-    *getLeftPageData({ payload }, { call, put }) {
-      const data = yield call(getLeftPageData);
+    *getLeftPageDataV3({ payload }, { call, put }) {
+      const data = yield call(getLeftPageDataV3);
       if (data) {
         yield put({
           type: 'setData',

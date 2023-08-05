@@ -28,7 +28,7 @@ class index extends PureComponent {
     render() {
 
 
-        const {resData, queryData, locationQuery} = this.state;
+        const {resData, queryData, locationQuery} = this.props;
         let centerPage = null
         let topBoxData = null
         let bottomBoxData = null

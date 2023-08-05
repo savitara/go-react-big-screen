@@ -14,6 +14,9 @@ app.model(require('./models/rightPage').default);
 app.model(require('./models/homePage').default);
 app.model(require('./models/secondPage').default);
 
+app.model(require('./models/V3/leftPage').default);
+app.model(require('./models/V3/centerPage').default);
+app.model(require('./models/V3/rightPage').default);
 // 4. Router
 app.router(require('./routers/router').default);
 

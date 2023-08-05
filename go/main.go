@@ -3,6 +3,7 @@ package main
 import (
 	v1 "big-srceen/v1"
 	v2 "big-srceen/v2"
+	v3 "big-srceen/v3"
 	"github.com/gin-gonic/gin"
 )
 
@@ -26,6 +27,8 @@ func main() {
 	v1.ApiV1(router)
 
 	v2.ApiV2(router)
+
+	v3.ApiV3(router)
 
 	router.Run("0.0.0.0:8080")
 }
