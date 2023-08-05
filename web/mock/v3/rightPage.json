@@ -1,7 +1,7 @@
 {
   "data": {
     "rightData": {
-      "leanCenterData": {
+      "leanRightData": {
         "top": {
           "title": "停车习惯",
           "chart": {
@@ -246,7 +246,7 @@
             "chartOption": {
               "chartStyle": {
                 "width": "3.65rem",
-                "height": "3.3rem"
+                "height": "2.04rem"
               },
               "option": {
                 "title": [
@@ -334,7 +334,7 @@
             "chartOption": {
               "chartStyle": {
                 "width": "3.65rem",
-                "height": "3.3rem"
+                "height": "2.04rem"
               },
               "option": {
                 "title": [
@@ -409,94 +409,6 @@
               }
             }
           }
-        }
-      },
-      "leanRightData": {
-        "top": {
-          "title": "最近7日停车周转率",
-          "chart": {
-            "chartOption": {
-              "chartStyle": {
-                "width": "4rem",
-                "height": "2.03rem"
-              },
-              "option": {
-                "xAxis": {
-                  "type": "category",
-                  "data": [
-                    "24日",
-                    "25日",
-                    "26日",
-                    "27日",
-                    "28日",
-                    "29日",
-                    "30日"
-                  ]
-                },
-                "yAxis": {
-                  "type": "value",
-                  "max": null
-                },
-                "series": [
-                  {
-                    "data": [
-                      75,
-                      70,
-                      80,
-                      90,
-                      95,
-                      100,
-                      95
-                    ],
-                    "type": "bar"
-                  }
-                ]
-              }
-            }
-          }
-        },
-        "center": {
-          "title": "最近7日充电周转率",
-          "chart": {
-            "chartOption": {
-              "chartStyle": {
-                "width": "4rem",
-                "height": "2.03rem"
-              },
-              "option": {
-                "xAxis": {
-                  "type": "category",
-                  "data": [
-                    "24日",
-                    "25日",
-                    "26日",
-                    "27日",
-                    "28日",
-                    "29日",
-                    "30日"
-                  ]
-                },
-                "yAxis": {
-                  "type": "value",
-                  "max": null
-                },
-                "series": [
-                  {
-                    "data": [
-                      60,
-                      70,
-                      75,
-                      80,
-                      85,
-                      90,
-                      95
-                    ],
-                    "type": "bar"
-                  }
-                ]
-              }
-            }
-          }
         },
         "bottom": {
           "title": "最近7日新增用户量",
@@ -504,7 +416,7 @@
             "chartOption": {
               "chartStyle": {
                 "width": "4rem",
-                "height": "2.03rem"
+                "height": "2.04rem"
               },
               "option": {
                 "xAxis": {
@@ -533,6 +445,184 @@
                       150,
                       140,
                       160
+                    ],
+                    "type": "bar"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "leanCenterData": {
+        "top": {
+          "title": "充电桩使用率",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "2.02rem"
+              },
+              "option": {
+                "xAxis": {
+                  "type": "category",
+                  "data": [
+                    "00:00",
+                    "01:00",
+                    "02:00",
+                    "03:00",
+                    "04:00",
+                    "05:00",
+                    "06:00",
+                    "07:00",
+                    "08:00",
+                    "09:00",
+                    "10:00",
+                    "11:00",
+                    "12:00",
+                    "13:00",
+                    "14:00",
+                    "15:00",
+                    "16:00",
+                    "17:00",
+                    "18:00",
+                    "19:00",
+                    "20:00",
+                    "21:00",
+                    "22:00",
+                    "23:00"
+                  ]
+                },
+                "yAxis": {
+                  "type": "value",
+                  "max": 100
+                },
+                "series": [
+                  {
+                    "data": [
+                      80,
+                      90,
+                      85,
+                      75,
+                      70,
+                      60,
+                      65,
+                      70,
+                      80,
+                      85,
+                      90,
+                      95,
+                      100,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      85,
+                      90,
+                      95,
+                      90,
+                      85,
+                      80
+                    ],
+                    "type": "line"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "center": {
+          "title": "充电桩使用率排行",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "2.02rem"
+              },
+              "option": {
+                "grid": {
+                  "left": "3%",
+                  "right": "4%",
+                  "bottom": "3%",
+                  "containLabel": true
+                },
+                "xAxis": {
+                  "type": "value"
+                },
+                "yAxis": {
+                  "type": "category",
+                  "data": [
+                    "第一停车场",
+                    "第二停车场",
+                    "第三停车场",
+                    "第四停车场",
+                    "第五停车场",
+                    "第六停车场",
+                    "第七停车场"
+                  ]
+                },
+                "series": [
+                  {
+                    "name": "Direct",
+                    "type": "bar",
+                    "stack": "total",
+                    "label": {
+                      "show": true
+                    },
+                    "emphasis": {
+                      "focus": "series"
+                    },
+                    "data": [
+                      70,
+                      40,
+                      38,
+                      35,
+                      34,
+                      31,
+                      28
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "bottom": {
+          "title": "最近7日充电周转率",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "2.02rem"
+              },
+              "option": {
+                "xAxis": {
+                  "type": "category",
+                  "data": [
+                    "24日",
+                    "25日",
+                    "26日",
+                    "27日",
+                    "28日",
+                    "29日",
+                    "30日"
+                  ]
+                },
+                "yAxis": {
+                  "type": "value",
+                  "max": null
+                },
+                "series": [
+                  {
+                    "data": [
+                      60,
+                      70,
+                      75,
+                      80,
+                      85,
+                      90,
+                      95
                     ],
                     "type": "bar"
                   }
