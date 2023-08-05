@@ -17,7 +17,7 @@ export const LeftTopBox = styled.div`
 export const LeftCenterBox = styled.div`
 
   position: relative;
-  margin-top: 0.05rem;
+  margin-top: 0.005rem;
   //height: 3.885rem;
   width: 100%;
 
@@ -25,7 +25,7 @@ export const LeftCenterBox = styled.div`
 
 export const LeftBottomBox = styled.div`
   position: relative;
-  margin-top: 0.05rem;
+  margin-top: 0.005rem;
   //height: 3.885rem;
   width: 100%;
 

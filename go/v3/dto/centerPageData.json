@@ -210,86 +210,87 @@
       },
       "leanRightData": {
         "top": {
-          "title": "停车场实时占用率",
+          "title": "最近30日收费趋势-停车",
           "chart": {
             "chartOption": {
-              "chartContainerStyle": {
-                "width": "1.65rem",
-                "height": "1.55rem",
-                "position": "relative",
-                "overflow": "hidden"
-              },
               "chartStyle": {
-                "position": "absolute",
-                "top": "-0.5rem",
-                "left": "0",
-                "right": "0",
-                "bottom": "0"
+                "width": "2.55rem",
+                "height": "1.47rem"
               },
               "option": {
+                "xAxis": {
+                  "type": "category",
+                  "data": [
+                    "1日",
+                    "2日",
+                    "3日",
+                    "4日",
+                    "5日",
+                    "6日",
+                    "7日",
+                    "8日",
+                    "9日",
+                    "10日",
+                    "11日",
+                    "12日",
+                    "13日",
+                    "14日",
+                    "15日",
+                    "16日",
+                    "17日",
+                    "18日",
+                    "19日",
+                    "20日",
+                    "21日",
+                    "22日",
+                    "23日",
+                    "24日",
+                    "25日",
+                    "26日",
+                    "27日",
+                    "28日",
+                    "29日",
+                    "30日"
+                  ]
+                },
+                "yAxis": {
+                  "type": "value"
+                },
                 "series": [
                   {
-                    "type": "pie",
-                    "radius": [
-                      "20%",
-                      "30%"
-                    ],
-                    "avoidLabelOverlap": false,
-                    "label": {
-                      "show": true,
-                      "position": "outside",
-                      "formatter": "{b}",
-                      "color": "#fff"
-                    },
-                    "emphasis": {
-                      "label": {
-                        "show": true,
-                        "fontSize": "20",
-                        "fontWeight": "bold",
-                        "color": "#fff"
-                      }
-                    },
-                    "labelLine": {
-                      "show": true,
-                      "length": 10,
-                      "length2": 20
-                    },
                     "data": [
-                      {
-                        "value": 335,
-                        "name": "1到60分钟"
-                      },
-                      {
-                        "value": 234,
-                        "name": "1到12小时"
-                      },
-                      {
-                        "value": 310,
-                        "name": "12到24小时"
-                      },
-                      {
-                        "value": 160,
-                        "name": "24小时以上"
-                      },
-                      {
-                        "value": 100,
-                        "name": "48小时以上"
-                      }
-                    ]
-                  }
-                ],
-                "graphic": [
-                  {
-                    "type": "text",
-                    "left": "center",
-                    "top": "center",
-                    "style": {
-                      "text": "停车时长分布",
-                      "textAlign": "center",
-                      "fill": "#fff",
-                      "fontSize": 20,
-                      "fontWeight": "bold"
-                    }
+                      80,
+                      90,
+                      85,
+                      75,
+                      70,
+                      60,
+                      65,
+                      70,
+                      80,
+                      85,
+                      90,
+                      95,
+                      100,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      85,
+                      90,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      70,
+                      80,
+                      90,
+                      95,
+                      100
+                    ],
+                    "type": "line"
                   }
                 ]
               }
@@ -297,87 +298,87 @@
           }
         },
         "center": {
-          "title": "停车路段周转率排行",
+          "title": "最近30日订单量趋势-停车",
           "chart": {
-            "type": "pie",
             "chartOption": {
-              "chartContainerStyle": {
-                "width": "1.65rem",
-                "height": "1.55rem",
-                "position": "relative",
-                "overflow": "hidden"
-              },
               "chartStyle": {
-                "position": "absolute",
-                "top": "-0.5rem",
-                "left": "0",
-                "right": "0",
-                "bottom": "0"
+                "width": "2.55rem",
+                "height": "1.47rem"
               },
               "option": {
+                "xAxis": {
+                  "type": "category",
+                  "data": [
+                    "1日",
+                    "2日",
+                    "3日",
+                    "4日",
+                    "5日",
+                    "6日",
+                    "7日",
+                    "8日",
+                    "9日",
+                    "10日",
+                    "11日",
+                    "12日",
+                    "13日",
+                    "14日",
+                    "15日",
+                    "16日",
+                    "17日",
+                    "18日",
+                    "19日",
+                    "20日",
+                    "21日",
+                    "22日",
+                    "23日",
+                    "24日",
+                    "25日",
+                    "26日",
+                    "27日",
+                    "28日",
+                    "29日",
+                    "30日"
+                  ]
+                },
+                "yAxis": {
+                  "type": "value"
+                },
                 "series": [
                   {
-                    "type": "pie",
-                    "radius": [
-                      "20%",
-                      "30%"
-                    ],
-                    "avoidLabelOverlap": false,
-                    "label": {
-                      "show": true,
-                      "position": "outside",
-                      "formatter": "{b}",
-                      "color": "#fff"
-                    },
-                    "emphasis": {
-                      "label": {
-                        "show": true,
-                        "fontSize": "20",
-                        "fontWeight": "bold",
-                        "color": "#fff"
-                      }
-                    },
-                    "labelLine": {
-                      "show": true,
-                      "length": 10,
-                      "length2": 20
-                    },
                     "data": [
-                      {
-                        "value": 335,
-                        "name": "1到60分钟"
-                      },
-                      {
-                        "value": 234,
-                        "name": "1到12小时"
-                      },
-                      {
-                        "value": 310,
-                        "name": "12到24小时"
-                      },
-                      {
-                        "value": 160,
-                        "name": "24小时以上"
-                      },
-                      {
-                        "value": 100,
-                        "name": "48小时以上"
-                      }
-                    ]
-                  }
-                ],
-                "graphic": [
-                  {
-                    "type": "text",
-                    "left": "center",
-                    "top": "center",
-                    "style": {
-                      "text": "停车时长分布",
-                      "textAlign": "center",
-                      "fill": "#fff",
-                      "fontSize": 20,
-                      "fontWeight": "bold"
-                    }
+                      80,
+                      90,
+                      85,
+                      75,
+                      70,
+                      60,
+                      65,
+                      70,
+                      80,
+                      85,
+                      90,
+                      95,
+                      100,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      85,
+                      90,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      70,
+                      80,
+                      90,
+                      95,
+                      100
+                    ],
+                    "type": "line"
                   }
                 ]
               }
@@ -385,87 +386,175 @@
           }
         },
         "bottom": {
-          "title": "停车时长分布",
+          "title": "最近30日收费趋势-充电桩",
           "chart": {
-            "type": "pie",
             "chartOption": {
-              "chartContainerStyle": {
-                "width": "1.65rem",
-                "height": "1.55rem",
-                "position": "relative",
-                "overflow": "hidden"
-              },
               "chartStyle": {
-                "position": "absolute",
-                "top": "-0.5rem",
-                "left": "0",
-                "right": "0",
-                "bottom": "0"
+                "width": "2.55rem",
+                "height": "1.47rem"
               },
               "option": {
+                "xAxis": {
+                  "type": "category",
+                  "data": [
+                    "1日",
+                    "2日",
+                    "3日",
+                    "4日",
+                    "5日",
+                    "6日",
+                    "7日",
+                    "8日",
+                    "9日",
+                    "10日",
+                    "11日",
+                    "12日",
+                    "13日",
+                    "14日",
+                    "15日",
+                    "16日",
+                    "17日",
+                    "18日",
+                    "19日",
+                    "20日",
+                    "21日",
+                    "22日",
+                    "23日",
+                    "24日",
+                    "25日",
+                    "26日",
+                    "27日",
+                    "28日",
+                    "29日",
+                    "30日"
+                  ]
+                },
+                "yAxis": {
+                  "type": "value"
+                },
                 "series": [
                   {
-                    "type": "pie",
-                    "radius": [
-                      "20%",
-                      "30%"
-                    ],
-                    "avoidLabelOverlap": false,
-                    "label": {
-                      "show": true,
-                      "position": "outside",
-                      "formatter": "{b}",
-                      "color": "#fff"
-                    },
-                    "emphasis": {
-                      "label": {
-                        "show": true,
-                        "fontSize": "20",
-                        "fontWeight": "bold",
-                        "color": "#fff"
-                      }
-                    },
-                    "labelLine": {
-                      "show": true,
-                      "length": 10,
-                      "length2": 20
-                    },
                     "data": [
-                      {
-                        "value": 335,
-                        "name": "1到60分钟"
-                      },
-                      {
-                        "value": 234,
-                        "name": "1到12小时"
-                      },
-                      {
-                        "value": 310,
-                        "name": "12到24小时"
-                      },
-                      {
-                        "value": 160,
-                        "name": "24小时以上"
-                      },
-                      {
-                        "value": 100,
-                        "name": "48小时以上"
-                      }
-                    ]
+                      80,
+                      90,
+                      85,
+                      75,
+                      70,
+                      60,
+                      65,
+                      70,
+                      80,
+                      85,
+                      90,
+                      95,
+                      100,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      85,
+                      90,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      70,
+                      80,
+                      90,
+                      95,
+                      100
+                    ],
+                    "type": "line"
                   }
-                ],
-                "graphic": [
+                ]
+              }
+            }
+          }
+        },
+        "bottomPlus": {
+          "title": "最近30日订单量趋势-充电桩",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "2.55rem",
+                "height": "1.47rem"
+              },
+              "option": {
+                "xAxis": {
+                  "type": "category",
+                  "data": [
+                    "1日",
+                    "2日",
+                    "3日",
+                    "4日",
+                    "5日",
+                    "6日",
+                    "7日",
+                    "8日",
+                    "9日",
+                    "10日",
+                    "11日",
+                    "12日",
+                    "13日",
+                    "14日",
+                    "15日",
+                    "16日",
+                    "17日",
+                    "18日",
+                    "19日",
+                    "20日",
+                    "21日",
+                    "22日",
+                    "23日",
+                    "24日",
+                    "25日",
+                    "26日",
+                    "27日",
+                    "28日",
+                    "29日",
+                    "30日"
+                  ]
+                },
+                "yAxis": {
+                  "type": "value"
+                },
+                "series": [
                   {
-                    "type": "text",
-                    "left": "center",
-                    "top": "center",
-                    "style": {
-                      "text": "停车时长分布",
-                      "textAlign": "center",
-                      "fill": "#fff",
-                      "fontSize": 20,
-                      "fontWeight": "bold"
-                    }
+                    "data": [
+                      80,
+                      90,
+                      85,
+                      75,
+                      70,
+                      60,
+                      65,
+                      70,
+                      80,
+                      85,
+                      90,
+                      95,
+                      100,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      85,
+                      90,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      70,
+                      80,
+                      90,
+                      95,
+                      100
+                    ],
+                    "type": "line"
                   }
                 ]
               }

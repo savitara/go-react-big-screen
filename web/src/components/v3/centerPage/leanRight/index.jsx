@@ -7,6 +7,7 @@ import {RightBottomBox, RightCenterBox, RightPage, RightTopBox} from "../../righ
 import {BorderRadiusBox2} from "../../../homePage/centerPage/style";
 import SolitaireCard from "../../../homePage/centerPage/charts/SolitaireCard";
 import EchartComponent from "../../../homePage/centerPage/charts/EchartComponent";
+import {LeftBottomBox} from "../../leftPage/style";
 
 class LeanRight extends PureComponent {
     constructor(props) {
@@ -21,6 +22,7 @@ class LeanRight extends PureComponent {
         let topBoxData = null
         let bottomBoxData = null
         let centerData = null
+        let bottomBoxDataPlus = null
         if (LeanRightData) {
             if (LeanRightData.top) {
                 topBoxData = LeanRightData.top
@@ -30,6 +32,9 @@ class LeanRight extends PureComponent {
             }
             if (LeanRightData.center) {
                 centerData = LeanRightData.center
+            }
+            if(LeanRightData.bottomPlus){
+                bottomBoxDataPlus = LeanRightData.bottomPlus
             }
         }
 
@@ -132,6 +137,41 @@ class LeanRight extends PureComponent {
                                     </div>
                                 </BorderRadiusBox2>
                             </RightBottomBox>
+                        )}
+
+                        {/* 底部数据区域+1 */}
+                        {bottomBoxDataPlus && (
+                            <LeftBottomBox>
+                                <BorderRadiusBox2>
+                                    <div className='left-bottom'>
+                                        <ModuleTitle>
+                                            <i className='iconfont'>&#xe78f;</i>
+                                            <span>{bottomBoxDataPlus.title}</span>
+                                        </ModuleTitle>
+                                        {/*卡片*/}
+                                        {bottomBoxDataPlus.card && (
+                                            <BorderRadiusBox2>
+                                                <SolitaireCard solitaireCardData={bottomBoxDataPlus.card}>
+                                                </SolitaireCard>
+                                            </BorderRadiusBox2>
+                                        )}
+
+                                        {/* 图表 */}
+                                        {bottomBoxDataPlus.chart && (
+                                            <EchartComponent
+                                                echartData={bottomBoxDataPlus.chart.chartOption}></EchartComponent>
+                                        )}
+
+
+                                        {/*/!* 开关 *!/*/}
+                                        {/*{bottomBoxData.switch && (*/}
+                                        {/*  <SwitchBox*/}
+                                        {/*    switchData={bottomBoxData.switch}></SwitchBox>*/}
+                                        {/*)}*/}
+
+                                    </div>
+                                </BorderRadiusBox2>
+                            </LeftBottomBox>
                         )}
 
                     </RightPage>
