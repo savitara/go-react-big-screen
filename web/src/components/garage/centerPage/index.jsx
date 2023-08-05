@@ -15,9 +15,14 @@ class index extends PureComponent {
       mess: '' //初始化mess属性
     };
   }
+
   handleChildValueChange = (newValue) => {
     console.log(newValue)
+    this.setState({
+      mess: newValue
+    })
   };
+
   render() {
     const {
       berthOperation,
@@ -28,14 +33,15 @@ class index extends PureComponent {
       rankingIdentityCategory,
       mapChartData
     } = this.props;
-
-
+    let mess = this.state.mess
+    console.log(mess)
     return (
       <>
         {mapChartData && (<CenterPage>
             <div style={{display: 'flex'}}>
 
-              <LeanLeft roofDataList={roofDataList}  onValueChange={this.handleChildValueChange} ></LeanLeft>
+              <LeanLeft roofDataList={roofDataList} mess={mess}
+                        onValueChange={this.handleChildValueChange}></LeanLeft>
 
               <MapChart
                 style={{
