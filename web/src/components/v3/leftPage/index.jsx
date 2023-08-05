@@ -24,6 +24,7 @@ class index extends PureComponent {
     let topBoxData = null
     let bottomBoxData = null
     let centerData = null
+    let bottomBoxDataPlus= null
     if (resData) {
       leftPage = resData.leftData
       if (leftPage.top) {
@@ -34,6 +35,9 @@ class index extends PureComponent {
       }
       if (leftPage.center) {
         centerData = leftPage.center
+      }
+      if(leftPage.bottomPlus){
+        bottomBoxDataPlus = leftPage.bottomPlus
       }
     }
 
@@ -136,6 +140,41 @@ class index extends PureComponent {
                   </div>
                 </BorderRadiusBox2>
               </LeftBottomBox>
+            )}
+
+            {/* 底部数据区域+1 */}
+            {bottomBoxDataPlus && (
+                <LeftBottomBox>
+                  <BorderRadiusBox2>
+                    <div className='left-bottom'>
+                      <ModuleTitle>
+                        <i className='iconfont'>&#xe78f;</i>
+                        <span>{bottomBoxDataPlus.title}</span>
+                      </ModuleTitle>
+                      {/*卡片*/}
+                      {bottomBoxDataPlus.card && (
+                          <BorderRadiusBox2>
+                            <SolitaireCard solitaireCardData={bottomBoxDataPlus.card}>
+                            </SolitaireCard>
+                          </BorderRadiusBox2>
+                      )}
+
+                      {/* 图表 */}
+                      {bottomBoxDataPlus.chart && (
+                          <EchartComponent
+                              echartData={bottomBoxDataPlus.chart.chartOption}></EchartComponent>
+                      )}
+
+
+                      {/*/!* 开关 *!/*/}
+                      {/*{bottomBoxData.switch && (*/}
+                      {/*  <SwitchBox*/}
+                      {/*    switchData={bottomBoxData.switch}></SwitchBox>*/}
+                      {/*)}*/}
+
+                    </div>
+                  </BorderRadiusBox2>
+                </LeftBottomBox>
             )}
 
           </LeftPage>
