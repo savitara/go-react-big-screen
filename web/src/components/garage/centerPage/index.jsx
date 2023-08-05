@@ -9,85 +9,89 @@ import LeanRight from "./leanRight";
 import AaLiMap from "./charts/AaLiMap";
 
 class index extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
-    render() {
-        const {
-            berthOperation,
-            roofDataList,
-            parkingRecord,
-            parkingHabitsData,
-            identityCategory,
-            rankingIdentityCategory,
-            mapChartData
-        } = this.props;
-
-
-        return (
-            <>
-                {mapChartData && (<CenterPage>
-                        <div style={{display: 'flex'}}>
-
-                            <LeanLeft roofDataList={roofDataList}></LeanLeft>
-
-                            <MapChart
-                                style={{
-                                    display: 'inline-block', // 添加此样式以使组件并排显示
-                                }}
-                                id="MapId"
-                                mapChartData={mapChartData}
-                            />
-                            <LeanRight parkingHabitsData={parkingHabitsData} parkingRecord={parkingRecord}> </LeanRight>
-
-                        </div>
-
-                        <CenterBottomWidth>
-                            <div className='detail-list'>
-                                <>
-                                    <div className='detail-list-item' key={index}>
-
-                                        <div className='offline-portal-box'>
-                                            {berthOperation ? (
-                                                <>
-                                                    <div style={{display: 'flex'}}>
-                                                        <BerthOperation inline={true}
-                                                                        identityCategory={identityCategory}
-                                                                        rankingIdentityCategory={rankingIdentityCategory}/>
-                                                    </div>
-                                                </>
-                                            ) : (
-                                                ''
-                                            )}
-                                        </div>
+  constructor(props) {
+    super(props);
+    this.state = {
+      mess: '' //初始化mess属性
+    };
+  }
+  handleChildValueChange = (newValue) => {
+    console.log(newValue)
+  };
+  render() {
+    const {
+      berthOperation,
+      roofDataList,
+      parkingRecord,
+      parkingHabitsData,
+      identityCategory,
+      rankingIdentityCategory,
+      mapChartData
+    } = this.props;
 
 
-                                    </div>
+    return (
+      <>
+        {mapChartData && (<CenterPage>
+            <div style={{display: 'flex'}}>
 
-                                </>
-                            </div>
-                        </CenterBottomWidth>
+              <LeanLeft roofDataList={roofDataList}  onValueChange={this.handleChildValueChange} ></LeanLeft>
 
-                    </CenterPage>
-                )}
-            </>
+              <MapChart
+                style={{
+                  display: 'inline-block', // 添加此样式以使组件并排显示
+                }}
+                id="MapId"
+                mapChartData={mapChartData}
+              />
+              <LeanRight parkingHabitsData={parkingHabitsData} parkingRecord={parkingRecord}> </LeanRight>
 
-        );
-    }
+            </div>
+
+            <CenterBottomWidth>
+              <div className='detail-list'>
+                <>
+                  <div className='detail-list-item' key={index}>
+
+                    <div className='offline-portal-box'>
+                      {berthOperation ? (
+                        <>
+                          <div style={{display: 'flex'}}>
+                            <BerthOperation inline={true}
+                                            identityCategory={identityCategory}
+                                            rankingIdentityCategory={rankingIdentityCategory}/>
+                          </div>
+                        </>
+                      ) : (
+                        ''
+                      )}
+                    </div>
+
+
+                  </div>
+
+                </>
+              </div>
+            </CenterBottomWidth>
+
+          </CenterPage>
+        )}
+      </>
+
+    );
+  }
 }
 
 const mapStateToProps = state => {
-    return {
-        roofDataList: state.centerPage.roofDataList,
-        parkingHabitsData: state.centerPage.parkingHabitsData,
-        berthOperation: state.centerPage.berthOperation,
-        parkingRecord: state.centerPage.parkingRecord,
-        identityCategory: state.centerPage.identityCategory,
-        rankingIdentityCategory: state.centerPage.rankingIdentityCategory,
-        mapChartData: state.centerPage.mapChartData,
-    };
+  return {
+    roofDataList: state.centerPage.roofDataList,
+    parkingHabitsData: state.centerPage.parkingHabitsData,
+    berthOperation: state.centerPage.berthOperation,
+    parkingRecord: state.centerPage.parkingRecord,
+    identityCategory: state.centerPage.identityCategory,
+    rankingIdentityCategory: state.centerPage.rankingIdentityCategory,
+    mapChartData: state.centerPage.mapChartData,
+  };
 };
 
 const mapStateToDispatch = dispatch => ({});

@@ -1,82 +1,92 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import {
   ModuleTitle,
   LeftDiv,
   DataBox,
   BorderRadiusBox1
 } from '../style';
-import {Select} from 'antd';
-import {getTest} from '../../../../services';
+import { Select, TreeSelect } from 'antd';
+import { getTest } from '../../../../services';
 
-const {Option} = Select;
+const treeData = [
+  {
+    value: 'parent 1',
+    title: 'parent 1',
+    children: [
+      {
+        value: 'parent 1-0',
+        title: 'parent 1-0',
+        children: [
+          {
+            value: 'leaf1',
+            title: 'leaf1',
+          },
+          {
+            value: 'leaf2',
+            title: 'leaf2',
+          },
+        ],
+      },
+      {
+        value: 'parent 1-1',
+        title: 'parent 1-1',
+        children: [
+          {
+            value: 'leaf3',
+            title: (
+              <b
+                style={{
+                  color: '#08c',
+                }}
+              >
+                leaf3
+              </b>
+            ),
+          },
+        ],
+      },
+    ],
+  },
+];
 
 class LeanLeft extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      sptdd: 'asdasfafas', // 初始化sptdd为空字符串
+      sptdd: 'asdasfafas', // 初始化sptdd为固定字符串
     };
   }
-
-  componentDidMount() {
-    getTest().then((res) => {
-      console.log(res);
-      // this.setState({sptdd: res.message}); // 将获取的数据赋值给sptdd
-    });
-  }
-
-  handleChange = (value) => {
-    console.log(`selected ${value}`);
-    getTest().then((res) => {
-      console.log(res);
-      this.setState({sptdd: res.message}); // 将获取的数据赋值给sptdd
-    });
-    // 在这里执行handleChange的逻辑
+  handleTreeSelectChange = (value) => {
+    this.setState({ sptdd: value }); // 更新sptdd的值
+    this.props.onValueChange(value); // 调用父组件传递的回调函数，并将更新后的值作为参数传递
   };
 
   render() {
-    const {roofDataList} = this.props;
-    const {sptdd} = this.state; // 从state中获取sptdd
+    const { sptdd } = this.state; // 从state中获取sptdd
 
     return (
       <LeftDiv>
         <BorderRadiusBox1>
-          <div style={{width: '5rem'}}>
+          <div style={{ width: '5rem' }}>
             <ModuleTitle>
               <span>全国立体车库</span>
               <p>{sptdd}</p> {/* 在页面上展示sptdd的值 */}
             </ModuleTitle>
-            {/* 引入 select */}
-            <Select
-              defaultValue="lucy"
+            {/* 在这里添加TreeSelect组件 */}
+            <TreeSelect
+              showSearch
               style={{
-                width: 200,
+                width: '100%',
               }}
-              onChange={this.handleChange}
-              options={[
-                {
-                  label: 'Manager',
-                  options: [
-                    {
-                      label: 'Jack',
-                      value: 'jack',
-                    },
-                    {
-                      label: 'Lucy',
-                      value: 'lucy',
-                    },
-                  ],
-                },
-                {
-                  label: 'Engineer',
-                  options: [
-                    {
-                      label: 'yiminghe',
-                      value: 'Yiminghe',
-                    },
-                  ],
-                },
-              ]}
+              dropdownStyle={{
+                maxHeight: 400,
+                overflow: 'auto',
+              }}
+              placeholder="Please select"
+              allowClear
+              treeDefaultExpandAll
+              treeData={treeData}
+              onChange={this.handleTreeSelectChange}
             />
           </div>
         </BorderRadiusBox1>
