@@ -33,8 +33,6 @@ class LeanLeft extends PureComponent {
                         </div>
                     )}
 
-                    {/*<AaLiMap style={{flex: '1'}} centerPosition={centerPosition} amapZoom={amapZoom}*/}
-                    {/*         markerPositions={mapChartData.aMap.markerPositions}/>*/}
                 </BorderRadiusBox1>
             </CenterDiv>
 

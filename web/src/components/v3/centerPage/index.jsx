@@ -37,9 +37,7 @@ class index extends PureComponent {
                             <LeanLeft LeanLeftData={LeanLeftData}></LeanLeft>
 
 
-                            <Center dataCenter={dataCenter}>
-
-                            </Center>
+                            <Center dataCenter={dataCenter}> </Center>
                             <LeanRight LeanRightData={LeanRightData}> </LeanRight>
 
                         </div>

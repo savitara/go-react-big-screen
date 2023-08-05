@@ -5,7 +5,7 @@ export const CenterPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 12rem;
+  height: 7.45rem;
 `;
 
 // export const CenterBottom = styled.div`
@@ -134,25 +134,24 @@ export const BottomBox = styled.div`
 
 export const LeftDiv = styled.div`
   //align-self: flex-start; /* 将 LeftDiv 自身对齐方式设置为左侧对齐 */
-  display: flex;
-
-  .video-player{
-    display: flex;
-
-    //width: 100px;
-    //height: 100px;
-  }
+  //display: flex;
+  //.video-player{
+  //  display: flex;
+  //
+  //  //width: 100px;
+  //  //height: 100px;
+  //}
 
 `;
 
 export const RightDiv = styled.div`
-  flex: 1;
-  display: flex;
+  //flex: 1;
+  //display: flex;
 
 `;
 export const CenterDiv = styled.div`
-  flex: 1;
-  display: flex;
+  //flex: 1;
+  //display: flex;
 
 `;
 
