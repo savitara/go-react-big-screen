@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import * as echarts from 'echarts';
 import 'zrender/lib/svg/svg';
 import { debounce } from './index'; // 一个节流函数
+import 'echarts-liquidfill/src/liquidFill.js'
 
 export default class Chart extends PureComponent {
   constructor(props) {

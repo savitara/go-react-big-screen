@@ -1,266 +1,543 @@
 {
   "data": {
     "rightData": {
-      "top": {
-        "title": "停车场实时占用率",
-        "chart": {
-          "chartOption": {
-            "chartContainerStyle": {
-              "width": "1.65rem",
-              "height": "1.55rem",
-              "position": "relative",
-              "overflow": "hidden"
-            },
-            "chartStyle": {
-              "position": "absolute",
-              "top": "-0.5rem",
-              "left": "0",
-              "right": "0",
-              "bottom": "0"
-            },
-            "option": {
-              "series": [
-                {
-                  "type": "pie",
-                  "radius": [
-                    "20%",
-                    "30%"
-                  ],
-                  "avoidLabelOverlap": false,
-                  "label": {
-                    "show": true,
-                    "position": "outside",
-                    "formatter": "{b}",
-                    "color": "#fff"
-                  },
-                  "emphasis": {
-                    "label": {
-                      "show": true,
-                      "fontSize": "20",
-                      "fontWeight": "bold",
-                      "color": "#fff"
+      "leanCenterData": {
+        "top": {
+          "title": "停车习惯",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "1.47rem"
+              },
+              "option": {
+                "title": {
+                  "text": "停车时长",
+                  "subtext": "Fake Data",
+                  "left": "center"
+                },
+                "tooltip": {
+                  "trigger": "item"
+                },
+                "legend": {
+                  "orient": "vertical",
+                  "left": "left"
+                },
+                "series": [
+                  {
+                    "name": "停车时长",
+                    "type": "pie",
+                    "radius": "50%",
+                    "data": [
+                      {
+                        "value": 120,
+                        "name": "0-30分钟"
+                      },
+                      {
+                        "value": 80,
+                        "name": "30分钟-1小时"
+                      },
+                      {
+                        "value": 60,
+                        "name": "1-2小时"
+                      },
+                      {
+                        "value": 40,
+                        "name": "2-4小时"
+                      },
+                      {
+                        "value": 20,
+                        "name": "4小时以上"
+                      }
+                    ],
+                    "emphasis": {
+                      "itemStyle": {
+                        "shadowBlur": 10,
+                        "shadowOffsetX": 0,
+                        "shadowColor": "rgba(0, 0, 0, 0.5)"
+                      }
                     }
-                  },
-                  "labelLine": {
-                    "show": true,
-                    "length": 10,
-                    "length2": 20
-                  },
-                  "data": [
-                    {
-                      "value": 335,
-                      "name": "1到60分钟"
-                    },
-                    {
-                      "value": 234,
-                      "name": "1到12小时"
-                    },
-                    {
-                      "value": 310,
-                      "name": "12到24小时"
-                    },
-                    {
-                      "value": 160,
-                      "name": "24小时以上"
-                    },
-                    {
-                      "value": 100,
-                      "name": "48小时以上"
-                    }
-                  ]
-                }
-              ],
-              "graphic": [
-                {
-                  "type": "text",
-                  "left": "center",
-                  "top": "center",
-                  "style": {
-                    "text": "停车时长分布",
-                    "textAlign": "center",
-                    "fill": "#fff",
-                    "fontSize": 20,
-                    "fontWeight": "bold"
                   }
-                }
-              ]
+                ]
+              }
+            }
+          }
+        },
+        "center": {
+          "title": "充电习惯",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "1.47rem"
+              },
+              "option": {
+                "title": {
+                  "text": "充电习惯",
+                  "subtext": "Fake Data",
+                  "left": "center"
+                },
+                "tooltip": {
+                  "trigger": "item"
+                },
+                "legend": {
+                  "orient": "vertical",
+                  "left": "left"
+                },
+                "series": [
+                  {
+                    "name": "充电习惯",
+                    "type": "pie",
+                    "radius": "50%",
+                    "data": [
+                      {
+                        "value": 420,
+                        "name": "每天充一次"
+                      },
+                      {
+                        "value": 280,
+                        "name": "每周充一次"
+                      },
+                      {
+                        "value": 180,
+                        "name": "每月充一次"
+                      },
+                      {
+                        "value": 120,
+                        "name": "偶尔需要充电"
+                      }
+                    ],
+                    "emphasis": {
+                      "itemStyle": {
+                        "shadowBlur": 10,
+                        "shadowOffsetX": 0,
+                        "shadowColor": "rgba(0, 0, 0, 0.5)"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "bottom": {
+          "title": "车型分布",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "1.47rem"
+              },
+              "option": {
+                "title": {
+                  "text": "车型分布",
+                  "subtext": "Fake Data",
+                  "left": "center"
+                },
+                "tooltip": {
+                  "trigger": "item"
+                },
+                "legend": {
+                  "orient": "vertical",
+                  "left": "left"
+                },
+                "series": [
+                  {
+                    "name": "车型分布",
+                    "type": "pie",
+                    "radius": "50%",
+                    "data": [
+                      {
+                        "value": 600,
+                        "name": "燃油"
+                      },
+                      {
+                        "value": 400,
+                        "name": "四座新能源"
+                      },
+                      {
+                        "value": 200,
+                        "name": "小E"
+                      },
+                      {
+                        "value": 100,
+                        "name": "其他"
+                      }
+                    ],
+                    "emphasis": {
+                      "itemStyle": {
+                        "shadowBlur": 10,
+                        "shadowOffsetX": 0,
+                        "shadowColor": "rgba(0, 0, 0, 0.5)"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "bottomPlus": {
+          "title": "车龄占比",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "1.47rem"
+              },
+              "option": {
+                "title": {
+                  "text": "车龄占比",
+                  "subtext": "Fake Data",
+                  "left": "center"
+                },
+                "tooltip": {
+                  "trigger": "item"
+                },
+                "legend": {
+                  "orient": "vertical",
+                  "left": "left"
+                },
+                "series": [
+                  {
+                    "name": "车龄占比",
+                    "type": "pie",
+                    "radius": "50%",
+                    "data": [
+                      {
+                        "value": 350,
+                        "name": "1年以内"
+                      },
+                      {
+                        "value": 220,
+                        "name": "1-3年"
+                      },
+                      {
+                        "value": 180,
+                        "name": "3-5年"
+                      },
+                      {
+                        "value": 150,
+                        "name": "5-10年"
+                      },
+                      {
+                        "value": 100,
+                        "name": "10年以上"
+                      }
+                    ],
+                    "emphasis": {
+                      "itemStyle": {
+                        "shadowBlur": 10,
+                        "shadowOffsetX": 0,
+                        "shadowColor": "rgba(0, 0, 0, 0.5)"
+                      }
+                    }
+                  }
+                ]
+              }
             }
           }
         }
       },
-      "center": {
-        "title": "停车路段周转率排行",
-        "chart": {
-          "type": "pie",
-          "chartOption": {
-            "chartContainerStyle": {
-              "width": "1.65rem",
-              "height": "1.55rem",
-              "position": "relative",
-              "overflow": "hidden"
-            },
-            "chartStyle": {
-              "position": "absolute",
-              "top": "-0.5rem",
-              "left": "0",
-              "right": "0",
-              "bottom": "0"
-            },
-            "option": {
-              "series": [
-                {
-                  "type": "pie",
-                  "radius": [
-                    "20%",
-                    "30%"
-                  ],
-                  "avoidLabelOverlap": false,
-                  "label": {
-                    "show": true,
-                    "position": "outside",
-                    "formatter": "{b}",
-                    "color": "#fff"
-                  },
-                  "emphasis": {
-                    "label": {
-                      "show": true,
-                      "fontSize": "20",
-                      "fontWeight": "bold",
+      "leanLeftData": {
+        "top": {
+          "title": "累计收费比例-停车",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "3.65rem",
+                "height": "3.3rem"
+              },
+              "option": {
+                "title": [
+                  {
+                    "text": "应收15154元",
+                    "top": 5,
+                    "left": "center",
+                    "textStyle": {
+                      "fontSize": 17,
+                      "fontWeight": 600,
                       "color": "#fff"
                     }
                   },
-                  "labelLine": {
-                    "show": true,
-                    "length": 10,
-                    "length2": 20
-                  },
-                  "data": [
-                    {
-                      "value": 335,
-                      "name": "1到60分钟"
-                    },
-                    {
-                      "value": 234,
-                      "name": "1到12小时"
-                    },
-                    {
-                      "value": 310,
-                      "name": "12到24小时"
-                    },
-                    {
-                      "value": 160,
-                      "name": "24小时以上"
-                    },
-                    {
-                      "value": 100,
-                      "name": "48小时以上"
+                  {
+                    "text": "已收14954元",
+                    "bottom": -8,
+                    "left": "center",
+                    "textStyle": {
+                      "fontSize": 15,
+                      "fontWeight": 600,
+                      "color": "#fff"
                     }
-                  ]
-                }
-              ],
-              "graphic": [
-                {
-                  "type": "text",
-                  "left": "center",
-                  "top": "center",
-                  "style": {
-                    "text": "停车时长分布",
-                    "textAlign": "center",
-                    "fill": "#fff",
-                    "fontSize": 20,
-                    "fontWeight": "bold"
                   }
-                }
-              ]
+                ],
+                "tooltip": {
+                  "trigger": "item",
+                  "textStyle": {
+                    "color": "#fff"
+                  }
+                },
+                "series": [
+                  {
+                    "type": "liquidFill",
+                    "name": "实收占比",
+                    "radius": "62%",
+                    "center": [
+                      "50%",
+                      "60%"
+                    ],
+                    "shape": "circle",
+                    "phase": 0,
+                    "direction": "right",
+                    "outline": {
+                      "show": true,
+                      "borderDistance": 0,
+                      "itemStyle": {
+                        "opacity": 1,
+                        "borderWidth": 1,
+                        "shadowBlur": 1,
+                        "shadowColor": "#fff",
+                        "borderColor": "#41dcd8"
+                      }
+                    },
+                    "itemStyle": {
+                      "color": "#4077eb",
+                      "opacity": 0.5,
+                      "shadowBlur": 10
+                    },
+                    "backgroundStyle": {
+                      "color": "#407bf3",
+                      "opacity": 0.5
+                    },
+                    "emphasis": {
+                      "itemStyle": {
+                        "opacity": 0.8
+                      }
+                    },
+                    "label": {
+                      "fontSize": 15,
+                      "fontWeight": 400,
+                      "color": "#fff"
+                    },
+                    "data": [
+                      0.82
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "center": {
+          "title": "今日收费比例-停车",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "3.65rem",
+                "height": "3.3rem"
+              },
+              "option": {
+                "title": [
+                  {
+                    "text": "应收1154元",
+                    "top": 5,
+                    "left": "center",
+                    "textStyle": {
+                      "fontSize": 17,
+                      "fontWeight": 600,
+                      "color": "#fff"
+                    }
+                  },
+                  {
+                    "text": "已收1054元",
+                    "bottom": -8,
+                    "left": "center",
+                    "textStyle": {
+                      "fontSize": 15,
+                      "fontWeight": 600,
+                      "color": "#fff"
+                    }
+                  }
+                ],
+                "series": [
+                  {
+                    "type": "liquidFill",
+                    "name": "实收占比",
+                    "radius": "62%",
+                    "center": [
+                      "50%",
+                      "60%"
+                    ],
+                    "shape": "circle",
+                    "phase": 0,
+                    "direction": "right",
+                    "outline": {
+                      "show": true,
+                      "borderDistance": 0,
+                      "itemStyle": {
+                        "opacity": 1,
+                        "borderWidth": 1,
+                        "shadowBlur": 1,
+                        "shadowColor": "#fff",
+                        "borderColor": "#41dcd8"
+                      }
+                    },
+                    "itemStyle": {
+                      "color": "#4077eb",
+                      "opacity": 0.5,
+                      "shadowBlur": 10
+                    },
+                    "backgroundStyle": {
+                      "color": "#407bf3",
+                      "opacity": 0.5
+                    },
+                    "emphasis": {
+                      "itemStyle": {
+                        "opacity": 0.8
+                      }
+                    },
+                    "label": {
+                      "fontSize": 15,
+                      "fontWeight": 400,
+                      "color": "#fff"
+                    },
+                    "data": [
+                      0.82
+                    ]
+                  }
+                ]
+              }
             }
           }
         }
-
       },
-      "bottom": {
-        "title": "停车时长分布",
-        "chart": {
-          "type": "pie",
-          "chartOption": {
-            "chartContainerStyle": {
-              "width": "1.65rem",
-              "height": "1.55rem",
-              "position": "relative",
-              "overflow": "hidden"
-            },
-            "chartStyle": {
-              "position": "absolute",
-              "top": "-0.5rem",
-              "left": "0",
-              "right": "0",
-              "bottom": "0"
-            },
-            "option": {
-              "series": [
-                {
-                  "type": "pie",
-                  "radius": [
-                    "20%",
-                    "30%"
-                  ],
-                  "avoidLabelOverlap": false,
-                  "label": {
-                    "show": true,
-                    "position": "outside",
-                    "formatter": "{b}",
-                    "color": "#fff"
-                  },
-                  "emphasis": {
-                    "label": {
-                      "show": true,
-                      "fontSize": "20",
-                      "fontWeight": "bold",
-                      "color": "#fff"
-                    }
-                  },
-                  "labelLine": {
-                    "show": true,
-                    "length": 10,
-                    "length2": 20
-                  },
+      "leanRightData": {
+        "top": {
+          "title": "最近7日停车周转率",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "2.03rem"
+              },
+              "option": {
+                "xAxis": {
+                  "type": "category",
                   "data": [
-                    {
-                      "value": 335,
-                      "name": "1到60分钟"
-                    },
-                    {
-                      "value": 234,
-                      "name": "1到12小时"
-                    },
-                    {
-                      "value": 310,
-                      "name": "12到24小时"
-                    },
-                    {
-                      "value": 160,
-                      "name": "24小时以上"
-                    },
-                    {
-                      "value": 100,
-                      "name": "48小时以上"
-                    }
+                    "24日",
+                    "25日",
+                    "26日",
+                    "27日",
+                    "28日",
+                    "29日",
+                    "30日"
                   ]
-                }
-              ],
-              "graphic": [
-                {
-                  "type": "text",
-                  "left": "center",
-                  "top": "center",
-                  "style": {
-                    "text": "停车时长分布",
-                    "textAlign": "center",
-                    "fill": "#fff",
-                    "fontSize": 20,
-                    "fontWeight": "bold"
+                },
+                "yAxis": {
+                  "type": "value",
+                  "max": null
+                },
+                "series": [
+                  {
+                    "data": [
+                      75,
+                      70,
+                      80,
+                      90,
+                      95,
+                      100,
+                      95
+                    ],
+                    "type": "bar"
                   }
-                }
-              ]
+                ]
+              }
+            }
+          }
+        },
+        "center": {
+          "title": "最近7日充电周转率",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "2.03rem"
+              },
+              "option": {
+                "xAxis": {
+                  "type": "category",
+                  "data": [
+                    "24日",
+                    "25日",
+                    "26日",
+                    "27日",
+                    "28日",
+                    "29日",
+                    "30日"
+                  ]
+                },
+                "yAxis": {
+                  "type": "value",
+                  "max": null
+                },
+                "series": [
+                  {
+                    "data": [
+                      60,
+                      70,
+                      75,
+                      80,
+                      85,
+                      90,
+                      95
+                    ],
+                    "type": "bar"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "bottom": {
+          "title": "最近7日新增用户量",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "2.03rem"
+              },
+              "option": {
+                "xAxis": {
+                  "type": "category",
+                  "data": [
+                    "24日",
+                    "25日",
+                    "26日",
+                    "27日",
+                    "28日",
+                    "29日",
+                    "30日"
+                  ]
+                },
+                "yAxis": {
+                  "type": "value",
+                  "max": null
+                },
+                "series": [
+                  {
+                    "data": [
+                      100,
+                      120,
+                      110,
+                      130,
+                      150,
+                      140,
+                      160
+                    ],
+                    "type": "bar"
+                  }
+                ]
+              }
             }
           }
         }

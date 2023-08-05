@@ -14,9 +14,21 @@ class EchartComponent extends PureComponent {
         const {echartData} = this.props;
         const {renderer} = this.state; // 获取 renderer 的值
 
-        const chartContainerStyle = echartData.chartContainerStyle
-        const chartStyle = echartData.chartStyle
-        const option = echartData.option
+        let chartContainerStyle = {}
+        let chartStyle = {}
+        let option = null
+        if (echartData) {
+            if (echartData.chartContainerStyle) {
+                chartContainerStyle = echartData.chartContainerStyle
+            }
+            if (echartData.chartStyle) {
+                chartStyle = echartData.chartStyle
+            }
+            if (echartData.option) {
+                option = echartData.option
+            }
+
+        }
 
         return (
             <>

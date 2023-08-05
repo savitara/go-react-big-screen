@@ -3,7 +3,7 @@ import { ModuleTitle, LeftDiv, DataBox, RightDiv, BorderRadiusBox1 } from '../st
 import { BorderBox12, BorderBox13 } from '@jiaminghi/data-view-react';
 import PieChart from "../charts/PieChart";
 import TrafficSituation from "../charts/TrafficSituation";
-import {RightBottomBox, RightCenterBox, RightPage, RightTopBox} from "../../rightPage/style";
+import {CenterPageLeanRight, RightBottomBox, RightCenterBox, RightPage, RightTopBox} from "../../rightPage/style";
 import {BorderRadiusBox2} from "../../../homePage/centerPage/style";
 import SolitaireCard from "../../../homePage/centerPage/charts/SolitaireCard";
 import EchartComponent from "../../../homePage/centerPage/charts/EchartComponent";
@@ -42,7 +42,7 @@ class LeanRight extends PureComponent {
 
             <RightDiv>
                 {LeanRightData && (
-                    <RightPage>
+                    <CenterPageLeanRight>
                         {/* 顶部数据区域 */}
 
                         {topBoxData && (
@@ -174,7 +174,7 @@ class LeanRight extends PureComponent {
                             </LeftBottomBox>
                         )}
 
-                    </RightPage>
+                    </CenterPageLeanRight>
                 )}
 
             </RightDiv>

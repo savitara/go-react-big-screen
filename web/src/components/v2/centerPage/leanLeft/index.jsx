@@ -5,7 +5,13 @@ import TrafficSituation from '../charts/TrafficSituation';
 import {WaterLevelPond} from "@jiaminghi/data-view-react";
 import {LiquidBall} from '@jiaminghi/data-view-react';
 import EchartComponent from "../../../homePage/centerPage/charts/EchartComponent";
+// import ReactEcharts from 'echarts-for-react'
+// import * as echarts from 'echarts';
 
+// import ReactEcharts from 'echarts-for-react'
+
+// import * as echarts from 'echarts/core';
+// import 'echarts-liquidfill'
 class LeanLeft extends PureComponent {
     constructor(props) {
         super(props);
@@ -18,81 +24,93 @@ class LeanLeft extends PureComponent {
             data: [55],
             shape: 'round'
         }
-        // 堆叠的柱状图配置
+        // 水球柱状图配置
         const chartOption = {
-            "chartContainerStyle": {
-                width: "3.65rem",
-                height: "1.55rem",
-                position: "relative",
-                overflow: "hidden"
-            },
+
             chartStyle: {
-                position: "absolute",
-                top: "-0.1rem",
-                left: "0",
-                right: "0",
-                bottom: "0"
+                width: "3.65rem",
+                height: "1.7rem",
             },
-            option: {
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'shadow'
+            option:{
+                "title": [{
+                    "text": "应收15154元",
+                    "top": 5,
+                    "left": "center",
+                    "textStyle": {
+                        "fontSize": 17,
+                        "fontWeight": 600,
+                        "color": "#fff"
+                    }
+                },{
+                    "text": "已收14954元",
+                    "bottom": -8,
+                    "left": "center",
+                    "textStyle": {
+                        "fontSize": 15,
+                        "fontWeight": 600,
+                        "color": "#fff"
+                    },
+
+                }],
+                "tooltip": {
+                    "trigger": "item",
+                    "textStyle": {
+                        "color": "#fff"
+                    },
+                    "formatter": function (value) {
+                        return value.seriesName + ': ' + value.data * 100 + '%';
                     }
                 },
-                legend: {},
-                grid: {
-                    left: '3%',
-                    right: '4%',
-                    bottom: '3%',
-                    containLabel: true
-                },
-                xAxis: [
-                    {
-                        type: 'category',
-                        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-                    }
-                ],
-                yAxis: [
-                    {
-                        type: 'value'
-                    }
-                ],
-                series: [
-
-                    {
-                        name: 'Email',
-                        type: 'bar',
-                        stack: 'Ad',
-                        emphasis: {
-                            focus: 'series'
-                        },
-                        data: [120, 132, 101, 134, 90, 230, 210]
+                "series": [{
+                    "type": "liquidFill",
+                    "name": "实收占比",
+                    "radius": "62%",
+                    "center": ["50%", "60%"],
+                    "shape": "circle",
+                    "phase": 0,
+                    "direction": "right",
+                    "outline": {
+                        "show": true,
+                        "borderDistance": 0,
+                        "itemStyle": {
+                            "opacity": 1,
+                            "borderWidth": 1,
+                            "shadowBlur": 1,
+                            "shadowColor": "#fff",
+                            "borderColor": "#41dcd8"
+                        }
                     },
-                    {
-                        name: 'Union Ads',
-                        type: 'bar',
-                        stack: 'Ad',
-                        emphasis: {
-                            focus: 'series'
-                        },
-                        data: [220, 182, 191, 234, 290, 330, 310]
+                    "itemStyle": {
+                        "color": "#4077eb",
+                        "opacity": 0.5,
+                        "shadowBlur": 10
                     },
-                    {
-                        name: 'Video Ads',
-                        type: 'bar',
-                        stack: 'Ad',
-                        emphasis: {
-                            focus: 'series'
-                        },
-                        data: [150, 232, 201, 154, 190, 330, 410]
+                    "backgroundStyle": {
+                        "color": "#407bf3",
+                        "opacity": 0.5
                     },
-
-
-                ]
+                    "emphasis": {
+                        "itemStyle": {
+                            "opacity": 0.8
+                        }
+                    },
+                    "label": {
+                        "fontSize": 15,
+                        "fontWeight": 400,
+                        "color": "#fff"
+                    },
+                    "data": [0.82]
+                }]
             }
 
+
         }
+        const optionIntegrityRate = {
+            series: [{
+                type: 'liquidFill',
+                data: [0.6]
+            }]
+        };
         return (
 
             <LeftDiv>
@@ -126,8 +144,14 @@ class LeanLeft extends PureComponent {
                         </ModuleTitle>
                         <div>
                             {/*<WaterLevelPond config={config} style={{width: '150px', height: '200px'}}/>*/}
-                            <EchartComponent echartData={chartOption}></EchartComponent>
+
+                            {/*<ReactEcharts option={optionIntegrityRate} />*/}
                         </div>
+                    </div>
+                    <div>
+                        <EchartComponent echartData={chartOption}></EchartComponent>
+
+                        {/*<ReactEcharts option={optionIntegrityRate} />*/}
                     </div>
 
                 </BorderRadiusBox1>

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+
+
 export const RightPageLeanLeft = styled.div`
   width: 5.25rem;
   height: auto;
@@ -8,6 +10,20 @@ export const RightPageLeanLeft = styled.div`
 
 `;
 
+export const TitleColor = '#bcdcff'
+//  标题a
+export const ModuleTitle = styled.h3`
+  padding: 0.125rem 0.125rem;
+  color: ${TitleColor};
+  font-size: 0.2rem;
+  font-weight: bold;
+  .iconfont {
+    font-size: 0.175rem;
+    margin-right: 0.125rem;
+    color: #89e5ff;
+    font-weight: 400;
+  }
+`;
 export const RightPageLeanRight = styled.div`
   width: 5.25rem;
   height: auto;
@@ -20,10 +36,17 @@ export const RightPage = styled.div`
   //height: auto;
   //padding: 0 0.2rem 0.2rem 0.2rem;
   //padding-bottom: 0px;
-
+  margin: 0 0.2rem;
 `;
 
 
+export const CenterPageLeanRight = styled.div`
+  width: 4.25rem;
+  //height: auto;
+  //padding: 0 0.2rem 0.2rem 0.2rem;
+  //padding-bottom: 0px;
+
+`;
 
 
 export const RightTopBox = styled.div`
