@@ -158,32 +158,32 @@
           "videoPlayerHeight": "100%",
           "list": [
             {
-              "title": "视频1",
+              "title": "可用",
               "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
             },
             {
-              "title": "视频2",
+              "title": "可用",
               "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
             },
             {
-              "title": "视频3",
+              "title": "可用",
+              "url": "https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv"
+            },
+            {
+              "title": "可用",
+              "url": "https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv"
+            },
+            {
+              "title": "可用",
               "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
             },
             {
-              "title": "视频4",
-              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
-            },
-            {
-              "title": "视频5",
-              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
-            },
-            {
-              "title": "视频6",
+              "title": "可用",
               "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
             },
             {
               "title": "视频1",
-              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
+              "url": "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4"
             },
             {
               "title": "视频2",

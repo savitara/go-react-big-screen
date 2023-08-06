@@ -4,7 +4,7 @@ import EchartComponent from "../../../homePage/centerPage/charts/EchartComponent
 import {Select} from "antd";
 import ReactPlayer from 'react-player'
 import VideoPlayer from "../../VideoPlayer";
-
+import Player from 'griffith'
 class LeanLeft extends PureComponent {
     constructor(props) {
         super(props);
@@ -16,6 +16,7 @@ class LeanLeft extends PureComponent {
     handleVideoDisplayChange = (value) => {
         this.setState({videoDisplayRows: value});
     };
+
 
     render() {
 
@@ -40,6 +41,15 @@ class LeanLeft extends PureComponent {
         const videoPlayerStyle = {
             width: videoData.videoPlayerWidth
         }
+        const sources = {
+            hd: {
+                play_url: 'https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv',
+            },
+            // sd: {
+            //     play_url: 'https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_sd.mp4',
+            // },
+        }
+
         return (
 
             <LeftDiv>
@@ -67,8 +77,9 @@ class LeanLeft extends PureComponent {
                                             {rowVideos.map((video) => (
                                                 <div key={video.title} className={'video-player'}>
                                                     {/*<h3>{video.url}</h3>*/}
-                                                    <video src={video.url} controls
-                                                           style={videoPlayerStyle}></video>
+                                                    {/*<video src={video.url} controls autoPlay={true}*/}
+                                                    {/*       style={videoPlayerStyle}></video>*/}
+                                                    <Player sources={sources}  autoplay={true}/>
                                                     {/*<VideoPlayer src={video.url} />;*/}
                                                     {/*<ReactPlayer controls url={video.url} playing />*/}
                                                 </div>

@@ -85,7 +85,10 @@ class LeanLeft extends PureComponent {
         if (event.target.value !== '') {
         }
     };
-
+    handlePlaceSelected = (place) => {
+        console.log('选择的位置:', place);
+        // 处理选择的位置数据
+    }
 
     render() {
         const {dataCenter} = this.props;
@@ -93,7 +96,7 @@ class LeanLeft extends PureComponent {
         let chartContainerStyle = null;
         let chartStyle = null;
         if (dataCenter) {
-            option =  dataCenter.chart.chartOption.option
+            option = dataCenter.chart.chartOption.option
             // TODO 判断现在的选择框是否选中显示
 
             chartContainerStyle = dataCenter.chart.chartOption.chartContainerStyle;
@@ -112,16 +115,19 @@ class LeanLeft extends PureComponent {
                                 <div style={{position: 'relative'}}>
 
                                     {/*<Select style={{ position: 'absolute', top: 0, zIndex: 999 }}></Select>*/}
-                                    <Search
-                                        placeholder="搜索城市"
-                                        allowClear
-                                        onSearch={this.onSearch}
-                                        onPressEnter={this.onSearchByPressEnter}
-                                        style={{
-                                            width: 150,
-                                            position: 'absolute', top: 0, zIndex: 999
-                                        }}
-                                    />
+                                    {/*<Search*/}
+                                    {/*    placeholder="搜索城市"*/}
+                                    {/*    allowClear*/}
+                                    {/*    onSearch={this.onSearch}*/}
+                                    {/*    onPressEnter={this.onSearchByPressEnter}*/}
+                                    {/*    style={{*/}
+                                    {/*        width: 150,*/}
+                                    {/*        position: 'absolute', top: 0, zIndex: 999*/}
+                                    {/*    }}*/}
+                                    {/*/>*/}
+
+
+
                                     <AaLiMap ref={this.aMapRef} option={this.state.aMapOption}/>
                                     {showMenu ? (
                                         <div

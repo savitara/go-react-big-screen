@@ -1,7 +1,9 @@
 import React, {PureComponent} from "react";
 import {Map, Marker} from "react-amap";
 import Heatmap from 'react-amap-plugin-heatmap';
-
+// import Autocomplete from 'react-amap-plugin-autocomplete';
+// import { Autocomplete } from '@uiw/react-amap';
+import { Autocomplete } from '@uiw/react-amap-auto-complete';
 
 const AMAP_API_KEY = '7ab53b28352e55dc5754699add0ad862';
 
@@ -12,6 +14,7 @@ class AaLiMap extends PureComponent {
             option: props.option
         };
     }
+
 
     componentDidMount() {
         // 组件挂载完成
@@ -58,6 +61,16 @@ class AaLiMap extends PureComponent {
                                 mapStyle={this.state.option.setMapStyle}
                                 center={this.state.option.centerPosition}
                             >
+
+                                <Autocomplete
+                                              style={{
+                                                  width: 150,
+                                                  height: 150,
+
+                                                  position: 'absolute', top: 0, zIndex: 999
+                                              }}
+
+                                              placeholder='搜索'/>
                                 {
                                     this.state.option.heatmapPluginProps && (
                                         <Heatmap {...this.state.option.heatmapPluginProps}/>
