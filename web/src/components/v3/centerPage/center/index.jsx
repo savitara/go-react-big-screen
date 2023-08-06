@@ -10,14 +10,17 @@ import Search from "antd/es/input/Search";
 class LeanLeft extends PureComponent {
     constructor(props) {
         super(props);
+        this.aMapRef = React.createRef();
         this.state = {
             showMenu: false,
+            aMapOption: null,
             checkboxes: {
-                heatmap: false,
-                garage: false,
-                charging: false,
-                parking: false,
+                heatmap: true,
+                garage: true,
+                charging: true,
+                parking: true,
             },
+            aMapOptionCacheHeatmap: null,
         };
     }
 
@@ -34,6 +37,41 @@ class LeanLeft extends PureComponent {
                 [checkboxName]: !prevState.checkboxes[checkboxName],
             },
         }));
+        console.log(checkboxName)
+        console.log(this.state.checkboxes[checkboxName])
+        if (checkboxName === 'heatmap') {
+            if (this.state.checkboxes[checkboxName] === true) {
+
+
+                // this.props.changeHeatMap(this.state.checkboxes[checkboxName])
+                let option = this.state.aMapOption;
+                this.setState({
+                    aMapOptionCacheHeatmap: option.heatmapPluginProps
+                })
+                delete option.heatmapPluginProps
+                this.setState({
+                    aMapOption: option
+                })
+                // this.setState({
+                //     aMapOption: null
+                // })
+                console.log('111', this.state.aMapOptionCacheHeatmap)
+
+            } else {
+                console.log('222', this.state.aMapOptionCacheHeatmap)
+
+                let option = this.state.aMapOption;
+                option.heatmapPluginProps = this.state.aMapOptionCacheHeatmap
+                this.setState({
+                    aMapOption: option
+                })
+            }
+
+            if (this.aMapRef) {
+                this.aMapRef.current.childMethod(this.state.aMapOption);
+
+            }
+        }
     };
 
     onSearch = (value) => {
@@ -55,16 +93,20 @@ class LeanLeft extends PureComponent {
         let chartContainerStyle = null;
         let chartStyle = null;
         if (dataCenter) {
-            option = dataCenter.chart.chartOption.option;
+            option =  dataCenter.chart.chartOption.option
+            // TODO 判断现在的选择框是否选中显示
+
             chartContainerStyle = dataCenter.chart.chartOption.chartContainerStyle;
             chartStyle = dataCenter.chart.chartOption.chartStyle;
         }
+        this.setState({
+            aMapOption: option
+        })
         const {showMenu, checkboxes} = this.state;
-
         return (
             <CenterDiv>
                 <BorderRadiusBox1>
-                    {option && (
+                    {this.state.aMapOption && (
                         <div style={chartContainerStyle}>
                             <div style={chartStyle}>
                                 <div style={{position: 'relative'}}>
@@ -80,7 +122,7 @@ class LeanLeft extends PureComponent {
                                             position: 'absolute', top: 0, zIndex: 999
                                         }}
                                     />
-                                    <AaLiMap option={option}/>
+                                    <AaLiMap ref={this.aMapRef} option={this.state.aMapOption}/>
                                     {showMenu ? (
                                         <div
                                             style={{
