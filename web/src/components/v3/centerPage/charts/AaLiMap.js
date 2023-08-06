@@ -70,6 +70,12 @@ class AaLiMap extends PureComponent {
                                 {this.state.option.markerPositions.map((position, index) => (
                                     <Marker
                                         key={index}
+                                        title={'dada'}
+                                        visible={true}
+                                        label={{
+                                            content: `<div style="font-size: 20px;">${index + 1}</div>`,
+                                            direction: 'right' // 设置文本标注方位
+                                        }}
                                         position={position}
                                         extData={{id: `marker-${index + 1}`}}
                                         style={this.state.option.markerStyle} // 设置标记点的样式
