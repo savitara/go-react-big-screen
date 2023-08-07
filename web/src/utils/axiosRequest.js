@@ -6,3 +6,9 @@ export const get = (url, params) => {
     const lastUrl = apiUrl + url;
     return axios.get(lastUrl, { params }).then(response => response.data);
 };
+
+
+export const getDataFromFullUrl = (url, params) => {
+    const lastUrl =  url;
+    return axios.get(lastUrl, { params }).then(response => response.data);
+};

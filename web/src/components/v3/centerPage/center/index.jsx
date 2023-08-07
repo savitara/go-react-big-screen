@@ -6,6 +6,10 @@ import AaLiMap from "../charts/AaLiMap";
 import {Button, Checkbox, Menu, Select} from "antd";
 import MenuItem from "antd/es/menu/MenuItem";
 import Search from "antd/es/input/Search";
+import {getDataFromFullUrl} from "../../../../utils/axiosRequest";
+
+const ALiMapSearchUrl = 'https://restapi.amap.com/v5/place/text'
+const ALiMapSearchKey = '4a182bb48419ece31031dd0f02e1857a'
 
 class LeanLeft extends PureComponent {
     constructor(props) {
@@ -21,6 +25,10 @@ class LeanLeft extends PureComponent {
                 parking: true,
             },
             aMapOptionCacheHeatmap: null,
+            centerPotion: {
+                longitude: null,
+                latitude: null
+            }
         };
     }
 
@@ -69,20 +77,54 @@ class LeanLeft extends PureComponent {
 
             if (this.aMapRef) {
                 this.aMapRef.current.childMethod(this.state.aMapOption);
-
             }
         }
     };
 
-    onSearch = (value) => {
+    onSearch = async (value) => {
         console.log(value);
         if (value !== '') {
-
+            await getDataFromFullUrl(ALiMapSearchUrl, {
+                keywords: value,
+                key: ALiMapSearchKey,
+            }, (data) => {
+                console.log(data)
+                if (data.pois) {
+                    let locationList = data.pois[0].location.split(',')
+                    this.setState({
+                        centerPotion: {
+                            longitude: locationList[0],
+                            latitude: locationList[1]
+                        }
+                    })
+                    if (this.aMapRef) {
+                        this.aMapRef.current.childMethodOfSearch(this.state.centerPotion);
+                    }
+                }
+            })
         }
     }
-    onSearchByPressEnter = (event) => {
+    onSearchByPressEnter = async (event) => {
         console.log(event.target.value);
         if (event.target.value !== '') {
+            await getDataFromFullUrl(ALiMapSearchUrl, {
+                keywords: event.target.value,
+                key: ALiMapSearchKey,
+            }, (data) => {
+                console.log(data)
+                if (data.pois) {
+                    let locationList = data.pois[0].location.split(',')
+                    this.setState({
+                        centerPotion: {
+                            longitude: locationList[0],
+                            latitude: locationList[1]
+                        }
+                    })
+                    if (this.aMapRef) {
+                        this.aMapRef.current.childMethodOfSearch(this.state.centerPotion);
+                    }
+                }
+            })
         }
     };
     handlePlaceSelected = (place) => {
@@ -114,18 +156,16 @@ class LeanLeft extends PureComponent {
                             <div style={chartStyle}>
                                 <div style={{position: 'relative'}}>
 
-                                    {/*<Select style={{ position: 'absolute', top: 0, zIndex: 999 }}></Select>*/}
-                                    {/*<Search*/}
-                                    {/*    placeholder="搜索城市"*/}
-                                    {/*    allowClear*/}
-                                    {/*    onSearch={this.onSearch}*/}
-                                    {/*    onPressEnter={this.onSearchByPressEnter}*/}
-                                    {/*    style={{*/}
-                                    {/*        width: 150,*/}
-                                    {/*        position: 'absolute', top: 0, zIndex: 999*/}
-                                    {/*    }}*/}
-                                    {/*/>*/}
-
+                                    <Search
+                                        placeholder="搜索城市"
+                                        allowClear
+                                        onSearch={this.onSearch}
+                                        onPressEnter={this.onSearchByPressEnter}
+                                        style={{
+                                            width: 150,
+                                            position: 'absolute', top: 0, zIndex: 999
+                                        }}
+                                    />
 
 
                                     <AaLiMap ref={this.aMapRef} option={this.state.aMapOption}/>
