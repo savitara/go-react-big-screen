@@ -52,7 +52,7 @@ func TransServerMain() {
 }
 
 func transcode(inputFile string, outputURL string) error {
-	cmd := ffmpeg.Input(inputFile).Output(outputURL, ffmpeg.KwArgs{"rtsp_transport": "tcp", "vcodec": "h264", "acodec": "aac", "f": "flv"}).
+	cmd := ffmpeg.Input(inputFile).Output(outputURL, ffmpeg.KwArgs{"c:v": "libx264", "c:a": "aac", "f": "flv"}).
 		OverWriteOutput().ErrorToStdOut()
 
 	err := cmd.Run()
