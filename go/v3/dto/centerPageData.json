@@ -285,43 +285,43 @@
           "list": [
             {
               "title": "可用",
-              "url": "http://bucketyg.oss-cn-shenzhen.aliyuncs.com/ygERP/桂BDU7512——192.168.10.65_29_20230504112657886-0320ca6009864bf2.mp4"
+              "url": "../../../../../public/output.mp4"
             },
             {
               "title": "可用",
-              "url": "http://192.168.10.151:8088/video"
+              "url": "../../../../../public/output.mp4"
             },
             {
               "title": "可用",
-              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
+              "url": "../../../../../public/output2.mp4"
             },
             {
               "title": "可用",
-              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
+              "url": "../../../../../public/output.mp4"
             },
             {
               "title": "可用",
-              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
+              "url": "../../../../../public/output2.mp4"
+            },
+
+            {
+              "title": "可用",
+              "url": "../../../../../public/output.mp4"
             },
             {
               "title": "可用",
-              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
-            },
-            {
-              "title": "可用(开发板)",
-              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
+              "url": "../../../../../public/output2.mp4"
             },
             {
               "title": "视频2",
-              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
+              "url": "../../../../../public/output2.mp42"
             },
             {
               "title": "视频3",
-              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
-            },
-            {
-              "title": "视频4",
-              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
+              "url": "../../../../../public/output.mp4"
+            }, {
+              "title": "可用",
+              "url": "../../../../../public/output2.mp4"
             }
           ]
         }

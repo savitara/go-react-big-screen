@@ -1,34 +1,36 @@
-//
-//
-//
-// import React, { Component } from "react";
-// import Player from 'griffith'
-//
-// import WasmPlayer from '@easydarwin/easywasmplayer' //导入WasmPlayer.js
-//
-// class PlayerComponent extends Component {
-//   constructor(props){
-//     super(props);
-//   }
-//
-//   render(){
-//     const sources = {
-//       sd: {
-//         play_url: 'https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4',
-//       },
-//     }
-//
-//     const videoUrl='https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4'
-//     return (
-//       <div style={{width:200,height:200}}>
-//         <Player sources={sources} autoplay={true} />
-//         {/*<WasmPlayer*/}
-//         {/*videoUrl={videoUrl}*/}
-//         {/*></WasmPlayer>*/}
-//       </div>
-//     )
-//   }
-// }
-// export default PlayerComponent;
-//
-//
+import React, { useEffect, useRef } from 'react';
+import flvjs from 'flv.js';
+
+const PlayerComponentLiv = () => {
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        const videoElement = videoRef.current;
+
+        if (flvjs.isSupported()) {
+            const flvPlayer = flvjs.createPlayer({
+                type: 'flv',
+                url: 'https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv',
+            });
+
+            flvPlayer.attachMediaElement(videoElement);
+            flvPlayer.load();
+            flvPlayer.play();
+
+            return () => {
+                flvPlayer.pause();
+                flvPlayer.unload();
+                flvPlayer.detachMediaElement();
+                flvPlayer.destroy();
+            };
+        }
+    }, []);
+
+    return (
+        <div style={{ position: 'relative', padding: 0, margin: '20px auto', width: 700 }}>
+            <video ref={videoRef} controls />
+        </div>
+    );
+};
+
+export default PlayerComponentLiv;

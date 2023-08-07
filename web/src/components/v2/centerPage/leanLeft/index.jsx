@@ -3,6 +3,7 @@ import {ModuleTitle, LeftDiv, DataBox, BorderRadiusBox1} from '../style';
 
 
 import PlayerComponent from "./PlayerT";
+import PlayerComponentLiv from "./PlayerTC";
 
 
 class LeanLeft extends PureComponent {
@@ -147,6 +148,7 @@ class LeanLeft extends PureComponent {
                           {/*<H265PlayerComponent></H265PlayerComponent>*/}
                          {/*<PlayerComponent></PlayerComponent>*/}
                         </div>
+                        <PlayerComponentLiv></PlayerComponentLiv>
 
                     </div>
 
