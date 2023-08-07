@@ -1,10 +1,17 @@
+
 import React, {PureComponent} from 'react';
 import {ModuleTitle, LeftDiv, DataBox, BorderRadiusBox1} from '../style';
 import EchartComponent from "../../../homePage/centerPage/charts/EchartComponent";
 import {Select} from "antd";
-import ReactPlayer from 'react-player'
-import VideoPlayer from "../../VideoPlayer";
-import Player from 'griffith'
+// import ReactPlayer from 'react-player'
+// import VideoPlayer from "../../VideoPlayer";
+// import Player from 'griffith'
+
+
+// import { PlayerReact } from 'video-react';
+
+
+
 class LeanLeft extends PureComponent {
     constructor(props) {
         super(props);
@@ -50,6 +57,7 @@ class LeanLeft extends PureComponent {
             // },
         }
 
+
         return (
 
             <LeftDiv>
@@ -63,13 +71,13 @@ class LeanLeft extends PureComponent {
                                     <i className='iconfont'>&#xe78f;</i>
                                     <span>{videoData.title}</span>
 
-                                    <Select style={{marginLeft: '0.3rem'}} value={this.state.videoDisplayRows}
-                                            onChange={this.handleVideoDisplayChange}>
-                                        <Select.Option value={4}>四行</Select.Option>
-                                        <Select.Option value={6}>六行</Select.Option>
+                                    {/*<Select style={{marginLeft: '0.3rem'}} value={this.state.videoDisplayRows}*/}
+                                    {/*        onChange={this.handleVideoDisplayChange}>*/}
+                                    {/*    <Select.Option value={4}>四行</Select.Option>*/}
+                                    {/*    <Select.Option value={6}>六行</Select.Option>*/}
 
 
-                                    </Select>
+                                    {/*</Select>*/}
                                 </ModuleTitle>
                                 <div style={{margin: '0.02rem'}}>
                                     {videoPlayList.map((rowVideos, index) => (
@@ -77,9 +85,20 @@ class LeanLeft extends PureComponent {
                                             {rowVideos.map((video) => (
                                                 <div key={video.title} className={'video-player'}>
                                                     {/*<h3>{video.url}</h3>*/}
-                                                    {/*<video src={video.url} controls autoPlay={true}*/}
-                                                    {/*       style={videoPlayerStyle}></video>*/}
-                                                    <Player sources={sources}  autoplay={true}/>
+                                                  {/*<video src={video.url} controls autoPlay={true}*/}
+                                                  {/*       style={videoPlayerStyle}></video>*/}
+                                                  {/*<video src={videoFile} controls autoPlay={true}*/}
+                                                  {/*       style={videoPlayerStyle}></video>*/}
+                                                  {/*  <video  controls autoPlay={true}*/}
+                                                  {/*         style={videoPlayerStyle}>*/}
+                                                  {/*    /!*<source src={v} type="video/mp4"></source>*!/*/}
+                                                  {/*<PlayerReact>*/}
+                                                  {/*  <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />*/}
+                                                  {/*</PlayerReact>*/}
+                                                  {/*  </video>*/}
+                                                  <video src={require('../../../../../public/output.mp4')} controls autoPlay={true}
+                                                         style={videoPlayerStyle}></video>
+                                                    {/*<Player sources={sources}  autoplay={true}/>*/}
                                                     {/*<VideoPlayer src={video.url} />;*/}
                                                     {/*<ReactPlayer controls url={video.url} playing />*/}
                                                 </div>

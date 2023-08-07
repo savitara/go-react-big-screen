@@ -123,18 +123,15 @@ class AaLiMap extends PureComponent {
                                     )
                                 }
                                 {/* 在地图上添加标记点 */}
-                                {this.state.option.markerPositions.map((position, index) => (
+                                {this.state.option.markersList.map((item, index) => (
                                     <Marker
                                         key={index}
-                                        title={'dada'}
-                                        visible={true}
-                                        label={{
-                                            content: `<div style="font-size: 20px;">${index + 1}</div>`,
-                                            direction: 'right' // 设置文本标注方位
-                                        }}
-                                        position={position}
+                                        title={item.title}
+                                        visible={item.visible}
+                                        label={item.label}
+                                        position={item.position}
                                         extData={{id: `marker-${index + 1}`}}
-                                        style={this.state.option.markerStyle} // 设置标记点的样式
+                                        style={item.markerStyle} // 设置标记点的样式
                                     />
                                 ))}
                             </Map>

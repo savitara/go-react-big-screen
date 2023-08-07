@@ -1,1 +1,962 @@
 
+{
+  "data": {
+    "roofDataList": [
+      {
+        "title": "订单总金额",
+        "number": 2600000,
+        "unit": "元/月"
+      },
+      {
+        "title": "停车记录总量",
+        "number": 3130,
+        "unit": "条/月"
+      },
+      {
+        "title": "用户缴费率/月",
+        "number": 85,
+        "unit": "%"
+      },
+      {
+        "title": "月订单总额",
+        "number": 21016,
+        "unit": "元"
+      },
+      {
+        "title": "今日订单数",
+        "number": 85,
+        "unit": "条"
+      },
+      {
+        "title": "今日订单额",
+        "number": 2116,
+        "unit": "元"
+      },
+      {
+        "title": "充电桩数量",
+        "number": 185,
+        "unit": "个"
+      },
+      {
+        "title": "停车场数量",
+        "number": 21106,
+        "unit": "个"
+      },
+      {
+        "title": "立体车库数量",
+        "number": 306,
+        "unit": "个"
+      },
+      {
+        "title": "车库泊位数量",
+        "number": 48306,
+        "unit": "个"
+      }
+    ],
+    "centerData": {
+      "dataCenter": {
+        "title": "地图",
+        "chart": {
+          "chartOption": {
+            "option": {
+              "mapStyle": {
+                "width": "10rem",
+                "height": "7.5rem"
+              },
+              "markerStyle": {
+                "background": "red",
+                "borderRadius": "50%",
+                "width": "0.2rem",
+                "height": "0.2rem",
+                "border": "2px solid white",
+                "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
+              },
+              "setMapStyle": "amap://styles/dark",
+              "amapZoom": 5,
+              "centerPosition": {
+                "longitude": 107.38,
+                "latitude": 23.19
+              },
+              "markersList": [
+                {
+                  "markerType": "parking",
+                  "position": {
+                    "longitude": 111.5,
+                    "latitude": 37.1
+                  },
+                  "title": "路边停车",
+                  "visible": true,
+                  "label": {
+                    "content": "路边停车1",
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "direction": "top"
+                  },
+                  "markerStyle": {
+                    "background": "red",
+                    "borderRadius": "50%",
+                    "width": "0.2rem",
+                    "height": "0.2rem",
+                    "border": "2px solid white",
+                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
+                  }
+                },
+                {
+                  "markerType": "parking",
+                  "position": {
+                    "longitude": 112,
+                    "latitude": 38.06
+                  },
+                  "title": "路边停车",
+                  "visible": true,
+                  "label": {
+                    "content": "路边停车2",
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "direction": "top"
+                  },
+                  "markerStyle": {
+                    "background": "red",
+                    "borderRadius": "50%",
+                    "width": "0.2rem",
+                    "height": "0.2rem",
+                    "border": "2px solid white",
+                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
+                  }
+                },
+                {
+                  "markerType": "garage",
+                  "position": {
+                    "longitude": 112.3,
+                    "latitude": 38.8
+                  },
+                  "title": "立体车库",
+                  "visible": true,
+                  "label": {
+                    "content": "立体车库2",
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "direction": "top"
+                  },
+                  "markerStyle": {
+                    "background": "red",
+                    "borderRadius": "50%",
+                    "width": "0.2rem",
+                    "height": "0.2rem",
+                    "border": "2px solid white",
+                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
+                  }
+                },
+                {
+                  "markerType": "garage",
+                  "position": {
+                    "longitude": 111.43,
+                    "latitude": 37.57
+                  },
+                  "title": "立体车库",
+                  "visible": true,
+                  "label": {
+                    "content": "立体车库2",
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "direction": "top"
+                  },
+                  "markerStyle": {
+                    "background": "red",
+                    "borderRadius": "50%",
+                    "width": "0.2rem",
+                    "height": "0.2rem",
+                    "border": "2px solid white",
+                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
+                  }
+                },  {
+                  "markerType": "charging",
+                  "position": {
+                    "longitude": 110,
+                    "latitude": 38.21
+                  },
+                  "title": "充电桩",
+                  "visible": true,
+                  "label": {
+                    "content": "充电桩1",
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "direction": "top"
+                  },
+                  "markerStyle": {
+                    "background": "red",
+                    "borderRadius": "50%",
+                    "width": "0.2rem",
+                    "height": "0.2rem",
+                    "border": "2px solid white",
+                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
+                  }
+                }
+               ],
+              "markerPositions": [
+                {
+                  "longitude": 107.38,
+                  "latitude": 23.19
+                },
+                {
+                  "longitude": 111,
+                  "latitude": 37.86
+                },
+                {
+                  "longitude": 121,
+                  "latitude": 36.86
+                }
+              ],
+              "heatmapPluginProps": {
+                "dataSet": {
+                  "data": [
+                    {
+                      "lng": 116.191031,
+                      "lat": 39.988585,
+                      "count": 10
+                    },
+                    {
+                      "lng": 116.389275,
+                      "lat": 39.925818,
+                      "count": 11
+                    },
+                    {
+                      "lng": 116.287444,
+                      "lat": 39.810742,
+                      "count": 12
+                    },
+                    {
+                      "lng": 116.481707,
+                      "lat": 39.940089,
+                      "count": 13
+                    },
+                    {
+                      "lng": 116.410588,
+                      "lat": 39.880172,
+                      "count": 14
+                    },
+                    {
+                      "lng": 116.394816,
+                      "lat": 39.91181,
+                      "count": 15
+                    },
+                    {
+                      "lng": 116.416002,
+                      "lat": 39.952917,
+                      "count": 16
+                    }
+                  ],
+                  "max": 100
+                },
+                "zooms": [
+                  3,
+                  18
+                ],
+                "gradient": {
+                  "0.5": "blue",
+                  " 0.65": "rgb(117,211,248)",
+                  " 0.7": "rgb(0, 255, 0)",
+                  "0.9": "#ffea00",
+                  "1.0": "red"
+                },
+                "radius": 30,
+                "visible": true
+              }
+            }
+          }
+        }
+      },
+      "leanLeftData": {
+        "videoData": {
+          "title": "实时视频监控",
+          "boxWidth": "5rem",
+          "boxHeight": "7.5rem",
+          "videoPlayerWidth": "90%",
+          "videoPlayerHeight": "100%",
+          "list": [
+            {
+              "title": "可用",
+              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
+            },
+            {
+              "title": "可用",
+              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
+            },
+            {
+              "title": "可用",
+              "url": "https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv"
+            },
+            {
+              "title": "可用",
+              "url": "https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv"
+            },
+            {
+              "title": "可用",
+              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
+            },
+            {
+              "title": "可用",
+              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
+            },
+            {
+              "title": "可用(开发板)",
+              "url": "rtsp://192.168.10.189/live/mainstream_0"
+            },
+            {
+              "title": "视频2",
+              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
+            },
+            {
+              "title": "视频3",
+              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
+            },
+            {
+              "title": "视频4",
+              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
+            },
+            {
+              "title": "视频5",
+              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
+            },
+            {
+              "title": "视频6",
+              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
+            }
+          ]
+        }
+      },
+      "leanRightData": {
+        "top": {
+          "title": "最近30日收费趋势-停车",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "1.47rem"
+              },
+              "option": {
+                "xAxis": {
+                  "type": "category",
+                  "data": [
+                    "1日",
+                    "2日",
+                    "3日",
+                    "4日",
+                    "5日",
+                    "6日",
+                    "7日",
+                    "8日",
+                    "9日",
+                    "10日",
+                    "11日",
+                    "12日",
+                    "13日",
+                    "14日",
+                    "15日",
+                    "16日",
+                    "17日",
+                    "18日",
+                    "19日",
+                    "20日",
+                    "21日",
+                    "22日",
+                    "23日",
+                    "24日",
+                    "25日",
+                    "26日",
+                    "27日",
+                    "28日",
+                    "29日",
+                    "30日"
+                  ]
+                },
+                "yAxis": {
+                  "type": "value"
+                },
+                "series": [
+                  {
+                    "data": [
+                      80,
+                      90,
+                      85,
+                      75,
+                      70,
+                      60,
+                      65,
+                      70,
+                      80,
+                      85,
+                      90,
+                      95,
+                      100,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      85,
+                      90,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      70,
+                      80,
+                      90,
+                      95,
+                      100
+                    ],
+                    "type": "line"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "center": {
+          "title": "最近30日订单量趋势-停车",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "1.47rem"
+              },
+              "option": {
+                "xAxis": {
+                  "type": "category",
+                  "data": [
+                    "1日",
+                    "2日",
+                    "3日",
+                    "4日",
+                    "5日",
+                    "6日",
+                    "7日",
+                    "8日",
+                    "9日",
+                    "10日",
+                    "11日",
+                    "12日",
+                    "13日",
+                    "14日",
+                    "15日",
+                    "16日",
+                    "17日",
+                    "18日",
+                    "19日",
+                    "20日",
+                    "21日",
+                    "22日",
+                    "23日",
+                    "24日",
+                    "25日",
+                    "26日",
+                    "27日",
+                    "28日",
+                    "29日",
+                    "30日"
+                  ]
+                },
+                "yAxis": {
+                  "type": "value"
+                },
+                "series": [
+                  {
+                    "data": [
+                      80,
+                      90,
+                      85,
+                      75,
+                      70,
+                      60,
+                      65,
+                      70,
+                      80,
+                      85,
+                      90,
+                      95,
+                      100,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      85,
+                      90,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      70,
+                      80,
+                      90,
+                      95,
+                      100
+                    ],
+                    "type": "line"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "bottom": {
+          "title": "最近30日收费趋势-充电桩",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "1.47rem"
+              },
+              "option": {
+                "xAxis": {
+                  "type": "category",
+                  "data": [
+                    "1日",
+                    "2日",
+                    "3日",
+                    "4日",
+                    "5日",
+                    "6日",
+                    "7日",
+                    "8日",
+                    "9日",
+                    "10日",
+                    "11日",
+                    "12日",
+                    "13日",
+                    "14日",
+                    "15日",
+                    "16日",
+                    "17日",
+                    "18日",
+                    "19日",
+                    "20日",
+                    "21日",
+                    "22日",
+                    "23日",
+                    "24日",
+                    "25日",
+                    "26日",
+                    "27日",
+                    "28日",
+                    "29日",
+                    "30日"
+                  ]
+                },
+                "yAxis": {
+                  "type": "value"
+                },
+                "series": [
+                  {
+                    "data": [
+                      80,
+                      90,
+                      85,
+                      75,
+                      70,
+                      60,
+                      65,
+                      70,
+                      80,
+                      85,
+                      90,
+                      95,
+                      100,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      85,
+                      90,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      70,
+                      80,
+                      90,
+                      95,
+                      100
+                    ],
+                    "type": "line"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "bottomPlus": {
+          "title": "最近30日订单量趋势-充电桩",
+          "chart": {
+            "chartOption": {
+              "chartStyle": {
+                "width": "4rem",
+                "height": "1.47rem"
+              },
+              "option": {
+                "xAxis": {
+                  "type": "category",
+                  "data": [
+                    "1日",
+                    "2日",
+                    "3日",
+                    "4日",
+                    "5日",
+                    "6日",
+                    "7日",
+                    "8日",
+                    "9日",
+                    "10日",
+                    "11日",
+                    "12日",
+                    "13日",
+                    "14日",
+                    "15日",
+                    "16日",
+                    "17日",
+                    "18日",
+                    "19日",
+                    "20日",
+                    "21日",
+                    "22日",
+                    "23日",
+                    "24日",
+                    "25日",
+                    "26日",
+                    "27日",
+                    "28日",
+                    "29日",
+                    "30日"
+                  ]
+                },
+                "yAxis": {
+                  "type": "value"
+                },
+                "series": [
+                  {
+                    "data": [
+                      80,
+                      90,
+                      85,
+                      75,
+                      70,
+                      60,
+                      65,
+                      70,
+                      80,
+                      85,
+                      90,
+                      95,
+                      100,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      85,
+                      90,
+                      95,
+                      90,
+                      85,
+                      80,
+                      75,
+                      70,
+                      80,
+                      90,
+                      95,
+                      100
+                    ],
+                    "type": "line"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "leanBottomData": {
+        "list": [
+          {
+            "title": "充电桩数量",
+            "chart": {
+              "type": "pie",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "width": "1.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "series": [
+                    {
+                      "type": "pie",
+                      "radius": [
+                        "20%",
+                        "30%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#fff"
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": "20",
+                          "fontWeight": "bold",
+                          "color": "#fff"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 335,
+                          "name": "1到60分钟"
+                        },
+                        {
+                          "value": 234,
+                          "name": "1到12小时"
+                        },
+                        {
+                          "value": 310,
+                          "name": "12到24小时"
+                        },
+                        {
+                          "value": 160,
+                          "name": "24小时以上"
+                        },
+                        {
+                          "value": 100,
+                          "name": "48小时以上"
+                        }
+                      ]
+                    }
+                  ],
+                  "graphic": [
+                    {
+                      "type": "text",
+                      "left": "center",
+                      "top": "center",
+                      "style": {
+                        "text": "停车时长分布",
+                        "textAlign": "center",
+                        "fill": "#fff",
+                        "fontSize": 20,
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "title": "充电桩数量",
+            "chart": {
+              "type": "pie",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "width": "1.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "series": [
+                    {
+                      "type": "pie",
+                      "radius": [
+                        "20%",
+                        "30%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#fff"
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": "20",
+                          "fontWeight": "bold",
+                          "color": "#fff"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 335,
+                          "name": "1到60分钟"
+                        },
+                        {
+                          "value": 234,
+                          "name": "1到12小时"
+                        },
+                        {
+                          "value": 310,
+                          "name": "12到24小时"
+                        },
+                        {
+                          "value": 160,
+                          "name": "24小时以上"
+                        },
+                        {
+                          "value": 100,
+                          "name": "48小时以上"
+                        }
+                      ]
+                    }
+                  ],
+                  "graphic": [
+                    {
+                      "type": "text",
+                      "left": "center",
+                      "top": "center",
+                      "style": {
+                        "text": "停车时长分布",
+                        "textAlign": "center",
+                        "fill": "#fff",
+                        "fontSize": 20,
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "title": "充电桩数量",
+            "chart": {
+              "type": "pie",
+              "chartOption": {
+                "chartContainerStyle": {
+                  "width": "1.65rem",
+                  "height": "1.55rem",
+                  "position": "relative",
+                  "overflow": "hidden"
+                },
+                "chartStyle": {
+                  "position": "absolute",
+                  "top": "-0.5rem",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "option": {
+                  "series": [
+                    {
+                      "type": "pie",
+                      "radius": [
+                        "20%",
+                        "30%"
+                      ],
+                      "avoidLabelOverlap": false,
+                      "label": {
+                        "show": true,
+                        "position": "outside",
+                        "formatter": "{b}",
+                        "color": "#fff"
+                      },
+                      "emphasis": {
+                        "label": {
+                          "show": true,
+                          "fontSize": "20",
+                          "fontWeight": "bold",
+                          "color": "#fff"
+                        }
+                      },
+                      "labelLine": {
+                        "show": true,
+                        "length": 10,
+                        "length2": 20
+                      },
+                      "data": [
+                        {
+                          "value": 335,
+                          "name": "1到60分钟"
+                        },
+                        {
+                          "value": 234,
+                          "name": "1到12小时"
+                        },
+                        {
+                          "value": 310,
+                          "name": "12到24小时"
+                        },
+                        {
+                          "value": 160,
+                          "name": "24小时以上"
+                        },
+                        {
+                          "value": 100,
+                          "name": "48小时以上"
+                        }
+                      ]
+                    }
+                  ],
+                  "graphic": [
+                    {
+                      "type": "text",
+                      "left": "center",
+                      "top": "center",
+                      "style": {
+                        "text": "停车时长分布",
+                        "textAlign": "center",
+                        "fill": "#fff",
+                        "fontSize": 20,
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

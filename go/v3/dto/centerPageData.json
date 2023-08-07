@@ -76,6 +76,132 @@
                 "longitude": 107.38,
                 "latitude": 23.19
               },
+              "markersList": [
+                {
+                  "markerType": "parking",
+                  "position": {
+                    "longitude": 111.5,
+                    "latitude": 37.1
+                  },
+                  "title": "路边停车",
+                  "visible": true,
+                  "label": {
+                    "content": "路边停车1",
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "direction": "top"
+                  },
+                  "markerStyle": {
+                    "background": "red",
+                    "borderRadius": "50%",
+                    "width": "0.2rem",
+                    "height": "0.2rem",
+                    "border": "2px solid white",
+                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
+                  }
+                },
+                {
+                  "markerType": "parking",
+                  "position": {
+                    "longitude": 112,
+                    "latitude": 38.06
+                  },
+                  "title": "路边停车",
+                  "visible": true,
+                  "label": {
+                    "content": "路边停车2",
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "direction": "top"
+                  },
+                  "markerStyle": {
+                    "background": "red",
+                    "borderRadius": "50%",
+                    "width": "0.2rem",
+                    "height": "0.2rem",
+                    "border": "2px solid white",
+                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
+                  }
+                },
+                {
+                  "markerType": "garage",
+                  "position": {
+                    "longitude": 112.3,
+                    "latitude": 38.8
+                  },
+                  "title": "立体车库",
+                  "visible": true,
+                  "label": {
+                    "content": "立体车库2",
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "direction": "top"
+                  },
+                  "markerStyle": {
+                    "background": "red",
+                    "borderRadius": "50%",
+                    "width": "0.2rem",
+                    "height": "0.2rem",
+                    "border": "2px solid white",
+                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
+                  }
+                },
+                {
+                  "markerType": "garage",
+                  "position": {
+                    "longitude": 111.43,
+                    "latitude": 37.57
+                  },
+                  "title": "立体车库",
+                  "visible": true,
+                  "label": {
+                    "content": "立体车库2",
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "direction": "top"
+                  },
+                  "markerStyle": {
+                    "background": "red",
+                    "borderRadius": "50%",
+                    "width": "0.2rem",
+                    "height": "0.2rem",
+                    "border": "2px solid white",
+                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
+                  }
+                },  {
+                  "markerType": "charging",
+                  "position": {
+                    "longitude": 110,
+                    "latitude": 38.21
+                  },
+                  "title": "充电桩",
+                  "visible": true,
+                  "label": {
+                    "content": "充电桩1",
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "direction": "top"
+                  },
+                  "markerStyle": {
+                    "background": "red",
+                    "borderRadius": "50%",
+                    "width": "0.2rem",
+                    "height": "0.2rem",
+                    "border": "2px solid white",
+                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
+                  }
+                }
+               ],
               "markerPositions": [
                 {
                   "longitude": 107.38,
@@ -159,6 +285,18 @@
           "list": [
             {
               "title": "可用",
+              "url": "http://bucketyg.oss-cn-shenzhen.aliyuncs.com/ygERP/桂BDU7512——192.168.10.65_29_20230504112657886-0320ca6009864bf2.mp4"
+            },
+            {
+              "title": "可用",
+              "url": "http://192.168.10.151:8088/video"
+            },
+            {
+              "title": "可用",
+              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
+            },
+            {
+              "title": "可用",
               "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
             },
             {
@@ -167,43 +305,23 @@
             },
             {
               "title": "可用",
-              "url": "https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv"
+              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
             },
             {
-              "title": "可用",
-              "url": "https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv"
-            },
-            {
-              "title": "可用",
-              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
-            },
-            {
-              "title": "可用",
-              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
-            },
-            {
-              "title": "视频1",
-              "url": "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4"
+              "title": "可用(开发板)",
+              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
             },
             {
               "title": "视频2",
-              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
+              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
             },
             {
               "title": "视频3",
-              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
+              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
             },
             {
               "title": "视频4",
-              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
-            },
-            {
-              "title": "视频5",
-              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
-            },
-            {
-              "title": "视频6",
-              "url": "http://39.134.65.162/PLTV/88888888/224/3221225611/index.m3u8"
+              "url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4"
             }
           ]
         }

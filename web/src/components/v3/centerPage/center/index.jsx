@@ -47,11 +47,10 @@ class LeanLeft extends PureComponent {
         }));
         console.log(checkboxName)
         console.log(this.state.checkboxes[checkboxName])
+        // 热力图
         if (checkboxName === 'heatmap') {
+            // 不选中热力图
             if (this.state.checkboxes[checkboxName] === true) {
-
-
-                // this.props.changeHeatMap(this.state.checkboxes[checkboxName])
                 let option = this.state.aMapOption;
                 this.setState({
                     aMapOptionCacheHeatmap: option.heatmapPluginProps
@@ -60,9 +59,7 @@ class LeanLeft extends PureComponent {
                 this.setState({
                     aMapOption: option
                 })
-                // this.setState({
-                //     aMapOption: null
-                // })
+
                 console.log('111', this.state.aMapOptionCacheHeatmap)
 
             } else {
@@ -75,6 +72,104 @@ class LeanLeft extends PureComponent {
                 })
             }
 
+            if (this.aMapRef) {
+                this.aMapRef.current.childMethod(this.state.aMapOption);
+            }
+        }
+        // 车库
+        if(checkboxName === 'garage'){
+            if (this.state.checkboxes[checkboxName] === true) {
+                let option = this.state.aMapOption;
+                let markersList = option.markersList;
+                for(let i=0;i<markersList.length;i++){
+                    if(markersList[i].markerType==='garage'){
+                        markersList[i].visible = false;
+                    }
+                }
+                option.markersList = markersList;
+
+                this.setState({
+                    aMapOption: option
+                })
+            } else {
+                let option = this.state.aMapOption;
+                let markersList = option.markersList;
+                for(let i=0;i<markersList.length;i++){
+                    if(markersList[i].markerType==='garage'){
+                        markersList[i].visible = true;
+                    }
+                }
+                option.markersList = markersList;
+
+                this.setState({
+                    aMapOption: option
+                })
+            }
+            if (this.aMapRef) {
+                this.aMapRef.current.childMethod(this.state.aMapOption);
+            }
+        }
+        // 充电桩
+        if(checkboxName ==='charging'){
+            if (this.state.checkboxes[checkboxName] === true) {
+                let option = this.state.aMapOption;
+                let markersList = option.markersList;
+                for(let i=0;i<markersList.length;i++){
+                    if(markersList[i].markerType==='charging'){
+                        markersList[i].visible = false;
+                    }
+                }
+                option.markersList = markersList;
+
+                this.setState({
+                    aMapOption: option
+                })
+            } else {
+                let option = this.state.aMapOption;
+                let markersList = option.markersList;
+                for(let i=0;i<markersList.length;i++){
+                    if(markersList[i].markerType==='charging'){
+                        markersList[i].visible = true;
+                    }
+                }
+                option.markersList = markersList;
+
+                this.setState({
+                    aMapOption: option
+                })
+            }
+            if (this.aMapRef) {
+                this.aMapRef.current.childMethod(this.state.aMapOption);
+            }
+        }
+        if(checkboxName==='parking'){
+            if (this.state.checkboxes[checkboxName] === true) {
+                let option = this.state.aMapOption;
+                let markersList = option.markersList;
+                for(let i=0;i<markersList.length;i++){
+                    if(markersList[i].markerType==='parking'){
+                        markersList[i].visible = false;
+                    }
+                }
+                option.markersList = markersList;
+
+                this.setState({
+                    aMapOption: option
+                })
+            } else {
+                let option = this.state.aMapOption;
+                let markersList = option.markersList;
+                for(let i=0;i<markersList.length;i++){
+                    if(markersList[i].markerType==='parking'){
+                        markersList[i].visible = true;
+                    }
+                }
+                option.markersList = markersList;
+
+                this.setState({
+                    aMapOption: option
+                })
+            }
             if (this.aMapRef) {
                 this.aMapRef.current.childMethod(this.state.aMapOption);
             }
@@ -156,16 +251,16 @@ class LeanLeft extends PureComponent {
                             <div style={chartStyle}>
                                 <div style={{position: 'relative'}}>
 
-                                    <Search
-                                        placeholder="搜索城市"
-                                        allowClear
-                                        onSearch={this.onSearch}
-                                        onPressEnter={this.onSearchByPressEnter}
-                                        style={{
-                                            width: 150,
-                                            position: 'absolute', top: 0, zIndex: 999
-                                        }}
-                                    />
+                                    {/*<Search*/}
+                                    {/*    placeholder="搜索城市"*/}
+                                    {/*    allowClear*/}
+                                    {/*    onSearch={this.onSearch}*/}
+                                    {/*    onPressEnter={this.onSearchByPressEnter}*/}
+                                    {/*    style={{*/}
+                                    {/*        width: 150,*/}
+                                    {/*        position: 'absolute', top: 0, zIndex: 999*/}
+                                    {/*    }}*/}
+                                    {/*/>*/}
 
 
                                     <AaLiMap ref={this.aMapRef} option={this.state.aMapOption}/>

@@ -1,17 +1,10 @@
 import React, {PureComponent} from 'react';
 import {ModuleTitle, LeftDiv, DataBox, BorderRadiusBox1} from '../style';
-import {BorderBox12, BorderBox13} from '@jiaminghi/data-view-react';
-import TrafficSituation from '../charts/TrafficSituation';
-import {WaterLevelPond} from "@jiaminghi/data-view-react";
-import {LiquidBall} from '@jiaminghi/data-view-react';
-import EchartComponent from "../../../homePage/centerPage/charts/EchartComponent";
-// import ReactEcharts from 'echarts-for-react'
-// import * as echarts from 'echarts';
 
-// import ReactEcharts from 'echarts-for-react'
 
-// import * as echarts from 'echarts/core';
-// import 'echarts-liquidfill'
+import PlayerComponent from "./PlayerT";
+
+
 class LeanLeft extends PureComponent {
     constructor(props) {
         super(props);
@@ -136,6 +129,7 @@ class LeanLeft extends PureComponent {
 
                 {/*    </div>*/}
                 {/*</BorderBox12>*/}
+
                 <BorderRadiusBox1>
                     <div style={{width: '5rem'}}>
                         <ModuleTitle>
@@ -143,16 +137,20 @@ class LeanLeft extends PureComponent {
                             <span>路段实时视频</span>
                         </ModuleTitle>
                         <div>
-                            {/*<WaterLevelPond config={config} style={{width: '150px', height: '200px'}}/>*/}
+                        {/*<WXInlinePlayer></WXInlinePlayer>*/}
 
-                            {/*<ReactEcharts option={optionIntegrityRate} />*/}
+                          {/*<VLCPlayer*/}
+                          {/*  style={{width: '200px', height: '200px'}}*/}
+                          {/*  videoAspectRatio="16:9"*/}
+                          {/*  source={{ uri: "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"}}*/}
+                          {/*/>*/}
+                          {/*<H265PlayerComponent></H265PlayerComponent>*/}
+                         {/*<PlayerComponent></PlayerComponent>*/}
                         </div>
-                    </div>
-                    <div>
-                        <EchartComponent echartData={chartOption}></EchartComponent>
 
-                        {/*<ReactEcharts option={optionIntegrityRate} />*/}
                     </div>
+
+
 
                 </BorderRadiusBox1>
             </LeftDiv>
