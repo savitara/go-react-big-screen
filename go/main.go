@@ -24,7 +24,8 @@ func corsMiddleware() gin.HandlerFunc {
 }
 func main() {
 	go mediaServer.ServerMain()
-	go ffmpegTranspond.TranspondMain()
+	//go ffmpegTranspond.TranspondMain()
+	go ffmpegTranspond.TransServerMain()
 	router := gin.Default()
 
 	router.Use(corsMiddleware())
