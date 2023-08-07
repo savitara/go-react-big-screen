@@ -2,6 +2,7 @@ package main
 
 import (
 	"big-srceen/mediaServer"
+	"big-srceen/mediaServer/ffmpegTranspond"
 	v1 "big-srceen/v1"
 	v2 "big-srceen/v2"
 	v3 "big-srceen/v3"
@@ -23,6 +24,7 @@ func corsMiddleware() gin.HandlerFunc {
 }
 func main() {
 	go mediaServer.ServerMain()
+	go ffmpegTranspond.TranspondMain()
 	router := gin.Default()
 
 	router.Use(corsMiddleware())
