@@ -1,6 +1,7 @@
 package main
 
 import (
+	"big-srceen/mediaServer"
 	v1 "big-srceen/v1"
 	v2 "big-srceen/v2"
 	v3 "big-srceen/v3"
@@ -21,6 +22,7 @@ func corsMiddleware() gin.HandlerFunc {
 	}
 }
 func main() {
+	go mediaServer.ServerMain()
 	router := gin.Default()
 
 	router.Use(corsMiddleware())

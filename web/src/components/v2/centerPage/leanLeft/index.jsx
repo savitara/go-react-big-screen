@@ -4,6 +4,8 @@ import {ModuleTitle, LeftDiv, DataBox, BorderRadiusBox1} from '../style';
 
 import PlayerComponent from "./PlayerT";
 import PlayerComponentLiv from "./PlayerTC";
+import RTMP from "./player/rtmp";
+import VideoPlayer from "./player/VideoPlayer";
 
 
 class LeanLeft extends PureComponent {
@@ -25,7 +27,7 @@ class LeanLeft extends PureComponent {
                 width: "3.65rem",
                 height: "1.7rem",
             },
-            option:{
+            option: {
                 "title": [{
                     "text": "应收15154元",
                     "top": 5,
@@ -35,7 +37,7 @@ class LeanLeft extends PureComponent {
                         "fontWeight": 600,
                         "color": "#fff"
                     }
-                },{
+                }, {
                     "text": "已收14954元",
                     "bottom": -8,
                     "left": "center",
@@ -138,20 +140,23 @@ class LeanLeft extends PureComponent {
                             <span>路段实时视频</span>
                         </ModuleTitle>
                         <div>
-                        {/*<WXInlinePlayer></WXInlinePlayer>*/}
+                            {/*<WXInlinePlayer></WXInlinePlayer>*/}
 
-                          {/*<VLCPlayer*/}
-                          {/*  style={{width: '200px', height: '200px'}}*/}
-                          {/*  videoAspectRatio="16:9"*/}
-                          {/*  source={{ uri: "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"}}*/}
-                          {/*/>*/}
-                          {/*<H265PlayerComponent></H265PlayerComponent>*/}
-                         {/*<PlayerComponent></PlayerComponent>*/}
+                            {/*<VLCPlayer*/}
+                            {/*  style={{width: '200px', height: '200px'}}*/}
+                            {/*  videoAspectRatio="16:9"*/}
+                            {/*  source={{ uri: "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"}}*/}
+                            {/*/>*/}
+                            {/*<H265PlayerComponent></H265PlayerComponent>*/}
+                            {/*<PlayerComponent></PlayerComponent>*/}
                         </div>
-                        <PlayerComponentLiv></PlayerComponentLiv>
+                        {/*<PlayerComponentLiv></PlayerComponentLiv>*/}
+                        {/*<PlayerComponent></PlayerComponent>*/}
+                      {/*<VideoPlayer></VideoPlayer>*/}
 
+
+                      <PlayerComponentLiv></PlayerComponentLiv>
                     </div>
-
 
 
                 </BorderRadiusBox1>
