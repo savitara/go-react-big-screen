@@ -1,7 +1,6 @@
 import React, {PureComponent} from "react";
-import {Map, Marker} from "react-amap";
+import {InfoWindow, Map, Marker} from "react-amap";
 import Heatmap from 'react-amap-plugin-heatmap';
-import Autocomplete from 'react-amap-plugin-autocomplete';
 
 const AMAP_API_KEY = '7ab53b28352e55dc5754699add0ad862';
 
@@ -77,6 +76,7 @@ class AaLiMap extends PureComponent {
         // }
     }
 
+
     render() {
         const pluginProps = {
             input: 'input0', // 将输入框引用传递给插件
@@ -92,31 +92,7 @@ class AaLiMap extends PureComponent {
                                 mapStyle={this.state.option.setMapStyle}
                                 center={this.state.option.centerPosition}
                             >
-                                {/*<input*/}
-                                {/*   id={'input0'}*/}
-                                {/*    style={{*/}
-                                {/*        width: 150,*/}
-                                {/*        height: 30,*/}
-                                {/*        position: 'absolute',*/}
-                                {/*        top: 10,*/}
-                                {/*        left: 10,*/}
-                                {/*        zIndex: 999*/}
-                                {/*    }}*/}
-                                {/*    placeholder="input"*/}
-                                {/*/>*/}
-                                {/*<Autocomplete*/}
-                                {/*    options={{*/}
-                                {/*        input: this.inputRef.current // 将输入框引用传递给插件*/}
-                                {/*    }}*/}
-                                {/*    onSelect={this.onAutocompleteSelect}*/}
-                                {/*/>*/}
-                                {/*<Autocomplete options={pluginProps} onSelect={(e) => this.selectfunc(e)}*/}
-                                {/*              // style={{*/}
-                                {/*              //     width: 150,*/}
-                                {/*              //     position: 'absolute', top: 0, zIndex: 999*/}
-                                {/*              // }}*/}
-                                {/*              // placeholder='搜索'*/}
-                                {/*/>*/}
+
                                 {
                                     this.state.option.heatmapPluginProps && (
                                         <Heatmap {...this.state.option.heatmapPluginProps} />
@@ -126,14 +102,24 @@ class AaLiMap extends PureComponent {
                                 {this.state.option.markersList.map((item, index) => (
                                     <Marker
                                         key={index}
-                                        title={item.title}
+                                        icon={item.icon ? item.icon : null}
+                                        title={item.title?item.title:null}
                                         visible={item.visible}
-                                        label={item.label}
+                                        label={item.label?item.label:null}
                                         position={item.position}
                                         extData={{id: `marker-${index + 1}`}}
-                                        style={item.markerStyle} // 设置标记点的样式
+                                        // onClick={}
                                     />
                                 ))}
+
+                                {/*{winPosition && (*/}
+                                {/*    <InfoWindow*/}
+                                {/*        visiable={show}*/}
+                                {/*        position={winPosition}*/}
+                                {/*        offset={{ x: 0, y: -10}}*/}
+                                {/*        content={content}                                        */}
+                                {/*    />*/}
+                                {/*)}*/}
                             </Map>
                         </div>
                     )

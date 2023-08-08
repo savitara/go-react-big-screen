@@ -85,6 +85,7 @@
                   },
                   "title": "路边停车",
                   "visible": true,
+                  "icon": "../../../../../../public/iconImage/marker-green.png",
                   "label": {
                     "content": "路边停车1",
                     "offset": {
@@ -92,15 +93,8 @@
                       "y": 0
                     },
                     "direction": "top"
-                  },
-                  "markerStyle": {
-                    "background": "red",
-                    "borderRadius": "50%",
-                    "width": "0.2rem",
-                    "height": "0.2rem",
-                    "border": "2px solid white",
-                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
                   }
+
                 },
                 {
                   "markerType": "parking",
@@ -110,22 +104,17 @@
                   },
                   "title": "路边停车",
                   "visible": true,
+                  "icon": "../../../../../../public/iconImage/marker-green.png",
                   "label": {
                     "content": "路边停车2",
+
                     "offset": {
                       "x": 0,
                       "y": 0
                     },
                     "direction": "top"
-                  },
-                  "markerStyle": {
-                    "background": "red",
-                    "borderRadius": "50%",
-                    "width": "0.2rem",
-                    "height": "0.2rem",
-                    "border": "2px solid white",
-                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
                   }
+
                 },
                 {
                   "markerType": "garage",
@@ -135,6 +124,7 @@
                   },
                   "title": "立体车库",
                   "visible": true,
+                  "icon": "../../../../../../public/iconImage/marker-red.png",
                   "label": {
                     "content": "立体车库2",
                     "offset": {
@@ -142,16 +132,8 @@
                       "y": 0
                     },
                     "direction": "top"
-                  },
-                  "markerStyle": {
-                    "background": "red",
-                    "borderRadius": "50%",
-                    "width": "0.2rem",
-                    "height": "0.2rem",
-                    "border": "2px solid white",
-                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
                   }
-                },
+                 },
                 {
                   "markerType": "garage",
                   "position": {
@@ -160,6 +142,7 @@
                   },
                   "title": "立体车库",
                   "visible": true,
+                  "icon": "../../../../../../public/iconImage/marker-red.png",
                   "label": {
                     "content": "立体车库2",
                     "offset": {
@@ -167,15 +150,8 @@
                       "y": 0
                     },
                     "direction": "top"
-                  },
-                  "markerStyle": {
-                    "background": "red",
-                    "borderRadius": "50%",
-                    "width": "0.2rem",
-                    "height": "0.2rem",
-                    "border": "2px solid white",
-                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
                   }
+
                 },  {
                   "markerType": "charging",
                   "position": {
@@ -184,6 +160,7 @@
                   },
                   "title": "充电桩",
                   "visible": true,
+                  "icon": "../../../../../../public/iconImage/marker-blue.png",
                   "label": {
                     "content": "充电桩1",
                     "offset": {
@@ -191,32 +168,10 @@
                       "y": 0
                     },
                     "direction": "top"
-                  },
-                  "markerStyle": {
-                    "background": "red",
-                    "borderRadius": "50%",
-                    "width": "0.2rem",
-                    "height": "0.2rem",
-                    "border": "2px solid white",
-                    "boxShadow": "0 0 5px rgba(0, 0, 0, 0.3)"
                   }
                 }
                ],
-              "markerPositions": [
-                {
-                  "longitude": 107.38,
-                  "latitude": 23.19
-                },
-                {
-                  "longitude": 111,
-                  "latitude": 37.86
-                },
-                {
-                  "longitude": 121,
-                  "latitude": 36.86
-                }
-              ],
-              "heatmapPluginProps": {
+               "heatmapPluginProps": {
                 "dataSet": {
                   "data": [
                     {
@@ -338,6 +293,11 @@
               "option": {
                 "xAxis": {
                   "type": "category",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  },
                   "data": [
                     "1日",
                     "2日",
@@ -372,7 +332,12 @@
                   ]
                 },
                 "yAxis": {
-                  "type": "value"
+                  "type": "value",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  }
                 },
                 "series": [
                   {
@@ -408,9 +373,84 @@
                       95,
                       100
                     ],
-                    "type": "line"
+                    "type": "line",
+                    "smooth": true,
+                    "lineStyle": {
+                      "normal": {
+                        "color": "#00ca95",
+                        "shadowColor": "rgba(0, 0, 0, .3)",
+                        "shadowBlur": 0,
+                        "shadowOffsetY": 5,
+                        "shadowOffsetX": 5
+                      }
+                    },
+                    "label": {
+                      "show": false,
+                      "position": "top",
+                      "textStyle": {
+                        "color": "#00ca95"
+                      }
+                    },
+                    "symbolSize": 0,
+                    "itemStyle": {
+                      "color": "#00ca95"
+                    },
+                    "areaStyle": {
+                      "normal": {
+                        "color": {
+                          "type": "linear",
+                          "x": 0,
+                          "y": 0,
+                          "x2": 0,
+                          "y2": 1,
+                          "colorStops": [
+                            {
+                              "offset": 0,
+                              "color": "rgba(0,202,149,0.3)"
+                            },
+                            {
+                              "offset": 1,
+                              "color": "rgba(0,202,149,0)"
+                            }
+                          ],
+                          "global": false
+                        },
+                        "shadowColor": "rgba(0,202,149, 0.9)",
+                        "shadowBlur": 20
+                      }
+                    }
+
                   }
-                ]
+                ],
+                "tooltip": {
+                  "trigger": "axis",
+                  "axisPointer": {
+                    "lineStyle": {
+                      "color": {
+                        "type": "linear",
+                        "x": 0,
+                        "y": 0,
+                        "x2": 0,
+                        "y2": 1,
+                        "colorStops": [
+                          {
+                            "offset": 0,
+                            "color": "rgba(0, 255, 233,0)"
+                          },
+                          {
+                            "offset": 0.5,
+                            "color": "rgba(255, 255, 255,1)"
+                          },
+                          {
+                            "offset": 1,
+                            "color": "rgba(0, 255, 233,0)"
+                          }
+                        ],
+                        "global": false
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -426,6 +466,11 @@
               "option": {
                 "xAxis": {
                   "type": "category",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  },
                   "data": [
                     "1日",
                     "2日",
@@ -459,9 +504,74 @@
                     "30日"
                   ]
                 },
-                "yAxis": {
-                  "type": "value"
+                "tooltip": {
+                  "trigger": "axis",
+                  "axisPointer": {
+                    "lineStyle": {
+                      "color": {
+                        "type": "linear",
+                        "x": 0,
+                        "y": 0,
+                        "x2": 0,
+                        "y2": 1,
+                        "colorStops": [
+                          {
+                            "offset": 0,
+                            "color": "rgba(0, 255, 233,0)"
+                          },
+                          {
+                            "offset": 0.5,
+                            "color": "rgba(255, 255, 255,1)"
+                          },
+                          {
+                            "offset": 1,
+                            "color": "rgba(0, 255, 233,0)"
+                          }
+                        ],
+                        "global": false
+                      }
+                    }
+                  }
                 },
+
+                "yAxis": {
+                  "type": "value",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  }
+                },
+                "tooltip": {
+                  "trigger": "axis",
+                  "axisPointer": {
+                    "lineStyle": {
+                      "color": {
+                        "type": "linear",
+                        "x": 0,
+                        "y": 0,
+                        "x2": 0,
+                        "y2": 1,
+                        "colorStops": [
+                          {
+                            "offset": 0,
+                            "color": "rgba(0, 255, 233,0)"
+                          },
+                          {
+                            "offset": 0.5,
+                            "color": "rgba(255, 255, 255,1)"
+                          },
+                          {
+                            "offset": 1,
+                            "color": "rgba(0, 255, 233,0)"
+                          }
+                        ],
+                        "global": false
+                      }
+                    }
+                  }
+                },
+
                 "series": [
                   {
                     "data": [
@@ -496,7 +606,53 @@
                       95,
                       100
                     ],
-                    "type": "line"
+                    "type": "line",
+                    "smooth": true,
+                    "lineStyle": {
+                      "normal": {
+                        "color": "#FFA500",
+                        "shadowColor": "rgba(0, 0, 0, .3)",
+                        "shadowBlur": 0,
+                        "shadowOffsetY": 5,
+                        "shadowOffsetX": 5
+                      }
+                    },
+                    "label": {
+                      "show": false,
+                      "position": "top",
+                      "textStyle": {
+                        "color": "#FFA500"
+                      }
+                    },
+                    "symbolSize": 0,
+                    "itemStyle": {
+                      "color": "#FFA500"
+                    },
+                    "areaStyle": {
+                      "normal": {
+                        "color": {
+                          "type": "linear",
+                          "x": 0,
+                          "y": 0,
+                          "x2": 0,
+                          "y2": 1,
+                          "colorStops": [
+                            {
+                              "offset": 0,
+                              "color": "rgba(0,179,244,0.3)"
+                            },
+                            {
+                              "offset": 1,
+                              "color": "rgba(0,179,244,0)"
+                            }
+                          ]
+                        },
+                        "shadowColor": "rgba(0,179,244, 0.9)",
+                        "shadowBlur": 20
+                      }
+                    }
+
+
                   }
                 ]
               }
@@ -514,6 +670,11 @@
               "option": {
                 "xAxis": {
                   "type": "category",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  },
                   "data": [
                     "1日",
                     "2日",
@@ -548,8 +709,43 @@
                   ]
                 },
                 "yAxis": {
-                  "type": "value"
+                  "type": "value",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  }
                 },
+                "tooltip": {
+                  "trigger": "axis",
+                  "axisPointer": {
+                    "lineStyle": {
+                      "color": {
+                        "type": "linear",
+                        "x": 0,
+                        "y": 0,
+                        "x2": 0,
+                        "y2": 1,
+                        "colorStops": [
+                          {
+                            "offset": 0,
+                            "color": "rgba(0, 255, 233,0)"
+                          },
+                          {
+                            "offset": 0.5,
+                            "color": "rgba(255, 255, 255,1)"
+                          },
+                          {
+                            "offset": 1,
+                            "color": "rgba(0, 255, 233,0)"
+                          }
+                        ],
+                        "global": false
+                      }
+                    }
+                  }
+                },
+
                 "series": [
                   {
                     "data": [
@@ -584,7 +780,53 @@
                       95,
                       100
                     ],
-                    "type": "line"
+                    "type": "line",
+                    "smooth": true,
+                    "lineStyle": {
+                      "normal": {
+                        "color": "#00ca95",
+                        "shadowColor": "rgba(0, 0, 0, .3)",
+                        "shadowBlur": 0,
+                        "shadowOffsetY": 5,
+                        "shadowOffsetX": 5
+                      }
+                    },
+                    "label": {
+                      "show": false,
+                      "position": "top",
+                      "textStyle": {
+                        "color": "#00ca95"
+                      }
+                    },
+                    "symbolSize": 0,
+                    "itemStyle": {
+                      "color": "#00ca95"
+                    },
+                    "areaStyle": {
+                      "normal": {
+                        "color": {
+                          "type": "linear",
+                          "x": 0,
+                          "y": 0,
+                          "x2": 0,
+                          "y2": 1,
+                          "colorStops": [
+                            {
+                              "offset": 0,
+                              "color": "rgba(0,202,149,0.3)"
+                            },
+                            {
+                              "offset": 1,
+                              "color": "rgba(0,202,149,0)"
+                            }
+                          ],
+                          "global": false
+                        },
+                        "shadowColor": "rgba(0,202,149, 0.9)",
+                        "shadowBlur": 20
+                      }
+                    }
+
                   }
                 ]
               }
@@ -602,6 +844,11 @@
               "option": {
                 "xAxis": {
                   "type": "category",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  },
                   "data": [
                     "1日",
                     "2日",
@@ -636,8 +883,43 @@
                   ]
                 },
                 "yAxis": {
-                  "type": "value"
+                  "type": "value",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  }
                 },
+                "tooltip": {
+                  "trigger": "axis",
+                  "axisPointer": {
+                    "lineStyle": {
+                      "color": {
+                        "type": "linear",
+                        "x": 0,
+                        "y": 0,
+                        "x2": 0,
+                        "y2": 1,
+                        "colorStops": [
+                          {
+                            "offset": 0,
+                            "color": "rgba(0, 255, 233,0)"
+                          },
+                          {
+                            "offset": 0.5,
+                            "color": "rgba(255, 255, 255,1)"
+                          },
+                          {
+                            "offset": 1,
+                            "color": "rgba(0, 255, 233,0)"
+                          }
+                        ],
+                        "global": false
+                      }
+                    }
+                  }
+                },
+
                 "series": [
                   {
                     "data": [
@@ -672,7 +954,52 @@
                       95,
                       100
                     ],
-                    "type": "line"
+                    "type": "line",
+                    "smooth": true,
+                    "lineStyle": {
+                      "normal": {
+                        "color": "#FFA500",
+                        "shadowColor": "rgba(0, 0, 0, .3)",
+                        "shadowBlur": 0,
+                        "shadowOffsetY": 5,
+                        "shadowOffsetX": 5
+                      }
+                    },
+                    "label": {
+                      "show": false,
+                      "position": "top",
+                      "textStyle": {
+                        "color": "#FFA500"
+                      }
+                    },
+                    "symbolSize": 0,
+                    "itemStyle": {
+                      "color": "#FFA500"
+                    },
+                    "areaStyle": {
+                      "normal": {
+                        "color": {
+                          "type": "linear",
+                          "x": 0,
+                          "y": 0,
+                          "x2": 0,
+                          "y2": 1,
+                          "colorStops": [
+                            {
+                              "offset": 0,
+                              "color": "rgba(0,179,244,0.3)"
+                            },
+                            {
+                              "offset": 1,
+                              "color": "rgba(0,179,244,0)"
+                            }
+                          ]
+                        },
+                        "shadowColor": "rgba(0,179,244, 0.9)",
+                        "shadowBlur": 20
+                      }
+                    }
+
                   }
                 ]
               }
@@ -681,272 +1008,7 @@
         }
       },
       "leanBottomData": {
-        "list": [
-          {
-            "title": "充电桩数量",
-            "chart": {
-              "type": "pie",
-              "chartOption": {
-                "chartContainerStyle": {
-                  "width": "1.65rem",
-                  "height": "1.55rem",
-                  "position": "relative",
-                  "overflow": "hidden"
-                },
-                "chartStyle": {
-                  "position": "absolute",
-                  "top": "-0.5rem",
-                  "left": "0",
-                  "right": "0",
-                  "bottom": "0"
-                },
-                "option": {
-                  "series": [
-                    {
-                      "type": "pie",
-                      "radius": [
-                        "20%",
-                        "30%"
-                      ],
-                      "avoidLabelOverlap": false,
-                      "label": {
-                        "show": true,
-                        "position": "outside",
-                        "formatter": "{b}",
-                        "color": "#fff"
-                      },
-                      "emphasis": {
-                        "label": {
-                          "show": true,
-                          "fontSize": "20",
-                          "fontWeight": "bold",
-                          "color": "#fff"
-                        }
-                      },
-                      "labelLine": {
-                        "show": true,
-                        "length": 10,
-                        "length2": 20
-                      },
-                      "data": [
-                        {
-                          "value": 335,
-                          "name": "1到60分钟"
-                        },
-                        {
-                          "value": 234,
-                          "name": "1到12小时"
-                        },
-                        {
-                          "value": 310,
-                          "name": "12到24小时"
-                        },
-                        {
-                          "value": 160,
-                          "name": "24小时以上"
-                        },
-                        {
-                          "value": 100,
-                          "name": "48小时以上"
-                        }
-                      ]
-                    }
-                  ],
-                  "graphic": [
-                    {
-                      "type": "text",
-                      "left": "center",
-                      "top": "center",
-                      "style": {
-                        "text": "停车时长分布",
-                        "textAlign": "center",
-                        "fill": "#fff",
-                        "fontSize": 20,
-                        "fontWeight": "bold"
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          {
-            "title": "充电桩数量",
-            "chart": {
-              "type": "pie",
-              "chartOption": {
-                "chartContainerStyle": {
-                  "width": "1.65rem",
-                  "height": "1.55rem",
-                  "position": "relative",
-                  "overflow": "hidden"
-                },
-                "chartStyle": {
-                  "position": "absolute",
-                  "top": "-0.5rem",
-                  "left": "0",
-                  "right": "0",
-                  "bottom": "0"
-                },
-                "option": {
-                  "series": [
-                    {
-                      "type": "pie",
-                      "radius": [
-                        "20%",
-                        "30%"
-                      ],
-                      "avoidLabelOverlap": false,
-                      "label": {
-                        "show": true,
-                        "position": "outside",
-                        "formatter": "{b}",
-                        "color": "#fff"
-                      },
-                      "emphasis": {
-                        "label": {
-                          "show": true,
-                          "fontSize": "20",
-                          "fontWeight": "bold",
-                          "color": "#fff"
-                        }
-                      },
-                      "labelLine": {
-                        "show": true,
-                        "length": 10,
-                        "length2": 20
-                      },
-                      "data": [
-                        {
-                          "value": 335,
-                          "name": "1到60分钟"
-                        },
-                        {
-                          "value": 234,
-                          "name": "1到12小时"
-                        },
-                        {
-                          "value": 310,
-                          "name": "12到24小时"
-                        },
-                        {
-                          "value": 160,
-                          "name": "24小时以上"
-                        },
-                        {
-                          "value": 100,
-                          "name": "48小时以上"
-                        }
-                      ]
-                    }
-                  ],
-                  "graphic": [
-                    {
-                      "type": "text",
-                      "left": "center",
-                      "top": "center",
-                      "style": {
-                        "text": "停车时长分布",
-                        "textAlign": "center",
-                        "fill": "#fff",
-                        "fontSize": 20,
-                        "fontWeight": "bold"
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          {
-            "title": "充电桩数量",
-            "chart": {
-              "type": "pie",
-              "chartOption": {
-                "chartContainerStyle": {
-                  "width": "1.65rem",
-                  "height": "1.55rem",
-                  "position": "relative",
-                  "overflow": "hidden"
-                },
-                "chartStyle": {
-                  "position": "absolute",
-                  "top": "-0.5rem",
-                  "left": "0",
-                  "right": "0",
-                  "bottom": "0"
-                },
-                "option": {
-                  "series": [
-                    {
-                      "type": "pie",
-                      "radius": [
-                        "20%",
-                        "30%"
-                      ],
-                      "avoidLabelOverlap": false,
-                      "label": {
-                        "show": true,
-                        "position": "outside",
-                        "formatter": "{b}",
-                        "color": "#fff"
-                      },
-                      "emphasis": {
-                        "label": {
-                          "show": true,
-                          "fontSize": "20",
-                          "fontWeight": "bold",
-                          "color": "#fff"
-                        }
-                      },
-                      "labelLine": {
-                        "show": true,
-                        "length": 10,
-                        "length2": 20
-                      },
-                      "data": [
-                        {
-                          "value": 335,
-                          "name": "1到60分钟"
-                        },
-                        {
-                          "value": 234,
-                          "name": "1到12小时"
-                        },
-                        {
-                          "value": 310,
-                          "name": "12到24小时"
-                        },
-                        {
-                          "value": 160,
-                          "name": "24小时以上"
-                        },
-                        {
-                          "value": 100,
-                          "name": "48小时以上"
-                        }
-                      ]
-                    }
-                  ],
-                  "graphic": [
-                    {
-                      "type": "text",
-                      "left": "center",
-                      "top": "center",
-                      "style": {
-                        "text": "停车时长分布",
-                        "textAlign": "center",
-                        "fill": "#fff",
-                        "fontSize": 20,
-                        "fontWeight": "bold"
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        ]
+        "list":[]
       }
     }
   }

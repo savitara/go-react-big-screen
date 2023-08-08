@@ -33,10 +33,7 @@ class index extends PureComponent {
             <>
                 {centerData && (<CenterPage>
                         <div style={{display: 'flex'}}>
-
                             <LeanLeft LeanLeftData={LeanLeftData}></LeanLeft>
-
-
                             <Center dataCenter={dataCenter}> </Center>
                             <LeanRight LeanRightData={LeanRightData}> </LeanRight>
 

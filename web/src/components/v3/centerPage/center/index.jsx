@@ -7,6 +7,21 @@ import {Button, Checkbox, Menu, Select} from "antd";
 import MenuItem from "antd/es/menu/MenuItem";
 import Search from "antd/es/input/Search";
 import {getDataFromFullUrl} from "../../../../utils/axiosRequest";
+import {
+    HomeOutlined,
+    LoadingOutlined,
+    SettingFilled,
+    SmileOutlined,
+    SyncOutlined,
+} from '@ant-design/icons';
+import {Image} from 'antd';
+import {
+    HeartIcon,
+    MarkerBlueIcon,
+    MarkerGreenIcon,
+    MarkerIcon,
+    MarkerRedIcon
+} from "../../../../assets/svgIcon/SvgComponent";
 
 const ALiMapSearchUrl = 'https://restapi.amap.com/v5/place/text'
 const ALiMapSearchKey = '4a182bb48419ece31031dd0f02e1857a'
@@ -77,12 +92,12 @@ class LeanLeft extends PureComponent {
             }
         }
         // 车库
-        if(checkboxName === 'garage'){
+        if (checkboxName === 'garage') {
             if (this.state.checkboxes[checkboxName] === true) {
                 let option = this.state.aMapOption;
                 let markersList = option.markersList;
-                for(let i=0;i<markersList.length;i++){
-                    if(markersList[i].markerType==='garage'){
+                for (let i = 0; i < markersList.length; i++) {
+                    if (markersList[i].markerType === 'garage') {
                         markersList[i].visible = false;
                     }
                 }
@@ -94,8 +109,8 @@ class LeanLeft extends PureComponent {
             } else {
                 let option = this.state.aMapOption;
                 let markersList = option.markersList;
-                for(let i=0;i<markersList.length;i++){
-                    if(markersList[i].markerType==='garage'){
+                for (let i = 0; i < markersList.length; i++) {
+                    if (markersList[i].markerType === 'garage') {
                         markersList[i].visible = true;
                     }
                 }
@@ -110,12 +125,12 @@ class LeanLeft extends PureComponent {
             }
         }
         // 充电桩
-        if(checkboxName ==='charging'){
+        if (checkboxName === 'charging') {
             if (this.state.checkboxes[checkboxName] === true) {
                 let option = this.state.aMapOption;
                 let markersList = option.markersList;
-                for(let i=0;i<markersList.length;i++){
-                    if(markersList[i].markerType==='charging'){
+                for (let i = 0; i < markersList.length; i++) {
+                    if (markersList[i].markerType === 'charging') {
                         markersList[i].visible = false;
                     }
                 }
@@ -127,8 +142,8 @@ class LeanLeft extends PureComponent {
             } else {
                 let option = this.state.aMapOption;
                 let markersList = option.markersList;
-                for(let i=0;i<markersList.length;i++){
-                    if(markersList[i].markerType==='charging'){
+                for (let i = 0; i < markersList.length; i++) {
+                    if (markersList[i].markerType === 'charging') {
                         markersList[i].visible = true;
                     }
                 }
@@ -142,12 +157,12 @@ class LeanLeft extends PureComponent {
                 this.aMapRef.current.childMethod(this.state.aMapOption);
             }
         }
-        if(checkboxName==='parking'){
+        if (checkboxName === 'parking') {
             if (this.state.checkboxes[checkboxName] === true) {
                 let option = this.state.aMapOption;
                 let markersList = option.markersList;
-                for(let i=0;i<markersList.length;i++){
-                    if(markersList[i].markerType==='parking'){
+                for (let i = 0; i < markersList.length; i++) {
+                    if (markersList[i].markerType === 'parking') {
                         markersList[i].visible = false;
                     }
                 }
@@ -159,8 +174,8 @@ class LeanLeft extends PureComponent {
             } else {
                 let option = this.state.aMapOption;
                 let markersList = option.markersList;
-                for(let i=0;i<markersList.length;i++){
-                    if(markersList[i].markerType==='parking'){
+                for (let i = 0; i < markersList.length; i++) {
+                    if (markersList[i].markerType === 'parking') {
                         markersList[i].visible = true;
                     }
                 }
@@ -292,7 +307,10 @@ class LeanLeft extends PureComponent {
                                                         onChange={() => this.handleCheckboxChange('garage')}
                                                     >
                                                         立体车库
+
+
                                                     </Checkbox>
+                                                    <MarkerRedIcon></MarkerRedIcon>
                                                 </MenuItem>
                                                 <MenuItem>
                                                     <Checkbox
@@ -301,6 +319,7 @@ class LeanLeft extends PureComponent {
                                                     >
                                                         充电桩
                                                     </Checkbox>
+                                                    <MarkerBlueIcon></MarkerBlueIcon>
                                                 </MenuItem>
                                                 <MenuItem>
                                                     <Checkbox
@@ -309,6 +328,7 @@ class LeanLeft extends PureComponent {
                                                     >
                                                         停车场
                                                     </Checkbox>
+                                                    <MarkerGreenIcon></MarkerGreenIcon>
                                                 </MenuItem>
                                             </Menu>
                                         </div>

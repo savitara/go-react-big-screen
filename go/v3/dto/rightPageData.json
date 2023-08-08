@@ -11,17 +11,15 @@
                 "height": "1.47rem"
               },
               "option": {
-                "title": {
-                  "text": "停车时长",
-                  "subtext": "Fake Data",
-                  "left": "center"
-                },
                 "tooltip": {
                   "trigger": "item"
                 },
                 "legend": {
                   "orient": "vertical",
-                  "left": "left"
+                  "left": "left",
+                  "textStyle": {
+                    "color": "#fff"
+                  }
                 },
                 "series": [
                   {
@@ -31,23 +29,38 @@
                     "data": [
                       {
                         "value": 120,
-                        "name": "0-30分钟"
+                        "name": "0-30分钟",
+                        "itemStyle": {
+                          "color": "#E38EFF"
+                        }
                       },
                       {
                         "value": 80,
-                        "name": "30分钟-1小时"
+                        "name": "30分钟-1小时",
+                        "itemStyle": {
+                          "color": "#66FFFF"
+                        }
                       },
                       {
                         "value": 60,
-                        "name": "1-2小时"
+                        "name": "1-2小时",
+                        "itemStyle": {
+                          "color": "#99FF99"
+                        }
                       },
                       {
                         "value": 40,
-                        "name": "2-4小时"
+                        "name": "2-4小时",
+                        "itemStyle": {
+                          "color": "#FFEE99"
+                        }
                       },
                       {
                         "value": 20,
-                        "name": "4小时以上"
+                        "name": "4小时以上",
+                        "itemStyle": {
+                          "color": "#5599FF"
+                        }
                       }
                     ],
                     "emphasis": {
@@ -72,17 +85,15 @@
                 "height": "1.47rem"
               },
               "option": {
-                "title": {
-                  "text": "充电习惯",
-                  "subtext": "Fake Data",
-                  "left": "center"
-                },
                 "tooltip": {
                   "trigger": "item"
                 },
                 "legend": {
                   "orient": "vertical",
-                  "left": "left"
+                  "left": "left",
+                  "textStyle": {
+                    "color": "#fff"
+                  }
                 },
                 "series": [
                   {
@@ -92,21 +103,34 @@
                     "data": [
                       {
                         "value": 420,
-                        "name": "每天充一次"
+                        "name": "每天充一次",
+                        "itemStyle": {
+                          "color": "rgba(0, 202, 149, 1)"
+                        }
                       },
                       {
                         "value": 280,
-                        "name": "每周充一次"
+                        "name": "每周充一次",
+                        "itemStyle": {
+                          "color": "rgba(255, 165, 0, 1)"
+                        }
                       },
                       {
                         "value": 180,
-                        "name": "每月充一次"
+                        "name": "每月充一次",
+                        "itemStyle": {
+                          "color": "rgba(30, 144, 255, 1)"
+                        }
                       },
                       {
                         "value": 120,
-                        "name": "偶尔需要充电"
+                        "name": "偶尔需要充电",
+                        "itemStyle": {
+                          "color": "rgba(138, 43, 226, 1)"
+                        }
                       }
                     ],
+
                     "emphasis": {
                       "itemStyle": {
                         "shadowBlur": 10,
@@ -129,17 +153,15 @@
                 "height": "1.47rem"
               },
               "option": {
-                "title": {
-                  "text": "车型分布",
-                  "subtext": "Fake Data",
-                  "left": "center"
-                },
                 "tooltip": {
                   "trigger": "item"
                 },
                 "legend": {
                   "orient": "vertical",
-                  "left": "left"
+                  "left": "left",
+                  "textStyle": {
+                    "color": "#fff"
+                  }
                 },
                 "series": [
                   {
@@ -149,19 +171,31 @@
                     "data": [
                       {
                         "value": 600,
-                        "name": "燃油"
+                        "name": "燃油",
+                        "itemStyle": {
+                          "color": "#FF6384"
+                        }
                       },
                       {
                         "value": 400,
-                        "name": "四座新能源"
+                        "name": "四座新能源",
+                        "itemStyle": {
+                          "color": "#36A2EB"
+                        }
                       },
                       {
                         "value": 200,
-                        "name": "小E"
+                        "name": "小E",
+                        "itemStyle": {
+                          "color": "#FFCE56"
+                        }
                       },
                       {
                         "value": 100,
-                        "name": "其他"
+                        "name": "其他",
+                        "itemStyle": {
+                          "color": "#4BC0C0"
+                        }
                       }
                     ],
                     "emphasis": {
@@ -186,17 +220,15 @@
                 "height": "1.47rem"
               },
               "option": {
-                "title": {
-                  "text": "车龄占比",
-                  "subtext": "Fake Data",
-                  "left": "center"
-                },
                 "tooltip": {
                   "trigger": "item"
                 },
                 "legend": {
                   "orient": "vertical",
-                  "left": "left"
+                  "left": "left",
+                  "textStyle": {
+                    "color": "#fff"
+                  }
                 },
                 "series": [
                   {
@@ -206,23 +238,38 @@
                     "data": [
                       {
                         "value": 350,
-                        "name": "1年以内"
+                        "name": "1年以内",
+                        "itemStyle": {
+                          "color": "#FF9F40"
+                        }
                       },
                       {
                         "value": 220,
-                        "name": "1-3年"
+                        "name": "1-3年",
+                        "itemStyle": {
+                          "color": "#0088FF"
+                        }
                       },
                       {
                         "value": 180,
-                        "name": "3-5年"
+                        "name": "3-5年",
+                        "itemStyle": {
+                          "color": "#00C49F"
+                        }
                       },
                       {
                         "value": 150,
-                        "name": "5-10年"
+                        "name": "5-10年",
+                        "itemStyle": {
+                          "color": "#FFCD56"
+                        }
                       },
                       {
                         "value": 100,
-                        "name": "10年以上"
+                        "name": "10年以上",
+                        "itemStyle": {
+                          "color": "#8A2BE2"
+                        }
                       }
                     ],
                     "emphasis": {
@@ -262,7 +309,7 @@
                   },
                   {
                     "text": "已收14954元",
-                    "bottom": -8,
+                    "bottom": 50,
                     "left": "center",
                     "textStyle": {
                       "fontSize": 15,
@@ -350,7 +397,7 @@
                   },
                   {
                     "text": "已收1054元",
-                    "bottom": -8,
+                    "bottom": 50,
                     "left": "center",
                     "textStyle": {
                       "fontSize": 15,
@@ -421,6 +468,11 @@
               "option": {
                 "xAxis": {
                   "type": "category",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  },
                   "data": [
                     "24日",
                     "25日",
@@ -433,18 +485,212 @@
                 },
                 "yAxis": {
                   "type": "value",
-                  "max": null
+                  "max": null,
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  }
                 },
                 "series": [
                   {
                     "data": [
-                      100,
-                      120,
-                      110,
-                      130,
-                      150,
-                      140,
-                      160
+                      {
+                        "value": 75,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "formatter": "{c}",
+                          "color": "#fff"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#99FFFF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#99FFFF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "value": 70,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "formatter": "{c}",
+                          "color": "#fff"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#99FFFF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#99FFFF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "value": 80,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "formatter": "{c}",
+                          "color": "#fff"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#99FFFF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#99FFFF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "value": 90,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "formatter": "{c}",
+                          "color": "#fff"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#99FFFF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#99FFFF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "value": 95,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "formatter": "{c}",
+                          "color": "#fff"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#99FFFF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#99FFFF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "value": 100,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "formatter": "{c}",
+                          "color": "#fff"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#99FFFF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#99FFFF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "value": 95,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "color": "#fff",
+                          "formatter": "{c}"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#99FFFF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#99FFFF"
+                              }
+                            ]
+                          }
+                        }
+                      }
                     ],
                     "type": "bar"
                   }
@@ -466,6 +712,11 @@
               "option": {
                 "xAxis": {
                   "type": "category",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  },
                   "data": [
                     "00:00",
                     "01:00",
@@ -495,7 +746,41 @@
                 },
                 "yAxis": {
                   "type": "value",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  },
                   "max": 100
+                },
+                "tooltip": {
+                  "trigger": "axis",
+                  "axisPointer": {
+                    "lineStyle": {
+                      "color": {
+                        "type": "linear",
+                        "x": 0,
+                        "y": 0,
+                        "x2": 0,
+                        "y2": 1,
+                        "colorStops": [
+                          {
+                            "offset": 0,
+                            "color": "rgba(0, 255, 233,0)"
+                          },
+                          {
+                            "offset": 0.5,
+                            "color": "rgba(255, 255, 255,1)"
+                          },
+                          {
+                            "offset": 1,
+                            "color": "rgba(0, 255, 233,0)"
+                          }
+                        ],
+                        "global": false
+                      }
+                    }
+                  }
                 },
                 "series": [
                   {
@@ -525,7 +810,51 @@
                       85,
                       80
                     ],
-                    "type": "line"
+                    "type": "line",
+                    "smooth": true,
+                    "lineStyle": {
+                      "normal": {
+                        "color": "#FFA500",
+                        "shadowColor": "rgba(0, 0, 0, .3)",
+                        "shadowBlur": 0,
+                        "shadowOffsetY": 5,
+                        "shadowOffsetX": 5
+                      }
+                    },
+                    "label": {
+                      "show": false,
+                      "position": "top",
+                      "textStyle": {
+                        "color": "#FFA500"
+                      }
+                    },
+                    "symbolSize": 0,
+                    "itemStyle": {
+                      "color": "#FFA500"
+                    },
+                    "areaStyle": {
+                      "normal": {
+                        "color": {
+                          "type": "linear",
+                          "x": 0,
+                          "y": 0,
+                          "x2": 0,
+                          "y2": 1,
+                          "colorStops": [
+                            {
+                              "offset": 0,
+                              "color": "rgba(0,179,244,0.3)"
+                            },
+                            {
+                              "offset": 1,
+                              "color": "rgba(0,179,244,0)"
+                            }
+                          ]
+                        },
+                        "shadowColor": "rgba(0,179,244, 0.9)",
+                        "shadowBlur": 20
+                      }
+                    }
                   }
                 ]
               }
@@ -548,10 +877,20 @@
                   "containLabel": true
                 },
                 "xAxis": {
-                  "type": "value"
+                  "type": "value",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  }
                 },
                 "yAxis": {
                   "type": "category",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  },
                   "data": [
                     "第一停车场",
                     "第二停车场",
@@ -574,13 +913,48 @@
                       "focus": "series"
                     },
                     "data": [
-                      70,
-                      40,
-                      38,
-                      35,
-                      34,
-                      31,
-                      28
+                      {
+                        "value": 80,
+                        "itemStyle": {
+                          "color": "rgba(0, 128, 0, 0.7)"
+                        }
+                      },
+                      {
+                        "value": 70,
+                        "itemStyle": {
+                          "color": "rgba(30, 144, 255, 0.7)"
+                        }
+                      },
+                      {
+                        "value": 68,
+                        "itemStyle": {
+                          "color": "rgba(123, 104, 238, 0.7)"
+                        }
+                      },
+                      {
+                        "value": 65,
+                        "itemStyle": {
+                          "color": "rgba(135, 206, 235, 0.7)"
+                        }
+                      },
+                      {
+                        "value": 62,
+                        "itemStyle": {
+                          "color": "rgba(255, 215, 0, 0.7)"
+                        }
+                      },
+                      {
+                        "value": 58,
+                        "itemStyle": {
+                          "color": "rgba(255, 165, 79, 0.7)"
+                        }
+                      },
+                      {
+                        "value": 48,
+                        "itemStyle": {
+                          "color": "rgba(205, 171, 89, 0.7)"
+                        }
+                      }
                     ]
                   }
                 ]
@@ -599,6 +973,11 @@
               "option": {
                 "xAxis": {
                   "type": "category",
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  },
                   "data": [
                     "24日",
                     "25日",
@@ -611,18 +990,212 @@
                 },
                 "yAxis": {
                   "type": "value",
-                  "max": null
+                  "max": null,
+                  "axisLabel": {
+                    "textStyle": {
+                      "color": "#fff"
+                    }
+                  }
                 },
                 "series": [
                   {
                     "data": [
-                      60,
-                      70,
-                      75,
-                      80,
-                      85,
-                      90,
-                      95
+                      {
+                        "value": 75,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "formatter": "{c}",
+                          "color": "#fff"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#9F88FF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#CCBBFF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "value": 70,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "formatter": "{c}",
+                          "color": "#fff"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#9F88FF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#CCBBFF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "value": 80,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "formatter": "{c}",
+                          "color": "#fff"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#9F88FF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#CCBBFF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "value": 90,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "formatter": "{c}",
+                          "color": "#fff"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#9F88FF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#CCBBFF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "value": 95,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "formatter": "{c}",
+                          "color": "#fff"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#9F88FF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#CCBBFF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "value": 100,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "formatter": "{c}",
+                          "color": "#fff"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#9F88FF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#CCBBFF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "value": 95,
+                        "label": {
+                          "show": true,
+                          "position": "top",
+                          "color": "#fff",
+                          "formatter": "{c}"
+                        },
+                        "itemStyle": {
+                          "color": {
+                            "type": "linear",
+                            "x": 0,
+                            "y": 0,
+                            "x2": 0,
+                            "y2": 1,
+                            "colorStops": [
+                              {
+                                "offset": 0,
+                                "color": "#9F88FF"
+                              },
+                              {
+                                "offset": 1,
+                                "color": "#CCBBFF"
+                              }
+                            ]
+                          }
+                        }
+                      }
                     ],
                     "type": "bar"
                   }
